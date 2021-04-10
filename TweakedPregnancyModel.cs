@@ -40,13 +40,11 @@ namespace BannerlordTweaks
                 float num = 0f;
                 if (settings.PlayerCharacterInfertileEnabled && HeroIsMainOrSpouseOfMain(hero))
                 {
-                    //DebugHelpers.DebugMessage("Hero: " + hero.Name + "PlayerCharacterFertileEnabled Check - num = " + num);
                     return num;
                 }
 
                 if (hero.Children != null && hero.Children.Any() && hero.Children.Count >= BannerlordTweaksSettings.Instance.MaxChildren)
                 {
-                    //DebugHelpers.DebugMessage("Hero: " + hero.Name + "MaxChildrenTweakEnabled Check - num = " + num);
                     return num;
                 }
 

@@ -1,20 +1,15 @@
 ﻿using HarmonyLib;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SandBox.CampaignBehaviors;
-using TaleWorlds.CampaignSystem.ViewModelCollection;
 using TaleWorlds.CampaignSystem.ViewModelCollection.Craft.Smelting;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
-using TaleWorlds.Localization;
 
 namespace BannerlordTweaks.Patches
 {
-    /*
-     * Prevent locked items from showing up in the smelting list to stop accidental smelting
-     */
+
     [HarmonyPatch(typeof(SmeltingVM), "RefreshList")]
     public class RefreshListPatch
     {

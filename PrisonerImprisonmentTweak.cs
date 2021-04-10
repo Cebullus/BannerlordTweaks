@@ -34,23 +34,19 @@ namespace BannerlordTweaks
 
                 if (flag == true)
                 {
-                    //If the party doesn't have enough healthy soldiers, is starving, is at peace with prisoners faction, or if imprisoned long enough, allow to attempt to escape.
                     if ( (hero.PartyBelongedToAsPrisoner.NumberOfHealthyMembers < hero.PartyBelongedToAsPrisoner.NumberOfPrisoners && !hero.PartyBelongedToAsPrisoner.IsSettlement) ||
                         hero.PartyBelongedToAsPrisoner.IsStarving ||
                         (hero.MapFaction != null && FactionManager.IsNeutralWithFaction(hero.MapFaction, hero.PartyBelongedToAsPrisoner.MapFaction)) ||
                         (int)hero.CaptivityStartTime.ElapsedDaysUntilNow > settings.MinimumDaysOfImprisonment)
                     {
-                        //DebugHelpers.DebugMessage("Prisoner Tweak DailyHeroTick: [" + hero.Name + "] Escape Conditions met. Allow Escape Attempt.");
                         typeof(PrisonerReleaseCampaignBehavior).GetMethod("DailyHeroTick", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(escapeBehaviour, new object[] { hero });
                         return;
                     }
-                    //DebugHelpers.DebugMessage("Prisoner Tweak DailyHeroTick: [" + hero.Name + "] Escape conditions not met. No Escape attempt.");
                     return;
                 }
                 
                 else
                 {
-                    //DebugHelpers.DebugMessage("Prisoner Tweak DailyHeroTick: [" + hero.Name + "] Tweak Flag is false. Allow Escape Attmpt.");
                     typeof(PrisonerReleaseCampaignBehavior).GetMethod("DailyHeroTick", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(escapeBehaviour, new object[] { hero });
                 }                
                 return;
@@ -58,21 +54,17 @@ namespace BannerlordTweaks
             }
             else
             {
-                //DebugHelpers.DebugMessage("Prisoner Tweak DailyHeroTick: [" + hero.Name + "] Else Condition met. Operate as normal, allow escape attempt.");
                 typeof(PrisonerReleaseCampaignBehavior).GetMethod("DailyHeroTick", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(escapeBehaviour, new object[] { hero });
             }
         }
 
         public static void DailyTick()
         {
-            //DebugHelpers.DebugMessage("Respawn Fix : Triggered Daily Tick");
             foreach (Hero hero in Hero.All)
             {
                 if (hero == null) return;
                 if (hero.PartyBelongedToAsPrisoner == null && hero.IsPrisoner && hero.IsAlive && !hero.IsActive && !hero.IsNotSpawned && !hero.IsReleased)
                 {
-                    //Hero.CharacterStates heroState = hero.HeroState;
-
                     float days = hero.CaptivityStartTime.ElapsedDaysUntilNow;
                     if ( BannerlordTweaksSettings.Instance is { } settings && (days > (settings.MinimumDaysOfImprisonment + 3)) )
                     {
@@ -80,8 +72,6 @@ namespace BannerlordTweaks
                         DebugHelpers.QuickInformationMessage("Releasing " + hero.Name + " due to Missing Hero Bug. (" + (int)days + " days)");
                         EndCaptivityAction.ApplyByReleasing(hero);
                     }
-
-                    //DebugHelpers.DebugMessage("Tracking Hero for possible bug: " + hero.Name + " | State: " + heroState + " | Loc: " + hero.LastSeenPlace + " | Captivity days: " + (int)days);
                 }
             }
         }

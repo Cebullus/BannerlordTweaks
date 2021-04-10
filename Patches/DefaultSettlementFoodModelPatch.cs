@@ -1,12 +1,10 @@
 ﻿using HarmonyLib;
 using System;
-using System.Linq;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SandBox.GameComponents;
 using TaleWorlds.Core;
 using TaleWorlds.Localization;
 
-// Convert TweakedSettlementFoodModel to patch due to 1.5.7 changes.
 
 namespace BannerlordTweaks.Patches
 {    

@@ -1,14 +1,9 @@
 ﻿using HarmonyLib;
-using Helpers;
 using System;
-using System.Windows.Forms;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SandBox.GameComponents.Map;
-using TaleWorlds.Core;
 using TaleWorlds.Localization;
-using TaleWorlds.Library;
 
-// Explained Number Changed in 1.5.7 - All patches adjusted to new format.
 
 namespace BannerlordTweaks.Patches
 {
@@ -19,8 +14,6 @@ namespace BannerlordTweaks.Patches
     {
         static void Postfix(PartyBase party, float renownValueOfBattle, float contributionShare, ref ExplainedNumber result, ref float __result)
         {
-
-
             if ((BannerlordTweaksSettings.Instance is { } settings && party.LeaderHero != null) && (settings.BattleRewardApplyToAI || party.LeaderHero == Hero.MainHero))
             {
                 float battleRenownMultiplier = settings.BattleRenownMultiplier;

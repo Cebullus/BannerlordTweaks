@@ -1,8 +1,6 @@
 ﻿using HarmonyLib;
-using System;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SandBox.GameComponents.Party;
-using TaleWorlds.Core;
 using TaleWorlds.Localization;
 
 namespace BannerlordTweaks.Patches
@@ -10,7 +8,6 @@ namespace BannerlordTweaks.Patches
     [HarmonyPatch(typeof(DefaultPartyWageModel), "GetTotalWage")]
     public class DefaultPartyWageModelPatch
     {
-
         static void Postfix(MobileParty mobileParty, ref ExplainedNumber __result)
         {
             if (BannerlordTweaksSettings.Instance is { } settings && settings.PartyWageTweaksEnabled && mobileParty != null)

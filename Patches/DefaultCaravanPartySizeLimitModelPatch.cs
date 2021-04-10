@@ -6,10 +6,9 @@ using TaleWorlds.CampaignSystem.SandBox.GameComponents.Party;
 namespace BannerlordTweaks.Patches
 {
     [HarmonyPatch(typeof(DefaultPartySizeLimitModel), "CalculateMobilePartyMemberSizeLimit")]
-    //[HarmonyPatch(typeof(DefaultPartySizeLimitModel), "GetPartyMemberSizeLimit")]
+
     public class DefaultCaravanPartySizeLimitModelPatch
     {
-        //static void Postfix(MobileParty party, StatExplainer explanation, ref int __result)
         static void Postfix(MobileParty party, ref ExplainedNumber __result)
         {
             if (party.IsCaravan && party.Party?.Owner != null && party.Party.Owner == Hero.MainHero && BannerlordTweaksSettings.Instance is { } settings)

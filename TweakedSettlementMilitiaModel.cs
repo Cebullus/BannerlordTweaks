@@ -1,8 +1,5 @@
 ﻿using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SandBox.GameComponents;
-using TaleWorlds.Localization;
-using System.Windows.Forms;
-using System;
 
 namespace BannerlordTweaks
 {    
