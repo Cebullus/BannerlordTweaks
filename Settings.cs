@@ -173,7 +173,7 @@ namespace BannerlordTweaks
         [SettingPropertyInteger("Become Teenager Age", 0, 125, "0 Years", RequireRestart = false, Order = 4, HintText = "Native: 14. Must be less than Hero Comes Of Age."), SettingPropertyGroup("Character Tweaks/Age Tweaks*")]
         public int BecomeTeenagerAge { get; set; } = 14;
 
-        [SettingPropertyInteger("Hero Comes Of Age", 0, 100, "0 Years", RequireRestart = false, Order = 5, HintText = "Native: 18. Must be less than Become Old Age."), SettingPropertyGroup("Character Tweaks/Age Tweaks*")]
+        [SettingPropertyInteger("Hero Comes Of Age", 0, 125, "0 Years", RequireRestart = false, Order = 5, HintText = "Native: 18. Must be less than Become Old Age."), SettingPropertyGroup("Character Tweaks/Age Tweaks*")]
         public int HeroComesOfAge { get; set; } = 18;
 
         [SettingPropertyInteger("Become Old Age", 0, 125, "0 Years", RequireRestart = false, Order = 6, HintText = "Native: 47. Must be less than Max Age."), SettingPropertyGroup("Character Tweaks/Age Tweaks*")]
@@ -283,16 +283,16 @@ namespace BannerlordTweaks
         [SettingPropertyBool("Player is Infertile", Order = 1, RequireRestart = false, HintText = "Native: disabled. If enabled, the player will not be able to have children."), SettingPropertyGroup("Character Tweaks/Pregnancy Tweaks*/Pregnancy Chance Tweaks")]
         public bool PlayerCharacterInfertileEnabled { get; set; } = false;
 
-        [SettingPropertyInteger("Min Pregnancy Age", 0, 999, "0 Years", Order = 2, RequireRestart = false, HintText = "Native: 18. Minimum age that someone can get pregnant."), SettingPropertyGroup("Character Tweaks/Pregnancy Tweaks*/Pregnancy Chance Tweaks")]
+        [SettingPropertyInteger("Min Pregnancy Age", 0, 125, "0 Years", Order = 2, RequireRestart = false, HintText = "Native: 18. Minimum age that someone can get pregnant."), SettingPropertyGroup("Character Tweaks/Pregnancy Tweaks*/Pregnancy Chance Tweaks")]
         public int MinPregnancyAge { get; set; } = 18;
 
-        [SettingPropertyInteger("Max Pregnancy Age", 0, 999, "0 Years",  Order = 3,  RequireRestart = false, HintText = "Native: 45. Maximum age that someone can get pregnant."), SettingPropertyGroup("Character Tweaks/Pregnancy Tweaks*/Pregnancy Chance Tweaks")]
+        [SettingPropertyInteger("Max Pregnancy Age", 0, 125, "0 Years",  Order = 3,  RequireRestart = false, HintText = "Native: 45. Maximum age that someone can get pregnant."), SettingPropertyGroup("Character Tweaks/Pregnancy Tweaks*/Pregnancy Chance Tweaks")]
         public int MaxPregnancyAge { get; set; } = 45;
 
         [SettingPropertyFloatingInteger("Clan Fertility Bonus", 1f, 10f, "0%", Order = 4, RequireRestart = false, HintText = "Adds modifier to your clan members to become pregnant. 100% = No Bonus, 200% = 2x chance. Note: May not do much after ~6-8 kids due to the base pregnancy calculations."), SettingPropertyGroup("Character Tweaks/Pregnancy Tweaks*/Pregnancy Chance Tweaks")]
         public float ClanFertilityBonus { get; set; } = 1f;
 
-        [SettingPropertyInteger("Max Children", 0, 999, "0 children", Order = 5, RequireRestart = false, HintText = "Default: 5. Maximum number of children that someone can have."), SettingPropertyGroup("Character Tweaks/Pregnancy Tweaks*/Pregnancy Chance Tweaks")]
+        [SettingPropertyInteger("Max Children", 0, 100, "0 children", Order = 5, RequireRestart = false, HintText = "Default: 5. Maximum number of children that someone can have."), SettingPropertyGroup("Character Tweaks/Pregnancy Tweaks*/Pregnancy Chance Tweaks")]
         public int MaxChildren { get; set; } = 5;
 
         #endregion
