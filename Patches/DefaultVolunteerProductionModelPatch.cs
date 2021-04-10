@@ -11,34 +11,18 @@ namespace BannerlordTweaks.Patches
         { 
             if (BannerlordTweaksSettings.Instance is { } settings && settings.BalancingTimeRecruitsTweaksEnabled && hero.CurrentSettlement.OwnerClan.Kingdom.StringId != null)
             {
-                float num = 0;
-                switch (hero.CurrentSettlement.OwnerClan.Kingdom.StringId)
+                float num = hero.CurrentSettlement.OwnerClan.Kingdom.StringId switch
                 {
-                    case "vlandia":
-                        num = settings.VlandiaBoost;
-                        break;
-                    case "battania":
-                        num = settings.BattaniaBoost;
-                        break;
-                    case "empire":
-                        num = settings.Empire_N_Boost;
-                        break;
-                    case "empire_s":
-                        num = settings.Empire_S_Boost;
-                        break;
-                    case "empire_w":
-                        num = settings.Empire_W_Boost;
-                        break;
-                    case "sturgia":
-                        num = settings.SturgiaBoost;
-                        break;
-                    case "khuzait":
-                        num = settings.KhuzaitBoost;
-                        break;
-                    case "aserai":
-                        num = settings.Aseraiboost;
-                        break;
-                }
+                    "vlandia" => settings.VlandiaBoost,
+                    "battania" => settings.BattaniaBoost,
+                    "empire" => settings.Empire_N_Boost,
+                    "empire_s" => settings.Empire_S_Boost,
+                    "empire_w" => settings.Empire_W_Boost,
+                    "sturgia" => settings.SturgiaBoost,
+                    "khuzait" => settings.KhuzaitBoost,
+                    "aserai" => settings.Aseraiboost,
+                    _ => 0f
+                };
                 __result = (__result + (num * 0.75f));
             }
         }
