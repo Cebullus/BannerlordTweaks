@@ -17,39 +17,23 @@ namespace BannerlordTweaks.Patches
             }
             if (BannerlordTweaksSettings.Instance is { } settings2 && settings2.BalancingFoodTweakEnabled && village.TradeBound.OwnerClan.Kingdom != null)
             {
-                float num = 0f;
-                switch (village.TradeBound.OwnerClan.Kingdom.StringId)
+                float num = village.TradeBound.OwnerClan.Kingdom.StringId switch
                 {
-                    case "vlandia":
-                        num = settings2.VlandiaBoost;
-                        break;
-                    case "battania":
-                        num = settings2.BattaniaBoost;
-                        break;
-                    case "empire":
-                        num = settings2.Empire_N_Boost;
-                        break;
-                    case "empire_s":
-                        num = settings2.Empire_S_Boost;
-                        break;
-                    case "empire_w":
-                        num = settings2.Empire_W_Boost;
-                        break;
-                    case "sturgia":
-                        num = settings2.SturgiaBoost;
-                        break;
-                    case "khuzait":
-                        num = settings2.KhuzaitBoost;
-                        break;
-                    case "aserai":
-                        num = settings2.Aseraiboost;
-                        break;
-                }
+                    "vlandia" => settings2.VlandiaBoost,
+                    "battania" => settings2.BattaniaBoost,
+                    "empire" => settings2.Empire_N_Boost,
+                    "empire_s" => settings2.Empire_S_Boost,
+                    "empire_w" => settings2.Empire_W_Boost,
+                    "sturgia" => settings2.SturgiaBoost,
+                    "khuzait" => settings2.KhuzaitBoost,
+                    "aserai" => settings2.Aseraiboost,
+                    _ => 0f
+                };
                 __result = (__result+ (__result * num));
             }
         }
 
-        static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && (settings.ProductionTweakEnabled || settings.KingdomBalanceStrengthEnabled);
+    static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && (settings.ProductionTweakEnabled || settings.KingdomBalanceStrengthEnabled);
     }
 
     [HarmonyPatch(typeof(DefaultVillageProductionCalculatorModel), "CalculateDailyProductionAmount")]
