@@ -2,10 +2,8 @@
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SandBox.GameComponents;
 using TaleWorlds.Localization;
-using System.Windows.Forms;
 using System;
 
-// Convert TweakedSettlementFoodModel to patch due to 1.5.7 changes.
 
 namespace BannerlordTweaks.Patches
 {
@@ -13,7 +11,6 @@ namespace BannerlordTweaks.Patches
 
     public class DefaultSettlementMilitiaModelPatch
     {
-        //static void Postfix(Settlement settlement, ref ExplainedNumber result, ref int __result)
         static void Postfix(Settlement settlement, ref ExplainedNumber __result)
         {
             if (BannerlordTweaksSettings.Instance is { } settings && settings.SettlementMilitiaBonusEnabled && !(settlement is null))

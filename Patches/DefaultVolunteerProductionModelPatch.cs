@@ -1,19 +1,12 @@
 ﻿using HarmonyLib;
-using System;
-using System.Collections;
-using System.Reflection;
-using System.Windows.Forms;
 using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.Actions;
 using TaleWorlds.CampaignSystem.SandBox.GameComponents.Map;
-using TaleWorlds.Core;
 
 namespace BannerlordTweaks.Patches
 {
     [HarmonyPatch(typeof(DefaultVolunteerProductionModel), "GetDailyVolunteerProductionProbability")]
     public class DefaultVolunteerProductionModelPatch
     {
-
         static void Postfix(Hero hero, int index, Settlement settlement, ref float __result)
         { 
             if (BannerlordTweaksSettings.Instance is { } settings && settings.BalancingTimeRecruitsTweaksEnabled && hero.CurrentSettlement.OwnerClan.Kingdom.StringId != null)

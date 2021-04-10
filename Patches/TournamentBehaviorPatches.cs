@@ -20,7 +20,6 @@ namespace BannerlordTweaks.Patches
         static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.TournamentGoldRewardEnabled;
     }
 
-
     [HarmonyPatch(typeof(TournamentBehavior), "CalculateBet")]
     public class CalculateBetPatch
     {

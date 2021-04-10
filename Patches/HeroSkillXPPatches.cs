@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using System;
-using System.Linq;
 using System.Reflection;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
@@ -12,21 +11,10 @@ namespace BannerlordTweaks.Patches
     {
         private static FieldInfo? hdFieldInfo = null;
 
-        /*
-        private static float GetMultiplier()
-        {
-            if (BannerlordTweaksSettings.Instance.HeroSkillExperienceOverrideMultiplierEnabled)
-                return BannerlordTweaksSettings.Instance.HeroSkillExperienceMultiplier;
-            else
-                return Math.Max(1, 0.0315769 * Math.Pow(skillLevel, 1.020743));
-        }
-        */
-
         static bool Prefix(Hero __instance, SkillObject skill, float xpAmount)
         {
             try
             {
-                
                 if (hdFieldInfo == null) GetFieldInfo();
 
                 HeroDeveloper hd = (HeroDeveloper)hdFieldInfo!.GetValue(__instance);
@@ -44,11 +32,9 @@ namespace BannerlordTweaks.Patches
                             {
                                 float PerSkillBonus = GetPerSkillBonus(skill, xpAmount);
                                 xpAmount = PerSkillBonus;
-                                //DebugHelpers.DebugMessage("HeroSkillXPPatch - Per-Skill Bonus Added: Player: " + hd.Hero.Name + "\nSkill is: " + skill.Name + "\nXPAmount = " + xpAmount);
                             }
                             float newXpAmount = (int)Math.Ceiling(xpAmount * settings.HeroSkillExperienceMultiplier);
                             hd.AddSkillXp(skill, newXpAmount, true, true);
-                            //DebugHelpers.DebugMessage("HeroSkillXPPatch: Player: " + hd.Hero.Name+ "\nSkill is: " + skill.Name + "\nXPAmount = " + xpAmount + "\nNewXPAmount = " + newXpAmount);
                         }
                         else if (settings.CompanionSkillExperienceMultiplierEnabled && !hd.Hero.IsHumanPlayerCharacter &&
                            ( hd.Hero.Clan == Hero.MainHero.Clan) )
@@ -57,11 +43,9 @@ namespace BannerlordTweaks.Patches
                             {
                                 float PerSkillBonus = GetPerSkillBonus(skill, xpAmount);
                                 xpAmount = PerSkillBonus;
-                                //DebugHelpers.DebugMessage("HeroSkillXPPatch - Per-Skill Bonus Added: Player: " + hd.Hero.Name + "\nSkill is: " + skill.Name + "\nXPAmount = " + xpAmount);
                             }
                             float newXpAmount = (int)Math.Ceiling(xpAmount * settings.CompanionSkillExperienceMultiplier);
                             hd.AddSkillXp(skill, newXpAmount, true, true);
-                           //DebugHelpers.DebugMessage("HeroSkillXPPatch: Companion: " + hd.Hero.Name + " - Clan: "+ hd.Hero.Clan.Name + " - Skill is: " + skill.Name + " - XPAmount = " + xpAmount + " - NewXPAmount = " + newXpAmount);
                         }
 
                         else 
@@ -101,28 +85,6 @@ namespace BannerlordTweaks.Patches
 
             if (!(BannerlordTweaksSettings.Instance is { } settings))
                 return 0;
-
-            /*
-            switch (skillname)
-            {
-                case "Engineering":
-                    return (newxpamount * settings.SkillBonusEngineering);
-                case "Leadership":
-                    return (newxpamount * settings.SkillBonusLeadership);
-                case "Medicine":
-                    return (newxpamount * settings.SkillBonusMedicine);
-                case "Riding":
-                    return (newxpamount * settings.SkillBonusRiding);
-                case "Roguery":
-                    return (newxpamount * settings.SkillBonusRoguery);
-                case "Scouting":
-                    return (newxpamount * settings.SkillBonusScouting);
-                case "Trade":
-                    return (newxpamount * settings.SkillBonusTrade);
-                default:
-                    //DebugHelpers.DebugMessage("GetPerSkillBonus did not find the skill: " + skillname);
-                    return xpamount;
-            */
 
             return skillname switch
             {

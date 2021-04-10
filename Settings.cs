@@ -1,7 +1,5 @@
 ﻿using MCM.Abstractions.Attributes;
-using MCM.Abstractions.FluentBuilder;
 using MCM.Abstractions.Attributes.v2;
-using MCM.Abstractions.Attributes.v1;
 using MCM.Abstractions.Settings.Base.Global;
 
 namespace BannerlordTweaks
@@ -936,7 +934,7 @@ namespace BannerlordTweaks
         [SettingPropertyBool("Show Number of Days of Food*", Order = 2, RequireRestart = true, HintText = "Changes the number showing how much food you have to instead show how many days' worth of food you have. (Bottom right of campaign map UI)."), SettingPropertyGroup("Misc")]
         public bool ShowFoodDaysRemaining { get; set; } = false;
 
-        [SettingPropertyInteger("Campaign Speed Fast Forward", 2, 20, Order = 3, RequireRestart = false, HintText = "Sets the campaign speed in fast forward mode. Vanilla is 4."), SettingPropertyGroup("Misc")]
+        [SettingPropertyInteger("Campaign Speed Fast Forward", 2, 32, Order = 3, RequireRestart = false, HintText = "Sets the campaign speed in fast forward mode. Vanilla is 4."), SettingPropertyGroup("Misc")]
         public int CampaignSpeed { get; set; } = 4;
 
         /* Disable in 1.5.7.2 until we understand changes to the main quest.

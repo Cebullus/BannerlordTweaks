@@ -1,12 +1,7 @@
 ﻿using HarmonyLib;
-using Helpers;
-using System;
-using System.Windows.Forms;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SandBox.GameComponents.Map;
 using TaleWorlds.Core;
-using TaleWorlds.Localization;
-using TaleWorlds.Library;
 
 namespace BannerlordTweaks.Patches
 {
@@ -20,7 +15,7 @@ namespace BannerlordTweaks.Patches
             {
                 __result = (__result * settings.ProductionFoodTweakEnabled);
             }
-            if (BannerlordTweaksSettings.Instance is { } settings2 && settings2.BalancingFoodTweakEnabled && village.TradeBound.OwnerClan.Kingdom != null)  //Null crash very rarely, added null-check for Kingdom
+            if (BannerlordTweaksSettings.Instance is { } settings2 && settings2.BalancingFoodTweakEnabled && village.TradeBound.OwnerClan.Kingdom != null)
             {
                 float num = 0f;
                 switch (village.TradeBound.OwnerClan.Kingdom.StringId)
@@ -56,8 +51,6 @@ namespace BannerlordTweaks.Patches
 
         static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && (settings.ProductionTweakEnabled || settings.KingdomBalanceStrengthEnabled);
     }
-
-
 
     [HarmonyPatch(typeof(DefaultVillageProductionCalculatorModel), "CalculateDailyProductionAmount")]
     public class CalculateDailyProductionAmountPatch

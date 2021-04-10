@@ -26,7 +26,6 @@ namespace BannerlordTweaks
 						questBase.ChangeQuestDueTime(CampaignTime.YearsFromNow(1f));
 						DebugHelpers.ColorGreenMessage("New quest deadline: " + questBase.QuestDueTime.ToString());
 					}
-					//bool flag3 = questBase.GetName().ToString().StartsWith("conspiacy_quest_") && questBase.QuestDueTime < CampaignTime.DaysFromNow(5f);
 					bool flag3 = questBase.StringId.StartsWith("conspiracy_quest_") && questBase.QuestDueTime < CampaignTime.DaysFromNow(7f);
 					if (flag3)
                     {

@@ -35,21 +35,6 @@ namespace BannerlordTweaks.Patches
     [HarmonyPatch(typeof(DefaultPartyMoraleModel), "GetPartySizeMoraleEffect")]
     public class GetPartySizeMoraleEffectPatch
     {
-        // 1.5.8 --> 1.5.9
-        //    static bool Prefix(MobileParty party, ref ExplainedNumber result, TextObject ____partySizeMoraleText)
-        //    {
-        //      if (party != null && party.Party != null && party.Party.LeaderHero != null && party.Party.LeaderHero == Hero.MainHero)
-        //      {
-        //        int num = QuestPartySizeHelper.GetPartySize(party) - party.Party.PartySizeLimit;
-        //        if (num > 0)
-        //        {
-        //            result.Add(-1f * (float) Math.Sqrt((double) num), ____partySizeMoraleText);
-        //        }
-        //        return false;
-        //      }
-        //    return true;
-        //    }
-
         static bool Prefix(MobileParty mobileParty, ref ExplainedNumber result, TextObject ____partySizeMoraleText)
         {
             if (mobileParty != null && mobileParty.Party != null && mobileParty.Party.LeaderHero != null && !mobileParty.IsMilitia && !mobileParty.IsVillager)
@@ -65,7 +50,6 @@ namespace BannerlordTweaks.Patches
         }
 
         static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.QuestCharactersIgnorePartySize;
-
     }
 
     [HarmonyPatch(typeof(DefaultPartyMoraleModel), "NumberOfDesertersDueToPaymentRatio")]
