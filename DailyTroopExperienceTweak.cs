@@ -16,25 +16,27 @@ namespace BannerlordTweaks
         {
             if (party.LeaderHero != null)
             {
-                int count = party.MemberRoster.Troops.Count();
-                if (party.LeaderHero == Hero.MainHero || BannerlordTweaksSettings.Instance is { } settings && settings.DailyTroopExperienceApplyToAllNPC ||
-                    BannerlordTweaksSettings.Instance.DailyTroopExperienceApplyToPlayerClanMembers && party.LeaderHero.Clan == Clan.PlayerClan)
+                int count = party.MemberRoster.TotalManCount;
+                if (party.LeaderHero == Hero.MainHero || BannerlordTweaksSettings.Instance is { } settings && settings.DailyTroopExperienceApplyToAllNPC || BannerlordTweaksSettings.Instance is { } settings2 && settings2.DailyTroopExperienceApplyToPlayerClanMembers && party.LeaderHero.Clan == Clan.PlayerClan)
                 {
                     int experienceAmount = ExperienceAmount(party.LeaderHero);
                     if (experienceAmount > 0)
                     {
-                        foreach (var troop in party.MemberRoster.Troops)
+                        int num = 0;
+                        foreach (var troop in party.MemberRoster.GetTroopRoster())
                         {
-                            party.MemberRoster.AddXpToTroop(experienceAmount, troop);
+                            if (!troop.Character.IsHero)
+                            {
+                                party.MemberRoster.AddXpToTroop(experienceAmount, troop.Character);
+                                num++;
+                            }
                         }
 
-                        if (BannerlordTweaksSettings.Instance is { } settings2 && settings2.DisplayMessageDailyExperienceGain)
+                        if (BannerlordTweaksSettings.Instance is { } settings3 && settings3.DisplayMessageDailyExperienceGain)
                         {
                             string troops = count == 1 ? "soldier" : "troops";
-                            //Debug
-                            //DebugHelpers.DebugMessage($"{party.LeaderHero.Name}'s party granted {experienceAmount} experience to {count} {troops}."));
-                            if (party.LeaderHero == Hero.MainHero)
-                                InformationManager.DisplayMessage(new InformationMessage($"Granted {experienceAmount} experience to {count} {troops}."));
+                            if (party.LeaderHero == Hero.MainHero && num > 0)
+                                InformationManager.DisplayMessage(new InformationMessage($"Granted {experienceAmount} experience to {num} {troops}."));
                         }
                     }
                 }

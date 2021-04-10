@@ -5,71 +5,46 @@ using TaleWorlds.Localization;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SandBox.GameComponents.Map;
 
-// Courtest of Ruihan - Since it costs 0 influence to raise cohesion on all-clan-party armies, even if low-morale or starving, so why make them click and add cohesion?
-
 
 namespace BannerlordTweaks.Patches
 {
-
-    /* Option to run it as a replacement model
-    public class TweakedDefaultArmyManagementCalculationModel : DefaultArmyManagementCalculationModel
-    {
-        public override float CalculateCohesionChange(Army army, StatExplainer? explanation = null)
-        {
-            int num1 = 0;
-            ExplainedNumber explainedNumber = new ExplainedNumber(-2f, explanation, null);
-
-            foreach (MobileParty party in army.Parties)
-            {
-                if (party.LeaderHero.Clan != army.LeaderParty.LeaderHero.Clan)
-                {
-                    num1++;
-                }
-            }
-            
-            if (num1 > 0)
-            {
-                // make this a reflection call
-                typeof(DefaultArmyManagementCalculationModel).GetMethod("CalculateCohesionChangeInternal", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(this, new object[] { army, explainedNumber });
-                //base.CalculateCohesionChangeInternal(army, ref explainedNumber);
-            }
-            else
-            {
-                explainedNumber.Add(2f, new TextObject("Clan-Only Armies Suffer No Cohesion Loss"), null);
-            }
-            return explainedNumber.ResultNumber;
-        }
-    }
-    */
-
     [HarmonyPatch(typeof(DefaultArmyManagementCalculationModel), "CalculateCohesionChange")]
     public class CalculateCohesionChangePatch
     {
-
-        static bool Prefix(Army army, ref float __result, StatExplainer? explanation = null)
+        static bool Prefix(Army army, bool includeDescriptions, ref ExplainedNumber __result)
         {
-            int num1 = 0;
-            foreach (MobileParty party in army.Parties)
+            if (BannerlordTweaksSettings.Instance is { } settings && settings.ClanArmyLosesNoCohesionEnabled)
             {
-                if (party.LeaderHero.Clan != army.LeaderParty.LeaderHero.Clan)
+                int num1 = 0;
+                foreach (MobileParty party in army.Parties)
                 {
-                    num1++;
+                    if (!(party.LeaderHero is null) && party.LeaderHero.Clan != army.LeaderParty.LeaderHero.Clan)
+                    {
+                        num1++;
+                    }
+                }
+                if (num1 > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    __result.Add(0, new TextObject("Clan-Only Armies Suffer No Cohesion Loss"));
+                    return false;
                 }
             }
-            if (num1 > 0)
+            return true;
+        }
+        static void Postfix(Army army, bool includeDescriptions, ref ExplainedNumber __result)
+        {
+            if (BannerlordTweaksSettings.Instance is { } settings && settings.BTCohesionTweakEnabled)
             {
-                return true;
-            }
-            else
-            {
-                if (explanation is null) explanation = new StatExplainer();
-                explanation.AddLine("Clan-Only Armies Suffer No Cohesion Loss", 0);
-                ExplainedNumber explainedNumber = new ExplainedNumber(0f, explanation);
-                __result = explainedNumber.ResultNumber;
-                return false;
+                float num1 = 1;
+                num1 = Math.Abs(__result.ResultNumber) * settings.BTCohesionTweakv2;
+                __result.Add(num1, new TextObject("BT Cohesion Tweak"));
             }
         }
 
-        static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.ClanArmyLosesNoCohesionEnabled;
+        static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.BTCohesionTweakEnabled;
     }
 }

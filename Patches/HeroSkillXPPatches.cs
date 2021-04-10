@@ -12,11 +12,21 @@ namespace BannerlordTweaks.Patches
     {
         private static FieldInfo? hdFieldInfo = null;
 
+        /*
+        private static float GetMultiplier()
+        {
+            if (BannerlordTweaksSettings.Instance.HeroSkillExperienceOverrideMultiplierEnabled)
+                return BannerlordTweaksSettings.Instance.HeroSkillExperienceMultiplier;
+            else
+                return Math.Max(1, 0.0315769 * Math.Pow(skillLevel, 1.020743));
+        }
+        */
+
         static bool Prefix(Hero __instance, SkillObject skill, float xpAmount)
         {
             try
             {
-
+                
                 if (hdFieldInfo == null) GetFieldInfo();
 
                 HeroDeveloper hd = (HeroDeveloper)hdFieldInfo!.GetValue(__instance);
@@ -30,31 +40,31 @@ namespace BannerlordTweaks.Patches
                     {
                         if (settings.HeroSkillExperienceMultiplierEnabled && hd.Hero.IsHumanPlayerCharacter)
                         {
-                            float newXpAmount = (int)Math.Ceiling(xpAmount * settings.HeroSkillExperienceMultiplier);
                             if (settings.PerSkillBonusEnabled)
                             {
                                 float PerSkillBonus = GetPerSkillBonus(skill, xpAmount);
-                                xpAmount += PerSkillBonus;
+                                xpAmount = PerSkillBonus;
                                 //DebugHelpers.DebugMessage("HeroSkillXPPatch - Per-Skill Bonus Added: Player: " + hd.Hero.Name + "\nSkill is: " + skill.Name + "\nXPAmount = " + xpAmount);
                             }
+                            float newXpAmount = (int)Math.Ceiling(xpAmount * settings.HeroSkillExperienceMultiplier);
                             hd.AddSkillXp(skill, newXpAmount, true, true);
                             //DebugHelpers.DebugMessage("HeroSkillXPPatch: Player: " + hd.Hero.Name+ "\nSkill is: " + skill.Name + "\nXPAmount = " + xpAmount + "\nNewXPAmount = " + newXpAmount);
                         }
                         else if (settings.CompanionSkillExperienceMultiplierEnabled && !hd.Hero.IsHumanPlayerCharacter &&
-                           (hd.Hero.Clan == Hero.MainHero.Clan))
+                           ( hd.Hero.Clan == Hero.MainHero.Clan) )
                         {
-                            float newXpAmount = (int)Math.Ceiling(xpAmount * settings.CompanionSkillExperienceMultiplier);
                             if (settings.PerSkillBonusEnabled)
                             {
                                 float PerSkillBonus = GetPerSkillBonus(skill, xpAmount);
-                                xpAmount += PerSkillBonus;
+                                xpAmount = PerSkillBonus;
                                 //DebugHelpers.DebugMessage("HeroSkillXPPatch - Per-Skill Bonus Added: Player: " + hd.Hero.Name + "\nSkill is: " + skill.Name + "\nXPAmount = " + xpAmount);
                             }
+                            float newXpAmount = (int)Math.Ceiling(xpAmount * settings.CompanionSkillExperienceMultiplier);
                             hd.AddSkillXp(skill, newXpAmount, true, true);
-                            //DebugHelpers.DebugMessage("HeroSkillXPPatch: Companion: " + hd.Hero.Name + " - Clan: "+ hd.Hero.Clan.Name + " - Skill is: " + skill.Name + " - XPAmount = " + xpAmount + " - NewXPAmount = " + newXpAmount);
+                           //DebugHelpers.DebugMessage("HeroSkillXPPatch: Companion: " + hd.Hero.Name + " - Clan: "+ hd.Hero.Clan.Name + " - Skill is: " + skill.Name + " - XPAmount = " + xpAmount + " - NewXPAmount = " + newXpAmount);
                         }
 
-                        else
+                        else 
                             hd.AddSkillXp(skill, xpAmount, true, true);
                     }
                     else
@@ -92,7 +102,7 @@ namespace BannerlordTweaks.Patches
             if (!(BannerlordTweaksSettings.Instance is { } settings))
                 return 0;
 
-
+            /*
             switch (skillname)
             {
                 case "Engineering":
@@ -112,7 +122,20 @@ namespace BannerlordTweaks.Patches
                 default:
                     //DebugHelpers.DebugMessage("GetPerSkillBonus did not find the skill: " + skillname);
                     return xpamount;
-            }
+            */
+
+            return skillname switch
+            {
+                "Engineering" => (newxpamount * settings.SkillBonusEngineering),
+                "Leadership" => (newxpamount * settings.SkillBonusLeadership),
+                "Medicine" => (newxpamount * settings.SkillBonusMedicine),
+                "Riding" => (newxpamount * settings.SkillBonusRiding),
+                "Roguery" => (newxpamount * settings.SkillBonusRoguery),
+                "Scouting" => (newxpamount * settings.SkillBonusScouting),
+                "Trade" => (newxpamount * settings.SkillBonusTrade),
+                "Smithing" => (newxpamount * settings.SkillBonusSmithing),
+                _ => xpamount,
+            };
         }
     }
 }

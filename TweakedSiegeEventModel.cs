@@ -6,28 +6,30 @@ namespace BannerlordTweaks
 {
     public class TweakedSiegeEventModel : DefaultSiegeEventModel
     {
-        public override float GetConstructionProgressPerHour(SiegeEngineType type, SiegeEvent siegeEvent, ISiegeEventSide side, StatExplainer? explanation = null)
+        //public override float GetConstructionProgressPerHour(SiegeEngineType type, SiegeEvent siegeEvent, ISiegeEventSide side, StatExplainer? explanation = null)
+        public override float GetConstructionProgressPerHour(SiegeEngineType type, SiegeEvent siegeEvent, ISiegeEventSide side)
         {
-            if (BannerlordTweaksSettings.Instance.SiegeConstructionProgressPerDayMultiplierEnabled)
-                return base.GetConstructionProgressPerHour(type, siegeEvent, side, explanation) * BannerlordTweaksSettings.Instance.SiegeConstructionProgressPerDayMultiplier;
+            if (BannerlordTweaksSettings.Instance is { } settings)
+                return base.GetConstructionProgressPerHour(type, siegeEvent, side) * settings.SiegeConstructionProgressPerDayMultiplier;
             else
-                return base.GetConstructionProgressPerHour(type, siegeEvent, side, explanation);
+                return base.GetConstructionProgressPerHour(type, siegeEvent, side);
         }
 
-        public override float GetColleteralDamageCasualties(SiegeEngineType siegeEngineType, MobileParty party)
+        public override int GetColleteralDamageCasualties(SiegeEngineType siegeEngineType, MobileParty party)
         {
-            if (BannerlordTweaksSettings.Instance.SiegeCasualtiesTweakEnabled)
-                return BannerlordTweaksSettings.Instance.SiegeCollateralDamageCasualties;
+            if (BannerlordTweaksSettings.Instance is { } settings)
+                return base.GetColleteralDamageCasualties(siegeEngineType, party) + settings.SiegeCollateralDamageCasualties;
             else
                 return base.GetColleteralDamageCasualties(siegeEngineType, party);
         }
 
-        public override float GetDestructionCasualties(SiegeEngineType destroyedSiegeEngine)
+        public override int GetDestructionCasualties(SiegeEvent siegeEvent, BattleSideEnum side, SiegeEngineType destroyedSiegeEngine)
         {
-            if (BannerlordTweaksSettings.Instance.SiegeCasualtiesTweakEnabled)
-                return BannerlordTweaksSettings.Instance.SiegeDestructionCasualties;
+            if (BannerlordTweaksSettings.Instance is { } settings)
+                return base.GetDestructionCasualties(siegeEvent, side, destroyedSiegeEngine) + settings.SiegeDestructionCasualties;
             else
-                return base.GetDestructionCasualties(destroyedSiegeEngine);
+                return base.GetDestructionCasualties(siegeEvent, side, destroyedSiegeEngine);
         }
+
     }
 }

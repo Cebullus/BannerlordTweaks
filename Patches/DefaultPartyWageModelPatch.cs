@@ -1,10 +1,9 @@
 ﻿using HarmonyLib;
 using System;
-using System.Runtime.CompilerServices;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SandBox.GameComponents.Party;
 using TaleWorlds.Core;
-using TaleWorlds.Library;
+using TaleWorlds.Localization;
 
 namespace BannerlordTweaks.Patches
 {
@@ -12,37 +11,26 @@ namespace BannerlordTweaks.Patches
     public class DefaultPartyWageModelPatch
     {
 
-        static void Postfix(ref int __result, MobileParty mobileParty)
+        static void Postfix(MobileParty mobileParty, ref ExplainedNumber __result)
         {
-            try {
-                if (BannerlordTweaksSettings.Instance.PartyWageTweaksEnabled && mobileParty != null)
-                {
-                    if (mobileParty.IsMainParty || (mobileParty.Party.MapFaction == Hero.MainHero.MapFaction && BannerlordTweaksSettings.Instance.ApplyWageTweakToFaction && !mobileParty.IsGarrison))
-                    {
-                        float num = BannerlordTweaksSettings.Instance.PartyWagePercent;
-                        __result = MathF.Round(__result * num);
-                    }
-                    if (mobileParty.IsGarrison && mobileParty.Party.Owner == Hero.MainHero)
-                    {
-                        float num2 = BannerlordTweaksSettings.Instance.GarrisonWagePercent;
-                        __result = MathF.Round(__result * num2);
-                        // Debug
-                        // DebugHelpers.DebugMessage("Adjusted garrison " + mobileParty.Name + "by " + num2 + ". Value: " + __result);
-                    }
-                    /* Debug
-                    DebugHelpers.DebugMessage("Relevant data: mobileParty.Party.Owner:" + mobileParty.Party.Owner + "\nmobileParty.Party.MapFaction:" + mobileParty.Party.MapFaction + "\nmobileParty.Party.LeaderHero:" + mobileParty.Party.LeaderHero + "\nmobileParty.Party.Leader" + mobileParty.Party.Leader);
-                    */
-                }
-            }
-            catch (Exception ex)
+            if (BannerlordTweaksSettings.Instance is { } settings && settings.PartyWageTweaksEnabled && mobileParty != null)
             {
-                DebugHelpers.ShowError("An exception occurred whilst trying to apply Wage Patch.", "", ex);
+                float orig_result = __result.ResultNumber;
+                if (!mobileParty.IsGarrison && ( mobileParty.IsMainParty || (mobileParty.Party.MapFaction == Hero.MainHero.MapFaction && settings.ApplyWageTweakToFaction) || settings.ApplyWageTweakToAI))
+                {
+                    float num = settings.PartyWagePercent;
+                    num = orig_result * num - orig_result;
+                    __result.Add(num, new TextObject("BT Party Wage Tweak"));
+                }
+                if (mobileParty.IsGarrison && (mobileParty.IsMainParty || (mobileParty.Party.MapFaction == Hero.MainHero.MapFaction && settings.ApplyWageTweakToFaction) || settings.ApplyWageTweakToAI))
+                {
+                    float num2 = settings.GarrisonWagePercent;
+                    num2 = orig_result * num2 - orig_result;
+                    __result.Add(num2, new TextObject("BT Garrison Wage Tweak"));
+                }
             }
         }
 
-        static bool Prepare()
-        {
-            return BannerlordTweaksSettings.Instance.PartyWageTweaksEnabled;
-        }
+        static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.PartyWageTweaksEnabled;
     }
 }

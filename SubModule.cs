@@ -6,6 +6,8 @@ using System.Text;
 using System.Windows.Forms;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
+using TaleWorlds.Library;
+using TaleWorlds.InputSystem;
 using TaleWorlds.MountAndBlade;
 
 namespace BannerlordTweaks
@@ -24,8 +26,12 @@ namespace BannerlordTweaks
                     harmony = new Harmony("mod.bannerlord.tweaks");
                     harmony.PatchAll();
 
-                    if (BannerlordTweaksSettings.Instance is { } settings && settings.BattleSizeTweakEnabled)
-                        BannerlordConfig.BattleSize = settings.BattleSize;
+                    // BattleSize was converted to an array {200, 300, 400, 500, 600, 1000} in 1.5.7. Setting BattleSize to anything outside of those will crash the game.
+                    // Solution is to let BannerlordConfig read a proper setting, then dynamically HarmonyPatch the BattleSize at the time of battle. Players will see 
+                    // the options screen have the setting number, but battles sizes can range to whatever is in BT settings. 
+
+                    //if (BannerlordTweaksSettings.Instance is { } settings && settings.BattleSizeTweakEnabled)
+                    //    BannerlordConfig.BattleSize = settings.BattleSize;
                     DebugHelpers.ColorOrangeMessage("Bannerlord Tweaks Loaded");
                 }
                 catch (Exception ex)
@@ -42,27 +48,36 @@ namespace BannerlordTweaks
             #pragma warning disable CS8604 // Possible null reference argument.
             AddModels(gameStarter: gameStarterObject as CampaignGameStarter);
             #pragma warning restore CS8604 // Possible null reference argument.
+
+            if (Campaign.Current != null && BannerlordTweaksSettings.Instance is { } settings2 && settings2.EnableCultureChanger)
+            {
+                try
+                {
+                    CampaignGameStarter campaignGameStarter = (CampaignGameStarter)gameStarterObject;
+                    campaignGameStarter.AddBehavior(new ChangeSettlementCulture());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error Initialising Culture Changer:\n\n{ex.ToStringFull()}");
+                }
+            }
         }
 
         private void AddModels(CampaignGameStarter gameStarter)
         {
             if (gameStarter != null && BannerlordTweaksSettings.Instance is { } settings)
             {
-                if (settings.TroopBattleExperienceMultiplierEnabled || settings.ArenaHeroExperienceMultiplierEnabled || settings.TournamentHeroExperienceMultiplierEnabled)
+                if (settings.TroopExperienceTweakEnabled || settings.ArenaHeroExperienceMultiplierEnabled || settings.TournamentHeroExperienceMultiplierEnabled)
                     gameStarter.AddModel(new TweakedCombatXpModel());
-                if (settings.MaxWorkshopCountTweakEnabled || settings.WorkshopBuyingCostTweakEnabled)
+                if (settings.MaxWorkshopCountTweakEnabled || settings.WorkshopBuyingCostTweakEnabled || settings.WorkshopEffectivnessEnabled)
                     gameStarter.AddModel(new TweakedWorkshopModel());
-                if (settings.CompanionLimitTweakEnabled || settings.ClanPartiesLimitTweakEnabled)
+                if (settings.PartiesLimitTweakEnabled)
                     gameStarter.AddModel(new TweakedClanTierModel());
-                if (settings.SettlementMilitiaBonusEnabled)
+                if (settings.SettlementMilitiaEliteSpawnRateBonusEnabled)
                     gameStarter.AddModel(new TweakedSettlementMilitiaModel());
-                if (settings.SettlementFoodBonusEnabled)
-                    gameStarter.AddModel(new TweakedSettlementFoodModel());
-                if (settings.SiegeCasualtiesTweakEnabled || settings.SiegeConstructionProgressPerDayMultiplierEnabled)
+                if (settings.SiegeTweaksEnabled)
                     gameStarter.AddModel(new TweakedSiegeEventModel());
-                if (settings.NoStillbirthsTweakEnabled || settings.NoMaternalMortalityTweakEnabled ||
-                        settings.PregnancyDurationTweakEnabled || settings.FemaleOffspringProbabilityTweakEnabled ||
-                        settings.TwinsProbabilityTweakEnabled)
+                if (settings.PregnancyTweaksEnabled)
                     gameStarter.AddModel(new TweakedPregnancyModel());
                 if (settings.AgeTweaksEnabled)
                 {
@@ -87,10 +102,8 @@ namespace BannerlordTweaks
                 }
                 if (settings.AttributeFocusPointTweakEnabled)
                     gameStarter.AddModel(new TweakedCharacterDevelopmentModel());
-                if (settings.DifficultyTweaksEnabled)
+                if (settings.DifficultyTweakEnabled)
                     gameStarter.AddModel(new TweakedDifficultyModel());
-//                if (settings.AIClanPartiesLimitTweakEnabled)
-//                    gameStarter.AddModel(new TweakedDefaultArmyManagementCalculationModel());
             }
         }
 
@@ -102,8 +115,9 @@ namespace BannerlordTweaks
                     PrisonerImprisonmentTweak.Apply(Campaign.Current);
                 if (settings.DailyTroopExperienceTweakEnabled)
                     DailyTroopExperienceTweak.Apply(Campaign.Current);
-                if (settings.TweakedConspiracyQuestTimerEnabled)
-                    ConspiracyQuestTimerTweak.Apply(Campaign.Current);
+                // 1.5.7.2 - Disable until we understand main quest changes.
+                //if (settings.TweakedConspiracyQuestTimerEnabled)
+                //    ConspiracyQuestTimerTweak.Apply(Campaign.Current);
             }
             return base.DoLoading(game);
         }
@@ -117,8 +131,9 @@ namespace BannerlordTweaks
         public override void OnGameInitializationFinished(Game game)
         {
             base.OnGameInitializationFinished(game);
-            if (Campaign.Current != null && BannerlordTweaksSettings.Instance is { } settings && settings.EnableMissingHeroFix)
+            if (Campaign.Current != null && BannerlordTweaksSettings.Instance is { } settings && (settings.EnableMissingHeroFix && settings.PrisonerImprisonmentTweakEnabled))
             {
+
                 try
                 {
                     CampaignEvents.DailyTickEvent.AddNonSerializedListener(this, delegate
@@ -130,6 +145,14 @@ namespace BannerlordTweaks
                 {
                     MessageBox.Show($"Error Initialising Missing Hero Fix:\n\n{ex.ToStringFull()}");
                 }
+            }
+        }
+
+        protected override void OnApplicationTick(float dt)
+        {
+            if (Campaign.Current != null && BannerlordTweaksSettings.Instance is { } settings2 && settings2.CampaignSpeed != 4)
+            {
+                Campaign.Current.SpeedUpMultiplier = settings2.CampaignSpeed;
             }
         }
     }

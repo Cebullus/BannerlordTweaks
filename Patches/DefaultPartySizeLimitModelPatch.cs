@@ -5,59 +5,90 @@ using TaleWorlds.CampaignSystem.SandBox.GameComponents.Party;
 using TaleWorlds.Core;
 using TaleWorlds.Localization;
 
+
 namespace BannerlordTweaks.Patches
 {
     [HarmonyPatch(typeof(DefaultPartySizeLimitModel), "CalculateMobilePartyMemberSizeLimit")]
     public class DefaultPartySizeLimitModelPatch
     {
-        static void Postfix(MobileParty party, StatExplainer explanation, ref int __result)
+        static void Postfix(MobileParty party, ref ExplainedNumber __result)
         {
-            if (party.LeaderHero != null && party.LeaderHero == Hero.MainHero && BannerlordTweaksSettings.Instance is not null)
+            if (!(party is null) && !(party.LeaderHero is null) && BannerlordTweaksSettings.Instance is { } settings)
             {
-                int num;
-                if (BannerlordTweaksSettings.Instance.LeadershipPartySizeBonusEnabled)
+                float num;
+                if (settings.LeadershipPartySizeBonusEnabled)
                 {
-                    num = (int)Math.Ceiling(party.LeaderHero.GetSkillValue(DefaultSkills.Leadership) * BannerlordTweaksSettings.Instance.LeadershipPartySizeBonus);
-                    __result += num;
-                    explanation?.AddLine("BT Leadership bonus", num);
+                    num = (int)Math.Ceiling(party.LeaderHero.GetSkillValue(DefaultSkills.Leadership) * settings.LeadershipPartySizeBonus * ((party.LeaderHero == Hero.MainHero) ? 1 : settings.PartySizeTweakAIFactor));
+                    __result.Add((float)num, new TextObject("BT Leadership bonus"));
                 }
 
-                if (BannerlordTweaksSettings.Instance.StewardPartySizeBonusEnabled)
+                if (settings.StewardPartySizeBonusEnabled && party.LeaderHero == Hero.MainHero)
                 {
-                    num = (int)Math.Ceiling(party.LeaderHero.GetSkillValue(DefaultSkills.Steward) * BannerlordTweaksSettings.Instance.StewardPartySizeBonus);
-                    __result += num;
-                    explanation?.AddLine("BT Steward bonus", num);
+                    num = (int)Math.Ceiling(party.LeaderHero.GetSkillValue(DefaultSkills.Steward) * settings.StewardPartySizeBonus * ((party.LeaderHero == Hero.MainHero) ? 1:settings.PartySizeTweakAIFactor));
+                    __result.Add((float)num, new TextObject("BT Steward bonus"));
+                }
+                if (settings.BalancingPartySizeTweaksEnabled && party.LeaderHero.Clan.Kingdom != null && party.LeaderHero != Hero.MainHero)
+                {
+                    switch (party.LeaderHero.Clan.Kingdom.StringId)
+                    {
+                        case "vlandia":
+                            num = __result.ResultNumber * settings.VlandiaBoost;
+                            __result.Add((float)num, new TextObject("BT Vlandia Boost"));
+                            break;
+                        case "battania":
+                            num = (__result.ResultNumber * settings.BattaniaBoost);
+                            __result.Add((float)num, new TextObject("BT Battania Boost"));
+                            break;
+                        case "empire":
+                            num = (__result.ResultNumber * settings.Empire_N_Boost);
+                            __result.Add((float)num, new TextObject("BT Empire boost"));
+                            break;
+                        case "empire_s":
+                            num = (__result.ResultNumber * settings.Empire_S_Boost);
+                            __result.Add((float)num, new TextObject("BT Empire(S) boost"));
+                            break;
+                        case "empire_w":
+                            num = (__result.ResultNumber * settings.Empire_W_Boost);
+                            __result.Add((float)num, new TextObject("BT Empire(W) boost"));
+                            break;
+                        case "sturgia":
+                            num = (__result.ResultNumber * settings.SturgiaBoost);
+                            __result.Add((float)num, new TextObject("BT Sturgia boost"));
+                            break;
+                        case "khuzait":
+                            num = (__result.ResultNumber * settings.KhuzaitBoost);
+                            __result.Add((float)num, new TextObject("BT Khuzait boost"));
+                            break;
+                        case "aserai":
+                            num = (__result.ResultNumber * settings.Aseraiboost);
+                            __result.Add((float)num, new TextObject("BT Aserai boost"));
+                            break;
+
+                    }
                 }
             }
         }
 
-        static bool Prepare()
-        {
-            return BannerlordTweaksSettings.Instance.PartySizeTweakEnabled;
-        }
+        static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && (settings.PartySizeTweakEnabled || settings.KingdomBalanceStrengthEnabled);
     }
-    
-    [HarmonyPatch(typeof(DefaultPartySizeLimitModel), "CalculateMobilePartyPrisonerSizeLimitInternal")]
+
+
+    //[HarmonyPatch(typeof(DefaultPartySizeLimitModel), "CalculateMobilePartyPrisonerSizeLimitInternal")]
+    [HarmonyPatch(typeof(DefaultPartySizeLimitModel), "GetPartyPrisonerSizeLimit")]
     public class DefaultPrisonerSizeLimitModelPatch
     {
-        static void Postfix(PartyBase party, StatExplainer explanation, ref int __result)
+        private static void Postfix(PartyBase party, ref ExplainedNumber __result)
         {
             if (party.LeaderHero != null && party.LeaderHero == Hero.MainHero)
             {
-                if (BannerlordTweaksSettings.Instance.PrisonerSizeTweakEnabled)
+                if (BannerlordTweaksSettings.Instance is { } settings && settings.PrisonerSizeTweakEnabled)
                 {
-                    double percent = Math.Abs((double)(BannerlordTweaksSettings.Instance.PrisonerSizeTweakPercent) / 100);
-                    double num = (int)Math.Ceiling(__result * percent);
-                    __result += (int)Math.Round(num);
-                    explanation?.AddLine("BT Prisoner Limit Bonus", (float)num);
+                    double num = (int)Math.Ceiling(__result.ResultNumber * settings.PrisonerSizeTweakPercent);
+                    __result.Add((float)num, new TextObject("BT Prisoner Limit Bonus"));
                 }
             }
         }
 
-        static bool Prepare()
-        {
-            return BannerlordTweaksSettings.Instance.PrisonerSizeTweakEnabled;
-        }
+        static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.PrisonerSizeTweakEnabled;
     }
-
 }

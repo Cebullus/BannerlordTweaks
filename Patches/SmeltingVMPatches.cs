@@ -20,71 +20,43 @@ namespace BannerlordTweaks.Patches
     {
         private static void Postfix(SmeltingVM __instance, ItemRoster ____playerItemRoster)
         {
-            // This appears to be how the game works out if an item is locked
-            // From TaleWorlds.CampaignSystem.ViewModelCollection.SPInventoryVM.InitializeInventory()
-            //IEnumerable<EquipmentElement> locks = Campaign.Current.GetCampaignBehavior<IInventoryLockTracker>().GetLocks();
 
-            // 1.5.4 - Method Changed again. Simplified based on new version ofSPInventoryVM.InitializeInventory()
-            //IEnumerable<EquipmentElement> locks = (IEnumerable<EquipmentElement>)Campaign.Current.GetCampaignBehavior<IInventoryLockTracker>().GetLocks();
-            List<string> locked_items = Campaign.Current.GetCampaignBehavior<IInventoryLockTracker>().GetLocks().ToList<string>();
+            if (BannerlordTweaksSettings.Instance is { } settings && settings.PreventSmeltingLockedItems)
+            { 
+                List<string> locked_items = Campaign.Current.GetCampaignBehavior<IInventoryLockTracker>().GetLocks().ToList<string>();
 
-            // Updated line 24 to Line 25 which seems to be the updated way game works out item locks in v1.4.3 InitializeInventory()
-            //EquipmentElement[] locked_items = locks?.ToArray<EquipmentElement>();
-
-
-            // 1.5.4 - Had to replace previous isLocked with version from SPInventoryVM's IsItemLocked fun.
-            /* 
-            bool isLocked(EquipmentElement test_item)
-            {
-                return !(locked_items == null || !locked_items.Any(delegate (EquipmentElement x)
+                bool isLocked(ItemRosterElement item)
                 {
-                    ItemObject lock_item = x.Item;
-                    if (lock_item.StringId == test_item.Item.StringId)
+                    string text = item.EquipmentElement.Item.StringId;
+                    if (item.EquipmentElement.ItemModifier != null)
                     {
-                        ItemModifier itemModifier = x.ItemModifier;
-                        string a = itemModifier?.StringId;
-                        ItemModifier itemModifier2 = test_item.ItemModifier;
-                        return a == (itemModifier2?.StringId);
+                        text += item.EquipmentElement.ItemModifier.StringId;
                     }
-                    return false;
-                }));
-            }
-            */
-
-            bool isLocked(ItemRosterElement item)
-            {
-                string text = item.EquipmentElement.Item.StringId;
-                if (item.EquipmentElement.ItemModifier != null)
-                {
-                    text += item.EquipmentElement.ItemModifier.StringId;
+                    return locked_items.Contains(text);
                 }
-                return locked_items.Contains(text);
-            }
 
-            MBBindingList<SmeltingItemVM> filteredList = new MBBindingList<SmeltingItemVM>();
+                MBBindingList<SmeltingItemVM> filteredList = new MBBindingList<SmeltingItemVM>();
 
-            foreach (SmeltingItemVM sItem in __instance.SmeltableItemList)
-            {
-                if (!____playerItemRoster.Any(rItem =>
-                    sItem.EquipmentElement.Item == rItem.EquipmentElement.Item && isLocked(rItem)
-                ))
+                foreach (SmeltingItemVM sItem in __instance.SmeltableItemList)
                 {
-                    filteredList.Add(sItem);
+                    if (!____playerItemRoster.Any(rItem =>
+                        sItem.EquipmentElement.Item == rItem.EquipmentElement.Item && isLocked(rItem)
+                    ))
+                    {
+                        filteredList.Add(sItem);
+                    }
                 }
-            }
 
-            __instance.SmeltableItemList = filteredList;
+                __instance.SmeltableItemList = filteredList;
 
-            if (__instance.SmeltableItemList.Count == 0)
-            {
-                __instance.CurrentSelectedItem = null;
+                if (__instance.SmeltableItemList.Count == 0)
+                {
+                    __instance.CurrentSelectedItem = null;
+                }
             }
         }
 
-        static bool Prepare()
-        {
-            return BannerlordTweaksSettings.Instance.PreventSmeltingLockedItems;
-        }
+        static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.SmeltingTweakEnabled;
     }
 
     [HarmonyPatch(typeof(SmeltingVM), "RefreshList")]
@@ -93,24 +65,20 @@ namespace BannerlordTweaks.Patches
     {
         private static void Postfix(SmeltingVM __instance, ItemRoster ____playerItemRoster)
         {
-            foreach (SmeltingItemVM item in __instance.SmeltableItemList)
-            {
-                // SmeltinItemVM ItemObject (item) was removed in 1.5.3 beta
-                // int count = SmeltingHelper.GetNewPartsFromSmelting(item.Item).Count();
-
-                int count = SmeltingHelper.GetNewPartsFromSmelting(item.EquipmentElement.Item).Count();
-                //int count = item.NumOfItems; - Changed in 1.5.3
-                if (count > 0)
+            if (BannerlordTweaksSettings.Instance is { } settings && settings.AutoLearnSmeltedParts)
+            { 
+                foreach (SmeltingItemVM item in __instance.SmeltableItemList)
                 {
-                    string parts = count == 1 ? "part" : "parts";
-                    item.Name = $"{item.Name} ({count} new {parts})";
+                    int count = SmeltingHelper.GetNewPartsFromSmelting(item.EquipmentElement.Item).Count();
+                    if (count > 0)
+                    {
+                        string parts = count == 1 ? "part" : "parts";
+                        item.Name = $"{item.Name} ({count} new {parts})";
+                    }
                 }
             }
         }
 
-        static bool Prepare()
-        {
-            return BannerlordTweaksSettings.Instance.AutoLearnSmeltedParts;
-        }
+        static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.SmeltingTweakEnabled;
     }
 }
