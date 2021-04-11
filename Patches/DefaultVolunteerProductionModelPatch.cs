@@ -9,7 +9,7 @@ namespace BannerlordTweaks.Patches
     {
         static void Postfix(Hero hero, int index, Settlement settlement, ref float __result)
         { 
-            if (BannerlordTweaksSettings.Instance is { } settings && settings.BalancingTimeRecruitsTweaksEnabled && hero.CurrentSettlement.OwnerClan.Kingdom.StringId != null)
+            if (BannerlordTweaksSettings.Instance is { } settings && settings.BalancingTimeRecruitsTweaksEnabled && hero.CurrentSettlement != null && hero.CurrentSettlement.OwnerClan.Kingdom != null)
             {
                 float num = hero.CurrentSettlement.OwnerClan.Kingdom.StringId switch
                 {
@@ -23,7 +23,7 @@ namespace BannerlordTweaks.Patches
                     "aserai" => settings.Aseraiboost,
                     _ => 0f
                 };
-                __result = (__result + (num * 0.75f));
+                __result += (num * 0.75f);
             }
         }
         static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.KingdomBalanceStrengthEnabled;

@@ -11,11 +11,11 @@ namespace BannerlordTweaks.Patches
     {
         static void Postfix(Village village, ref float __result)
         {
-            if (BannerlordTweaksSettings.Instance is { } settings && settings.ProductionTweakEnabled)
+            if (village != null && BannerlordTweaksSettings.Instance is { } settings && settings.ProductionTweakEnabled)
             {
                 __result = (__result * settings.ProductionFoodTweakEnabled);
             }
-            if (BannerlordTweaksSettings.Instance is { } settings2 && settings2.BalancingFoodTweakEnabled && village.TradeBound.OwnerClan.Kingdom != null)
+            if (village != null && BannerlordTweaksSettings.Instance is { } settings2 && settings2.BalancingFoodTweakEnabled && village.TradeBound.OwnerClan.Kingdom != null)
             {
                 float num = village.TradeBound.OwnerClan.Kingdom.StringId switch
                 {
@@ -29,7 +29,7 @@ namespace BannerlordTweaks.Patches
                     "aserai" => settings2.Aseraiboost,
                     _ => 0f
                 };
-                __result = (__result+ (__result * num));
+                __result += (__result * num);
             }
         }
 
@@ -43,7 +43,7 @@ namespace BannerlordTweaks.Patches
         {
             if ((BannerlordTweaksSettings.Instance is { } settings && settings.ProductionTweakEnabled))
             {
-             __result = (__result * settings.ProductionOtherTweakEnabled);
+             __result *= settings.ProductionOtherTweakEnabled;
             }
         }
         static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.ProductionTweakEnabled;
