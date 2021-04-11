@@ -63,7 +63,7 @@ namespace BannerlordTweaks
                     gameStarter.AddModel(new TweakedCombatXpModel());
                 if (settings.MaxWorkshopCountTweakEnabled || settings.WorkshopBuyingCostTweakEnabled || settings.WorkshopEffectivnessEnabled)
                     gameStarter.AddModel(new TweakedWorkshopModel());
-                if (settings.PartiesLimitTweakEnabled)
+                if (settings.PartiesLimitTweakEnabled || settings.CompanionLimitTweakEnabled)
                     gameStarter.AddModel(new TweakedClanTierModel());
                 if (settings.SettlementMilitiaEliteSpawnRateBonusEnabled)
                     gameStarter.AddModel(new TweakedSettlementMilitiaModel());
