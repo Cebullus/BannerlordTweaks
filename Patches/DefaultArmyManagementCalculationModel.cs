@@ -38,8 +38,7 @@ namespace BannerlordTweaks.Patches
         {
             if (BannerlordTweaksSettings.Instance is { } settings && settings.BTCohesionTweakEnabled)
             {
-                float num1 = 1;
-                num1 = Math.Abs(__result.ResultNumber) * settings.BTCohesionTweakv2;
+                float num1 = Math.Abs(__result.ResultNumber) * (1f-settings.BTCohesionTweakv2);
                 __result.Add(num1, new TextObject("BT Cohesion Tweak"));
             }
         }
