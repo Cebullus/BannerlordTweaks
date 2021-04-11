@@ -709,16 +709,16 @@ namespace BannerlordTweaks
 
         #region Settlement Tweaks - Buildings - Town - Training Fields
 
-        [SettingPropertyBool("Town Training Fields*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Changes the amount of experience the training fields provides for each level."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town Training Fields*")]
+        [SettingPropertyBool("Town Training Fields*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Changes the amount of experience the training fields provides for each level."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Training Fields*")]
         public bool TownTrainingFieldsBonusEnabled { get; set; } = false;
 
-        [SettingPropertyInteger("Town Training Fields Experience Level 1", 30, 300, RequireRestart = false, Order = 2, HintText = "Native value is 30. Changes the amount of experience the training fields provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town Training Fields*")]
+        [SettingPropertyInteger("Town Training Fields Experience Level 1", 30, 300, RequireRestart = false, Order = 2, HintText = "Native value is 30. Changes the amount of experience the training fields provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Training Fields*")]
         public int TownTrainingFieldsXpAmountLevel1 { get; set; } = 30;
 
-        [SettingPropertyInteger("Town Training Fields Experience Level 2", 60, 600, RequireRestart = false, Order = 3, HintText = "Native value is 60. Changes the amount of experience the training fields provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town Training Fields*")]
+        [SettingPropertyInteger("Town Training Fields Experience Level 2", 60, 600, RequireRestart = false, Order = 3, HintText = "Native value is 60. Changes the amount of experience the training fields provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Training Fields*")]
         public int TownTrainingFieldsXpAmountLevel2 { get; set; } = 60;
 
-        [SettingPropertyInteger("Town Training Fields Experience Level 3", 100, 1000, RequireRestart = false, Order = 4, HintText = "Native value is 100. Changes the amount of experience the training fields provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town Training Fields*")]
+        [SettingPropertyInteger("Town Training Fields Experience Level 3", 100, 1000, RequireRestart = false, Order = 4, HintText = "Native value is 100. Changes the amount of experience the training fields provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Training Fields*")]
         public int TownTrainingFieldsXpAmountLevel3 { get; set; } = 100;
 
         #endregion
