@@ -614,7 +614,7 @@ namespace BannerlordTweaks
 
         #region Settlement Tweaks - Disable Troop Donations
 
-        [SettingPropertyBool("Disable Troop Donations*", Order = 1, RequireRestart = false, IsToggle = true, HintText = "Disables your clan (and optionally kingdom) parties from donating troops to owned settlements."), SettingPropertyGroup("Settlement Tweaks/Disable Troop Donation Tweak*")]
+        [SettingPropertyBool("Disable Troop Donations*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Disables your clan (and optionally kingdom) parties from donating troops to owned settlements."), SettingPropertyGroup("Settlement Tweaks/Disable Troop Donation Tweak*")]
         public bool DisableTroopDonationPatchEnabled { get; set; } = false;
 
         [SettingPropertyBool("Disable Troop Donations - Apply to Faction", Order = 2, RequireRestart = false, HintText = "Extends disabling of troop donations to owned settlements to your entire kingdom."), SettingPropertyGroup("Settlement Tweaks/Disable Troop Donation Tweak*")]
