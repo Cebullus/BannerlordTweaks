@@ -23,19 +23,22 @@ namespace BannerlordTweaks
 
         #region Battle Tweaks - Battle Reward Tweaks
 
-        [SettingPropertyBool("Battle Renown & Influence Tweaks*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Applies the set multiplier to renown and influence gain from battles (applies to the player only)."), SettingPropertyGroup("Battle Tweaks/Battle Renown & Influence Tweaks*")]
+        [SettingPropertyBool("Battle Renown, Influence, Morale Tweaks*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Applies the set multiplier to renown and influence gain from battles (applies to the player only)."), SettingPropertyGroup("Battle Tweaks/Battle Renown, Influence, Morale Tweaks*")]
         public bool BattleRewardTweaksEnabled { get; set; } = false;
 
-        [SettingPropertyFloatingInteger("Battle Renown Amount", 0.1f, 5f, "0%", Order = 2, RequireRestart = false, HintText = "Native value is 100%. The amount of renown you receive from a battle is multiplied by this value."), SettingPropertyGroup("Battle Tweaks/Battle Renown & Influence Tweaks*")]
+        [SettingPropertyFloatingInteger("Battle Renown Amount", 0.1f, 5f, "0%", Order = 2, RequireRestart = false, HintText = "Native value is 100%. The amount of renown you receive from a battle is multiplied by this value. Note: Battle Morale is also calculated from this value."), SettingPropertyGroup("Battle Tweaks/Battle Renown, Influence, Morale Tweaks*")]
         public float BattleRenownMultiplier { get; set; } = 1f;
 
-        [SettingPropertyFloatingInteger("Battle Influence Amount", 0.1f, 5f, "0%", RequireRestart = false, Order = 3, HintText = "Native value is 100%. The amount of influence you receive from a battle is multiplied by this value."), SettingPropertyGroup("Battle Tweaks/Battle Renown & Influence Tweaks*")]
+        [SettingPropertyFloatingInteger("Battle Influence Amount", 0.1f, 5f, "0%", RequireRestart = false, Order = 3, HintText = "Native value is 100%. The amount of influence you receive from a battle is multiplied by this value."), SettingPropertyGroup("Battle Tweaks/Battle Renown, Influence, Morale Tweaks*")]
         public float BattleInfluenceMultiplier { get; set; } = 1f;
 
-        [SettingPropertyBool("Also Apply To AI", Order = 4, RequireRestart = false, HintText = "Applies the renown and influence modifiers to AI parties."), SettingPropertyGroup("Battle Tweaks/Battle Renown & Influence Tweaks*")]
+        [SettingPropertyFloatingInteger("Battle Morale Amount", 0.1f, 5f, "0%", RequireRestart = false, Order = 4, HintText = "Native value is 100%. The amount of morale you receive from a battle is multiplied by this value."), SettingPropertyGroup("Battle Tweaks/Battle Renown, Influence, Morale Tweaks*")]
+        public float BattleMoraleMultiplier { get; set; } = 1f;
+
+        [SettingPropertyBool("Also Apply To AI", Order = 5, RequireRestart = false, HintText = "Applies the renown and influence modifiers to AI parties."), SettingPropertyGroup("Battle Tweaks/Battle Renown, Influence, Morale Tweaks*")]
         public bool BattleRewardApplyToAI { get; set; } = false;
 
-        [SettingPropertyBool("Show Calculation Message", Order = 5, RequireRestart = false, HintText = "Shows detailed calculation for renown and influence tweaks in message log."), SettingPropertyGroup("Battle Tweaks/Battle Renown & Influence Tweaks*")]
+        [SettingPropertyBool("Show Calculation Message", Order = 6, RequireRestart = false, HintText = "Shows detailed calculation for renown and influence tweaks in message log."), SettingPropertyGroup("Battle Tweaks/Battle Renown, Influence, Morale Tweaks*")]
         public bool BattleRewardShowDebug { get; set; } = false;
 
         #endregion
@@ -525,13 +528,13 @@ namespace BannerlordTweaks
 
         #region Party Tweaks - Troop Daily Experience Tweak
 
-        [SettingPropertyBool("Daily Troop Experience*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Gives troops in a party an amount of experience each day based upon the leader's Leadership skill. By default only applies to the player."), SettingPropertyGroup("Party Tweaks/Daily Troop Experience*")]
+        [SettingPropertyBool("Daily Troop Experience*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Gives each troop roster (stack) in a party an amount of experience each day based upon the leader's Leadership skill. By default only applies to the player."), SettingPropertyGroup("Party Tweaks/Daily Troop Experience*")]
         public bool DailyTroopExperienceTweakEnabled { get; set; } = false;
 
-        [SettingPropertyFloatingInteger("Percentage of Leadership", 0.01f, 5f, "0%",  Order = 2, RequireRestart = false, HintText = "The percentage of the leader's Leadership skill to be given as experience to each of their troops."), SettingPropertyGroup("Party Tweaks/Daily Troop Experience*")]
+        [SettingPropertyFloatingInteger("Percentage of Leadership", 0.01f, 50f, "0%",  Order = 2, RequireRestart = false, HintText = "The percentage of the leader's Leadership skill to be given as experience to each of their troop rosters. With 100 leadership and a setting of 1000% each troop type stack will get 1.000 xp daily."), SettingPropertyGroup("Party Tweaks/Daily Troop Experience*")]
         public float LeadershipPercentageForDailyExperienceGain { get; set; } = 0f;
 
-        [SettingPropertyInteger("Starting from Leadership Level", 1, 200, Order = 3, RequireRestart = false, HintText = "The Leadership level required to start giving experience to troops."), SettingPropertyGroup("Party Tweaks/Daily Troop Experience*")]
+        [SettingPropertyInteger("Starting from Leadership Level", 1, 200, Order = 3, RequireRestart = false, HintText = "The Leadership level required to start giving experience to troop rosters. With this setting at 20, daily training of your troop stacks will start from leadership 20 onwards (but be calculated with the full 20 skillpoints)."), SettingPropertyGroup("Party Tweaks/Daily Troop Experience*")]
         public int DailyTroopExperienceRequiredLeadershipLevel { get; set; } = 30;
 
         [SettingPropertyBool("Apply to Player's Clan Members", Order = 4, RequireRestart = false, HintText = "Applies the daily troop experience gain to members of the player's clan also."), SettingPropertyGroup("Party Tweaks/Daily Troop Experience*")]
@@ -604,23 +607,27 @@ namespace BannerlordTweaks
 
         #region Settlement Tweaks - Settlement culture
 
-        [SettingPropertyBool("Settlement Culture Transformation*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Changes the culture of settlement in relation to the owner. On deactivation cultures revert back."), SettingPropertyGroup("Settlement Tweaks/Settlement Culture Transformation*")]
+        [SettingPropertyBool("Settlement Culture Transformation*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Changes the culture of settlement in relation to the owner clan. On deactivation cultures revert back."), SettingPropertyGroup("Settlement Tweaks/Settlement Culture Transformation*")]
         public bool EnableCultureChanger { get; set; } = false;
+
+        [SettingPropertyBool("Change To Culture Of Kingdom Faction Instead*", Order = 1, RequireRestart = true, IsToggle = false, HintText = "Instead of changing the faction to its owner-clan culture, change to its kingdom culture."), SettingPropertyGroup("Settlement Tweaks/Settlement Culture Transformation*")]
+        public bool ChangeToKingdomCulture { get; set; } = false;
 
         [SettingPropertyInteger("Weeks for Settlement Culture Change",1,52, "0 Weeks", Order = 2, RequireRestart = false, HintText = "After how many weeks the culture of a settlement changes to its owner's culture (and produces recruits of the new culturegroup)."), SettingPropertyGroup("Settlement Tweaks/Settlement Culture Transformation*")]
         public int TimeToChanceCulture { get; set; } = 4;
 
         #endregion
 
+
         #region Settlement Tweaks - Disable Troop Donations
 
-        [SettingPropertyBool("Disable Troop Donations*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Disables your clan (and optionally kingdom) parties from donating troops to owned settlements."), SettingPropertyGroup("Settlement Tweaks/Disable Troop Donation Tweak*")]
+        [SettingPropertyBool("Disable Troop Donations*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Disables your clan parties from donating troops to clan owned settlements."), SettingPropertyGroup("Settlement Tweaks/Disable Troop Donations*")]
         public bool DisableTroopDonationPatchEnabled { get; set; } = false;
 
-        [SettingPropertyBool("Disable Troop Donations - Apply to Faction", Order = 2, RequireRestart = false, HintText = "Extends disabling of troop donations to owned settlements to your entire kingdom."), SettingPropertyGroup("Settlement Tweaks/Disable Troop Donation Tweak*")]
-        public bool DisableTroopDonationFactionWideEnabled { get; set; } = false;
+        [SettingPropertyBool("Disable Troop Donations - Any Settlement", Order = 1, RequireRestart = false, HintText = "Additionally disables your clan parties from donating troops to ANY settlement."), SettingPropertyGroup("Settlement Tweaks/Disable Troop Donations*")]
+        public bool DisableTroopDonationAnyEnabled { get; set; } = false;
 
-        #endregion Settlement Tweaks - Disable Troop Donations
+        #endregion
 
         #region Settlement Tweaks - Production Tweaks
 
@@ -644,13 +651,13 @@ namespace BannerlordTweaks
         [SettingPropertyBool("Castle Training Field*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Changes the amount of experience the training fields provides for each level."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Training Field*")]
         public bool CastleTrainingFieldsBonusEnabled { get; set; } = false;
 
-        [SettingPropertyInteger("Castle Training Fields Experience Level 1", 1, 100, RequireRestart = false, Order = 2, HintText = "Native value is 1. Changes the amount of experience the training fields provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Training Field*")]
+        [SettingPropertyInteger("Castle Training Fields Experience Level 1*", 1, 100, RequireRestart = true, Order = 2, HintText = "Native value is 1. Changes the amount of experience the training fields provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Training Field*")]
         public int CastleTrainingFieldsXpAmountLevel1 { get; set; } = 1;
 
-        [SettingPropertyInteger("Castle Training Fields Experience Level 2", 2, 200, RequireRestart = false, Order = 3, HintText = "Native value is 2. Changes the amount of experience the training fields provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Training Field*")]
+        [SettingPropertyInteger("Castle Training Fields Experience Level 2*", 2, 200, RequireRestart = true, Order = 3, HintText = "Native value is 2. Changes the amount of experience the training fields provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Training Field*")]
         public int CastleTrainingFieldsXpAmountLevel2 { get; set; } = 2;
 
-        [SettingPropertyInteger("Castle Training Fields Experience Level 3", 3, 300, RequireRestart = false, Order = 4, HintText = "Native value is 3. Changes the amount of experience the training fields provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Training Field*")]
+        [SettingPropertyInteger("Castle Training Fields Experience Level 3*", 3, 300, RequireRestart = true, Order = 4, HintText = "Native value is 3. Changes the amount of experience the training fields provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Training Field*")]
         public int CastleTrainingFieldsXpAmountLevel3 { get; set; } = 3;
 
         #endregion
@@ -660,13 +667,13 @@ namespace BannerlordTweaks
         [SettingPropertyBool("Castle Granary*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Changes the amount of food storage the castle granary provides per level."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Granary*")]
         public bool CastleGranaryBonusEnabled { get; set; } = false;
 
-        [SettingPropertyInteger("Castle Granary Food Storage Level 1", 100, 1000, RequireRestart = false, Order = 2, HintText = "Native value is 100. Changes the amount of food storage the castle granary provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Granary*")]
+        [SettingPropertyInteger("Castle Granary Food Storage Level 1*", 100, 1000, RequireRestart = true, Order = 2, HintText = "Native value is 100. Changes the amount of food storage the castle granary provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Granary*")]
         public int CastleGranaryStorageAmountLevel1 { get; set; } = 100;
 
-        [SettingPropertyInteger("Castle Granary Food Storage Level 2", 200, 2000, RequireRestart = false, Order = 3, HintText = "Native value is 200. Changes the amount of food storage the castle granary provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Granary*")]
+        [SettingPropertyInteger("Castle Granary Food Storage Level 2*", 200, 2000, RequireRestart = true, Order = 3, HintText = "Native value is 200. Changes the amount of food storage the castle granary provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Granary*")]
         public int CastleGranaryStorageAmountLevel2 { get; set; } = 200;
 
-        [SettingPropertyInteger("Castle Granary Food Storage Level 3", 300, 3000, RequireRestart = false, Order = 4, HintText = "Native value is 300. Changes the amount of food storage the castle granary provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Granary*")]
+        [SettingPropertyInteger("Castle Granary Food Storage Level 3*", 300, 3000, RequireRestart = true, Order = 4, HintText = "Native value is 300. Changes the amount of food storage the castle granary provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Granary*")]
         public int CastleGranaryStorageAmountLevel3 { get; set; } = 300;
 
         #endregion
@@ -676,13 +683,13 @@ namespace BannerlordTweaks
         [SettingPropertyBool("Castle Gardens*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Changes the amount of food the castle gardens produce per level."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Gardens*")]
         public bool CastleGardensBonusEnabled { get; set; } = false;
 
-        [SettingPropertyInteger("Castle Garden Food Production Level 1", 5, 50, RequireRestart = false, Order = 2, HintText = "Native value is 5. Changes the amount of food the castle gardens produce at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Gardens*")]
+        [SettingPropertyInteger("Castle Garden Food Production Level 1*", 5, 50, RequireRestart = true, Order = 2, HintText = "Native value is 5. Changes the amount of food the castle gardens produce at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Gardens*")]
         public int CastleGardensFoodProductionAmountLevel1 { get; set; } = 5;
 
-        [SettingPropertyInteger("Castle Garden Food Production Level 2", 10, 100, RequireRestart = false, Order = 3, HintText = "Native value is 10. Changes the amount of food the castle gardens produce at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Gardens*")]
+        [SettingPropertyInteger("Castle Garden Food Production Level 2*", 10, 100, RequireRestart = true, Order = 3, HintText = "Native value is 10. Changes the amount of food the castle gardens produce at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Gardens*")]
         public int CastleGardensFoodProductionAmountLevel2 { get; set; } = 10;
 
-        [SettingPropertyInteger("Castle Garden Food Production Level 3", 15, 150, RequireRestart = false, Order = 4, HintText = "Native value is 15. Changes the amount of food the castle gardens produce at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Gardens*")]
+        [SettingPropertyInteger("Castle Garden Food Production Level 3*", 15, 150, RequireRestart = true, Order = 4, HintText = "Native value is 15. Changes the amount of food the castle gardens produce at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Gardens*")]
         public int CastleGardensFoodProductionAmountLevel3 { get; set; } = 15;
 
         #endregion
@@ -692,13 +699,13 @@ namespace BannerlordTweaks
         [SettingPropertyBool("Castle Militia Barracks*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Changes the militia production that the castle militia barracks provides per level."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Militia Barracks*")]
         public bool CastleMilitiaBarracksBonusEnabled { get; set; } = false;
 
-        [SettingPropertyInteger("Castle Militia Barracks Production Level 1", 1, 10, RequireRestart = false, Order = 2, HintText = "Native value is 1. Changes the militia production that the castle militia barracks provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Militia Barracks*")]
+        [SettingPropertyInteger("Castle Militia Barracks Production Level 1*", 1, 10, RequireRestart = true, Order = 2, HintText = "Native value is 1. Changes the militia production that the castle militia barracks provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Militia Barracks*")]
         public int CastleMilitiaBarracksAmountLevel1 { get; set; } = 1;
 
-        [SettingPropertyInteger("Castle Militia Barracks Production Level 2", 2, 20, RequireRestart = false, Order = 3, HintText = "Native value is 2. Changes the militia production that the castle militia barracks provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Militia Barracks*")]
+        [SettingPropertyInteger("Castle Militia Barracks Production Level 2*", 2, 20, RequireRestart = true, Order = 3, HintText = "Native value is 2. Changes the militia production that the castle militia barracks provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Militia Barracks*")]
         public int CastleMilitiaBarracksAmountLevel2 { get; set; } = 2;
 
-        [SettingPropertyInteger("Castle Militia Barracks Production Level 3", 3, 30, RequireRestart = false, Order = 4, HintText = "Native value is 3. Changes the militia production that the castle militia barracks provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Militia Barracks*")]
+        [SettingPropertyInteger("Castle Militia Barracks Production Level 3*", 3, 30, RequireRestart = true, Order = 4, HintText = "Native value is 3. Changes the militia production that the castle militia barracks provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Castle/Castle Militia Barracks*")]
         public int CastleMilitiaBarracksAmountLevel3 { get; set; } = 3;
 
         #endregion
@@ -712,13 +719,13 @@ namespace BannerlordTweaks
         [SettingPropertyBool("Town Training Fields*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Changes the amount of experience the training fields provides for each level."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Training Fields*")]
         public bool TownTrainingFieldsBonusEnabled { get; set; } = false;
 
-        [SettingPropertyInteger("Town Training Fields Experience Level 1", 30, 300, RequireRestart = false, Order = 2, HintText = "Native value is 30. Changes the amount of experience the training fields provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Training Fields*")]
+        [SettingPropertyInteger("Town Training Fields Experience Level 1*", 30, 300, RequireRestart = true, Order = 2, HintText = "Native value is 30. Changes the amount of experience the training fields provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Training Fields*")]
         public int TownTrainingFieldsXpAmountLevel1 { get; set; } = 30;
 
-        [SettingPropertyInteger("Town Training Fields Experience Level 2", 60, 600, RequireRestart = false, Order = 3, HintText = "Native value is 60. Changes the amount of experience the training fields provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Training Fields*")]
+        [SettingPropertyInteger("Town Training Fields Experience Level 2*", 60, 600, RequireRestart = true, Order = 3, HintText = "Native value is 60. Changes the amount of experience the training fields provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Training Fields*")]
         public int TownTrainingFieldsXpAmountLevel2 { get; set; } = 60;
 
-        [SettingPropertyInteger("Town Training Fields Experience Level 3", 100, 1000, RequireRestart = false, Order = 4, HintText = "Native value is 100. Changes the amount of experience the training fields provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Training Fields*")]
+        [SettingPropertyInteger("Town Training Fields Experience Level 3*", 100, 1000, RequireRestart = true, Order = 4, HintText = "Native value is 100. Changes the amount of experience the training fields provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Training Fields*")]
         public int TownTrainingFieldsXpAmountLevel3 { get; set; } = 100;
 
         #endregion
@@ -728,13 +735,13 @@ namespace BannerlordTweaks
         [SettingPropertyBool("Town Granary*", RequireRestart = true, IsToggle = true, HintText = "Changes the amount of food storage the town granary provides per level."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Granary*")]
         public bool TownGranaryBonusEnabled { get; set; } = false;
 
-        [SettingPropertyInteger("Town Granary Food Storage Level 1", 200, 2000, RequireRestart = false, Order = 1, HintText = "Native value is 200. Changes the amount of food storage the town granary provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Granary*")]
+        [SettingPropertyInteger("Town Granary Food Storage Level 1*", 200, 2000, RequireRestart = true, Order = 1, HintText = "Native value is 200. Changes the amount of food storage the town granary provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Granary*")]
         public int TownGranaryStorageAmountLevel1 { get; set; } = 200;
 
-        [SettingPropertyInteger("Town Granary Food Storage Level 2", 400, 4000, RequireRestart = false, Order = 2, HintText = "Native value is 400. Changes the amount of food storage the town granary provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Granary*")]
+        [SettingPropertyInteger("Town Granary Food Storage Level 2*", 400, 4000, RequireRestart = true, Order = 2, HintText = "Native value is 400. Changes the amount of food storage the town granary provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Granary*")]
         public int TownGranaryStorageAmountLevel2 { get; set; } = 400;
 
-        [SettingPropertyInteger("Town Granary Food Storage Level 3", 600, 6000, RequireRestart = false, Order = 3, HintText = "Native value is 600. Changes the amount of food storage the town granary provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Granary*")]
+        [SettingPropertyInteger("Town Granary Food Storage Level 3*", 600, 6000, RequireRestart = true, Order = 3, HintText = "Native value is 600. Changes the amount of food storage the town granary provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Granary*")]
         public int TownGranaryStorageAmountLevel3 { get; set; } = 600;
 
         #endregion
@@ -744,13 +751,13 @@ namespace BannerlordTweaks
         [SettingPropertyBool("Town Orchards*", Order = 1, RequireRestart = false, IsToggle = true, HintText = "Changes the amount of food the town orchards produce per level."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Orchards*")]
         public bool TownOrchardsBonusEnabled { get; set; } = false;
 
-        [SettingPropertyInteger("Town Orchard Food Production Level 1", 10, 100, RequireRestart = false, Order = 2, HintText = "Native value is 10. Changes the amount of food the town orchards produce at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Orchards*")]
+        [SettingPropertyInteger("Town Orchard Food Production Level 1*", 10, 100, RequireRestart = true, Order = 2, HintText = "Native value is 10. Changes the amount of food the town orchards produce at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Orchards*")]
         public int TownOrchardsFoodProductionAmountLevel1 { get; set; } = 10;
 
-        [SettingPropertyInteger("Town Orchard Food Production Level 2", 20, 200, RequireRestart = false, Order = 3, HintText = "Native value is 20. Changes the amount of food the town orchards produce at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Orchards*")]
+        [SettingPropertyInteger("Town Orchard Food Production Level 2*", 20, 200, RequireRestart = true, Order = 3, HintText = "Native value is 20. Changes the amount of food the town orchards produce at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Orchards*")]
         public int TownOrchardsFoodProductionAmountLevel2 { get; set; } = 20;
 
-        [SettingPropertyInteger("Town Orchard Food Production Level 3", 30, 300, RequireRestart = false, Order = 4, HintText = "Native value is 30. Changes the amount of food the town orchards produce at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Orchards*")]
+        [SettingPropertyInteger("Town Orchard Food Production Level 3*", 30, 300, RequireRestart = true, Order = 4, HintText = "Native value is 30. Changes the amount of food the town orchards produce at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Orchards*")]
         public int TownOrchardsFoodProductionAmountLevel3 { get; set; } = 30;
 
         #endregion
@@ -760,13 +767,13 @@ namespace BannerlordTweaks
         [SettingPropertyBool("Town Militia Barracks*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Changes the militia production that the town militia barracks provides per level."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Militia Barracks*")]
         public bool TownMilitiaBarracksBonusEnabled { get; set; } = false;
 
-        [SettingPropertyFloatingInteger("Town Militia Barracks Production Level 1", .5f, 15, RequireRestart = true, Order = 2, HintText = "Native value is .5. Changes the militia production that the town militia barracks provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Militia Barracks*")]
+        [SettingPropertyFloatingInteger("Town Militia Barracks Production Level 1*", .5f, 15, RequireRestart = true, Order = 2, HintText = "Native value is .5. Changes the militia production that the town militia barracks provides at level 1."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Militia Barracks*")]
         public float TownMilitiaBarracksAmountLevel1 { get; set; } = 0.5f;
 
-        [SettingPropertyFloatingInteger("Town Militia Barracks Production Level 2", 1f, 20f, RequireRestart = true, Order = 3, HintText = "Native value is 1. Changes the militia production that the town militia barracks provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Militia Barracks*")]
+        [SettingPropertyFloatingInteger("Town Militia Barracks Production Level 2*", 1f, 20f, RequireRestart = true, Order = 3, HintText = "Native value is 1. Changes the militia production that the town militia barracks provides at level 2."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Militia Barracks*")]
         public float TownMilitiaBarracksAmountLevel2 { get; set; } = 1.0f;
 
-        [SettingPropertyFloatingInteger("Town Militia Barracks Production Level 3", 1.5f, 30f, RequireRestart = true, Order = 4, HintText = "Native value is 1.5. Changes the militia production that the town militia barracks provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Militia Barracks*")]
+        [SettingPropertyFloatingInteger("Town Militia Barracks Production Level 3*", 1.5f, 30f, RequireRestart = true, Order = 4, HintText = "Native value is 1.5. Changes the militia production that the town militia barracks provides at level 3."), SettingPropertyGroup("Settlement Tweaks/Buildings/Town/Town Militia Barracks*")]
         public float TownMilitiaBarracksAmountLevel3 { get; set; } = 1.5f;
 
         #endregion
@@ -800,14 +807,20 @@ namespace BannerlordTweaks
 
         #region Settlement Tweaks - Normal Militia
 
-        [SettingPropertyBool("Normal Militia*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Grants a bonus to militia growth in towns and castles."), SettingPropertyGroup("Settlement Tweaks/Normal Militia*")]
+        [SettingPropertyBool("Normal Militia*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "Grants a flat bonus to militia growth in towns and castles."), SettingPropertyGroup("Settlement Tweaks/Normal Militia*")]
         public bool SettlementMilitiaBonusEnabled { get; set; } = false;
 
-        [SettingPropertyFloatingInteger("Castle Militia Growth Modifier", 1f, 10f, "0%",  RequireRestart = false, Order = 2, HintText = "Native value is 100%. Adds a modifier to militia growth in castles."), SettingPropertyGroup("Settlement Tweaks/Normal Militia*")]
-        public float CastleMilitiaBonus { get; set; } = 0f;
+        [SettingPropertyInteger("Castle Militia Growth Bonus", 0, 50, "0 Militia/Day",  RequireRestart = false, Order = 2, HintText = "Native value is 0. Adds a flat bonus on how many militia gets recruited each day in castles."), SettingPropertyGroup("Settlement Tweaks/Normal Militia*")]
+        public int CastleMilitiaBonusFlat { get; set; } = 0;
 
-        [SettingPropertyFloatingInteger("Town Militia Growth Modifier", 1f, 10f, "0%",  RequireRestart = false, Order = 3, HintText = "Native value is 100%. Adds a modifier to militia growth in towns."), SettingPropertyGroup("Settlement Tweaks/Normal Militia*")]
-        public float TownMilitiaBonus { get; set; } = 0f;
+        [SettingPropertyInteger("Town Militia Growth Bonus", 0, 50, "0 Militia/Day",  RequireRestart = false, Order = 3, HintText = "Native value is 0. Adds a flat bonus on how many militia gets recruited each day in towns."), SettingPropertyGroup("Settlement Tweaks/Normal Militia*")]
+        public int TownMilitiaBonusFlat { get; set; } = 0;
+
+        [SettingPropertyFloatingInteger("Castle Militia Retirement Modifier", 0f, 0.25f, "0.0%/Day", RequireRestart = false, Order = 3, HintText = "Native value is 2.5%. Modifies the percentage of your militia retiring each dayin castles."), SettingPropertyGroup("Settlement Tweaks/Normal Militia*")]
+        public float CastleMilitiaRetirementModifier { get; set; } = 0.025f;
+
+        [SettingPropertyFloatingInteger("Town Militia Retirement Modifier", 0f, 0.25f, "0.0%/Day", RequireRestart = false, Order = 3, HintText = "Native value is 2.5%. Modifies the percentage of your militia retiring each dayin town."), SettingPropertyGroup("Settlement Tweaks/Normal Militia*")]
+        public float TownMilitiaRetirementModifier { get; set; } = 0.025f;
 
         #endregion
 
