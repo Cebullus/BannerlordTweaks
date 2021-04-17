@@ -19,7 +19,7 @@ namespace BannerlordTweaks.Patches
                     num = orig_result * num - orig_result;
                     __result.Add(num, new TextObject("BT Party Wage Tweak"));
                 }
-                if (mobileParty.IsGarrison && (mobileParty.IsMainParty || (mobileParty.Party.MapFaction == Hero.MainHero.MapFaction && settings.ApplyWageTweakToFaction) || settings.ApplyWageTweakToAI))
+                if (mobileParty.IsGarrison && (mobileParty.CurrentSettlement.OwnerClan == Clan.PlayerClan || (mobileParty.Party.MapFaction == Hero.MainHero.MapFaction && settings.ApplyWageTweakToFaction) || settings.ApplyWageTweakToAI))
                 {
                     float num2 = settings.GarrisonWagePercent;
                     num2 = orig_result * num2 - orig_result;
