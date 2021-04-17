@@ -563,6 +563,9 @@ namespace BannerlordTweaks
         [SettingPropertyInteger("Minimum Days of Imprisonment", 0, 180, "0 Days",  Order = 3, RequireRestart = false, HintText = "The minimum number of days a lord will remain imprisoned before they can attempt to escape."), SettingPropertyGroup("Prisoner Tweaks/Imprisonment Time*")]
         public int MinimumDaysOfImprisonment { get; set; } = 10;
 
+        [SettingPropertyBool("Enable Missing Prisoner Hero Fix*", Order = 1, RequireRestart = true, HintText = "Will attempt to detect and release prisoner Heroes who may be bugged and do not respawn. Will trigger 3 days after the Minimum Days of Imprisonment setting."), SettingPropertyGroup("Prisoner Tweaks/Imprisonment Time*")]
+        public bool EnableMissingHeroFix { get; set; } = false;
+
         #endregion
 
         #region Prisoner Size Tweak
@@ -591,13 +594,6 @@ namespace BannerlordTweaks
 
         [SettingPropertyBool("Apply Prisoner Confirmity Tweaks to AI", Order = 4, RequireRestart = false, HintText = "Applies Prisoner Conformity Tweaks to all parties, including AI lords as well."), SettingPropertyGroup("Prisoner Tweaks/Prisoner Confirmity*")]
         public bool PrisonerConformityTweaksApplyToAi { get; set; } = false;
-
-        #endregion
-
-        #region Misc
-
-        [SettingPropertyBool("Enable Missing Prisoner Hero Fix", Order = 1, HintText = "Will attempt to detect and release prisoner Heroes who may be bugged and do not respawn. Will trigger 3 days after the Minimum Days of Imprisonment setting."), SettingPropertyGroup("Prisoner Tweaks/Misc")]
-        public bool EnableMissingHeroFix { get; set; } = false;
 
         #endregion
 
