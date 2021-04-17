@@ -16,9 +16,17 @@ namespace BannerlordTweaks.Patches
             if (BannerlordTweaksSettings.Instance is { } settings && settings.SettlementMilitiaBonusEnabled && !(settlement is null))
             {
                 if (settlement.IsCastle)
-                    __result.Add(Math.Abs(__result.ResultNumber) * (settings.CastleMilitiaBonus-1), new TextObject("Recruitment drive"));
+                { 
+                    __result.Add(settlement.Militia * 0.025f, new TextObject("{=gHnfFi1s}Retired", null));
+                    __result.Add(settings.CastleMilitiaRetirementModifier * -settlement.Militia, new TextObject("{=gHnfFi1s}Retired", null));
+                    __result.Add(settings.CastleMilitiaBonusFlat, new TextObject("Recruitment drive"));
+                }
                 if (settlement.IsTown)
-                    __result.Add(Math.Abs(__result.ResultNumber) * (settings.TownMilitiaBonus-1), new TextObject("Citizen militia"));
+                { 
+                    __result.Add(settlement.Militia * 0.025f, new TextObject("{=gHnfFi1s}Retired", null));
+                    __result.Add(settings.TownMilitiaRetirementModifier * -settlement.Militia, new TextObject("{=gHnfFi1s}Retired", null));
+                    __result.Add(settings.TownMilitiaBonusFlat, new TextObject("Citizen militia"));
+                }
             }
             return;
         }
