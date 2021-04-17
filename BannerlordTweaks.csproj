@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<Version>1.5.9.4</Version>
+		<Version>1.5.8.7</Version>
 		<TargetFramework>net472</TargetFramework>
 		<Platforms>x64</Platforms>
 		<LangVersion>9.0</LangVersion>
@@ -9,8 +9,8 @@
 		<GameFolder>C:\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord</GameFolder>
 		<Authors>Jiros+Cebullus</Authors>
 		<Company>Jiros+Cebullus</Company>
-		<AssemblyVersion>1.5.9.4</AssemblyVersion>
-		<FileVersion>1.5.9.4</FileVersion>
+		<AssemblyVersion>1.5.8.7</AssemblyVersion>
+		<FileVersion>1.5.8.7</FileVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
