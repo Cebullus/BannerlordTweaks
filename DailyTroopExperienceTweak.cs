@@ -33,7 +33,7 @@ namespace BannerlordTweaks
 
                         if (BannerlordTweaksSettings.Instance is { } settings3 && settings3.DisplayMessageDailyExperienceGain)
                         {
-                            string troops = count == 1 ? "soldier" : "troops";
+                            string troops = count == 1 ? "troop roster (stack)" : "troop rosters (stacks)";
                             if (party.LeaderHero == Hero.MainHero && num > 0)
                                 InformationManager.DisplayMessage(new InformationMessage($"Granted {experienceAmount} experience to {num} {troops}."));
                         }
