@@ -73,4 +73,35 @@ namespace BannerlordTweaks.Patches
         static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.BattleRewardTweaksEnabled;
 
     }
+    [HarmonyPatch(typeof(DefaultBattleRewardModel), "CalculateMoraleGainVictory")]
+    public class DefaultBattleRewardModelMoralePatch
+    {
+
+        static void Postfix(PartyBase party, float renownValueOfBattle, float contributionShare, ref ExplainedNumber result, ref float __result)
+        {
+            if ((BannerlordTweaksSettings.Instance is { } settings && party.LeaderHero != null) && (settings.BattleRewardApplyToAI || party.LeaderHero == Hero.MainHero))
+            {
+                float battleMoraleMultiplier = settings.BattleMoraleMultiplier;
+                battleMoraleMultiplier -= 1f;
+
+                if (party.LeaderHero == Hero.MainHero && settings.BattleRewardShowDebug)
+                {
+                    String BTTweak = "";
+
+                    if ((float)Math.Round((double)battleMoraleMultiplier * 100f, 0) > 0f)
+                    {
+                        BTTweak = "+";
+                    }
+
+                    DebugHelpers.DebugMessage("Morale Value = " + (float)Math.Round((double)(result.ResultNumber / contributionShare), 2) + " | Your share = " + (float)Math.Round((double)result.ResultNumber * contributionShare, 2) + "(" + (float)Math.Round((double)contributionShare * 100f, 1) + "%)" +
+                                            "\nBT Tweak = " + (float)Math.Round((double)(battleMoraleMultiplier * result.ResultNumber), 2) + "(" + BTTweak + (float)Math.Round((double)battleMoraleMultiplier * 100f, 1) + "%)");
+                }
+                __result = result.ResultNumber + (battleMoraleMultiplier * result.ResultNumber);
+                result.Add(party.MapFaction.IsKingdomFaction ? (result.ResultNumber * battleMoraleMultiplier) : 0f, new TextObject("BT Influence Tweak"), null);
+            }
+        }
+
+        static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.BattleRewardTweaksEnabled;
+
+    }
 }
