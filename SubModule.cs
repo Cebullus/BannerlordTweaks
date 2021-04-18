@@ -7,6 +7,9 @@ using System.Windows.Forms;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.CampaignSystem.GameMenus;
+using TaleWorlds.Localization;
+using TaleWorlds.CampaignSystem.Overlay;
 
 namespace BannerlordTweaks
 {
