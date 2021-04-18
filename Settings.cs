@@ -442,7 +442,10 @@ namespace BannerlordTweaks
         [SettingPropertyFloatingInteger("Khuzait Balancing Strength", -0.35f, 0.35f, "0%", Order = 4, RequireRestart = false, HintText = "Balancing strength for khuzait. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
         public float KhuzaitBoost { get; set; } = 0.00f;
 
-        [SettingPropertyBool("Party sizes", Order = 10, RequireRestart = false, HintText = "Modifier for max party sizes in relation to Balancing Strength (AI only). A balancing strength of +20% results in +20% party sizes for the specific kingdom."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
+        [SettingPropertyFloatingInteger("Player Kingdom Balancing Strength", -0.35f, 0.35f, "0%", Order = 4, RequireRestart = false, HintText = "Balancing strength for player kingdom. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
+        public float PlayerBoost { get; set; } = 0.00f;
+
+        [SettingPropertyBool("Party sizes", Order = 10, RequireRestart = false, HintText = "Modifier for max party sizes in relation to Balancing Strength. A balancing strength of +20% results in +20% party sizes for the specific kingdom."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
         public bool BalancingPartySizeTweaksEnabled { get; set; } = false;
 
         [SettingPropertyBool("Village Food Production", Order = 11, RequireRestart = false, HintText = "Modifier for daily production of food goods in villages in relation to Balancing Strength. A balancing strength of +20% results in +20% food production for the specific kingdom."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
@@ -451,10 +454,10 @@ namespace BannerlordTweaks
         [SettingPropertyBool("Recruit replenish time", Order = 12, RequireRestart = false, HintText = "Flat % bonus chance of new recruits to spawn in settlements in relation to Balancing Strength (x 0.75). A balancing strength of +20% results in +15% daily spawn chance for the specific kingdom (20% * 0.75 = 15%)."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
         public bool BalancingTimeRecruitsTweaksEnabled { get; set; } = false;
 
-        [SettingPropertyBool("Income Boost (not working yet)", Order = 13, RequireRestart = false, HintText = "Modifier for tax income in relation to Balancing Strength"), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
+        [SettingPropertyBool("Taxation Efficiency", Order = 13, RequireRestart = false, HintText = "Modifier for tax income from prosperity in towns and castles and trade tax income in villages in relation to Balancing Strength"), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
         public bool BalancingTaxTweaksEnabled { get; set; } = false;
 
-        [SettingPropertyBool("Wage cost (not working yet)", Order = 14, RequireRestart = false, HintText = "Modifier for troop and garrison wages in relation to Balancing Strength"), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
+        [SettingPropertyBool("Wage costs", Order = 14, RequireRestart = false, HintText = "Modifier for troop and garrison wages in relation to Balancing Strength"), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
         public bool BalancingWagesTweaksEnabled { get; set; } = false;
 
         #endregion
