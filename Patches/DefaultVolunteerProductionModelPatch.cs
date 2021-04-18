@@ -23,6 +23,7 @@ namespace BannerlordTweaks.Patches
                     "aserai" => settings.Aseraiboost,
                     _ => 0f
                 };
+                if (num == 0f && hero.CurrentSettlement.OwnerClan.Kingdom.Leader == Hero.MainHero) num = settings.PlayerBoost;
                 __result += (num * 0.75f);
             }
         }
