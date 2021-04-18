@@ -34,9 +34,25 @@ namespace BannerlordTweaks.Patches
                     "empire_w" => settings.Empire_W_Boost,
                     "sturgia" => settings.SturgiaBoost,
                     "khuzait" => settings.KhuzaitBoost,
-                    "aserai" => settings.Aseraiboost,
+                    "aserai" => settings.AseraiBoost,
                     _ => 0f
                 };
+
+                if (settings.KingdomBalanceStrengthCEKEnabled)
+                {
+                    num = town.Settlement.OwnerClan.Kingdom.StringId switch
+                    {
+                        "nordlings" => settings.NordlingsBoost,
+                        "vagir" => settings.VagirBoost,
+                        "royalist_vlandia" => settings.RoyalistVlandiaBoost,
+                        "apolssaly" => settings.ApolssalyBoost,
+                        "lyrion" => settings.LyrionBoost,
+                        "rebel_khuzait" => settings.RebelKhuzaitBoost,
+                        "paleician" => settings.PaleicianBoost,
+                        "ariorum" => settings.AriorumBoost,
+                        _ => 0f
+                    };
+                }
                 if (num == 0f && town.Settlement.OwnerClan.Kingdom.Leader == Hero.MainHero) num = settings.PlayerBoost;
                 float prosperity = town.Prosperity;
                 float num2 = 1f;
@@ -77,9 +93,25 @@ namespace BannerlordTweaks.Patches
                     "empire_w" => settings.Empire_W_Boost,
                     "sturgia" => settings.SturgiaBoost,
                     "khuzait" => settings.KhuzaitBoost,
-                    "aserai" => settings.Aseraiboost,
+                    "aserai" => settings.AseraiBoost,
                     _ => 0f
                 };
+
+                if (settings.KingdomBalanceStrengthCEKEnabled)
+                {
+                    num = village.Settlement.OwnerClan.Kingdom.StringId switch
+                    {
+                        "nordlings" => settings.NordlingsBoost,
+                        "vagir" => settings.VagirBoost,
+                        "royalist_vlandia" => settings.RoyalistVlandiaBoost,
+                        "apolssaly" => settings.ApolssalyBoost,
+                        "lyrion" => settings.LyrionBoost,
+                        "rebel_khuzait" => settings.RebelKhuzaitBoost,
+                        "paleician" => settings.PaleicianBoost,
+                        "ariorum" => settings.AriorumBoost,
+                        _ => 0f
+                    };
+                }
                 if (num == 0f && village.Settlement.OwnerClan.Kingdom.Leader == Hero.MainHero) num = settings.PlayerBoost;
                 //float oldresult = __result;
                 //float newresult = oldresult * (1 + num);

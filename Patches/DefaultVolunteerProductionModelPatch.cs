@@ -20,9 +20,24 @@ namespace BannerlordTweaks.Patches
                     "empire_w" => settings.Empire_W_Boost,
                     "sturgia" => settings.SturgiaBoost,
                     "khuzait" => settings.KhuzaitBoost,
-                    "aserai" => settings.Aseraiboost,
+                    "aserai" => settings.AseraiBoost,
                     _ => 0f
                 };
+                if (settings.KingdomBalanceStrengthCEKEnabled)
+                {
+                    num = hero.CurrentSettlement.OwnerClan.Kingdom.StringId switch
+                    {
+                        "nordlings" => settings.NordlingsBoost,
+                        "vagir" => settings.VagirBoost,
+                        "royalist_vlandia" => settings.RoyalistVlandiaBoost,
+                        "apolssaly" => settings.ApolssalyBoost,
+                        "lyrion" => settings.LyrionBoost,
+                        "rebel_khuzait" => settings.RebelKhuzaitBoost,
+                        "paleician" => settings.PaleicianBoost,
+                        "ariorum" => settings.AriorumBoost,
+                        _ => 0f
+                    };
+                }
                 if (num == 0f && hero.CurrentSettlement.OwnerClan.Kingdom.Leader == Hero.MainHero) num = settings.PlayerBoost;
                 __result += (num * 0.75f);
             }

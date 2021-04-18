@@ -38,9 +38,26 @@ namespace BannerlordTweaks.Patches
                         "empire_w" => settings.Empire_W_Boost,
                         "sturgia" => settings.SturgiaBoost,
                         "khuzait" => settings.KhuzaitBoost,
-                        "aserai" => settings.Aseraiboost,
+                        "aserai" => settings.AseraiBoost,
                         _ => 0f
                     };
+
+                    if (settings.KingdomBalanceStrengthCEKEnabled)
+                    {
+                        num2 = party.LeaderHero.Clan.Kingdom.StringId switch
+                        {
+                            "nordlings" => settings.NordlingsBoost,
+                            "vagir" => settings.VagirBoost,
+                            "royalist_vlandia" => settings.RoyalistVlandiaBoost,
+                            "apolssaly" => settings.ApolssalyBoost,
+                            "lyrion" => settings.LyrionBoost,
+                            "rebel_khuzait" => settings.RebelKhuzaitBoost,
+                            "paleician" => settings.PaleicianBoost,
+                            "ariorum" => settings.AriorumBoost,
+                            _ => 0f
+                        };
+                    }
+
                     if (num2 == 0f && party.LeaderHero.Clan.Kingdom.Leader == Hero.MainHero) num2 = settings.PlayerBoost;
                     __result.Add((float)__result.ResultNumber * num2, new TextObject("BT Balancing Tweak"));
                 }

@@ -437,13 +437,43 @@ namespace BannerlordTweaks
         public float Empire_W_Boost { get; set; } = 0.00f;
 
         [SettingPropertyFloatingInteger("Aserai Balancing Strength", -0.35f, 0.35f, "0%", Order = 1, RequireRestart = false, HintText = "Balancing strength for aserai. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
-        public float Aseraiboost { get; set; } = 0.00f;
+        public float AseraiBoost { get; set; } = 0.00f;
 
         [SettingPropertyFloatingInteger("Khuzait Balancing Strength", -0.35f, 0.35f, "0%", Order = 4, RequireRestart = false, HintText = "Balancing strength for khuzait. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
         public float KhuzaitBoost { get; set; } = 0.00f;
 
         [SettingPropertyFloatingInteger("Player Kingdom Balancing Strength", -0.35f, 0.35f, "0%", Order = 4, RequireRestart = false, HintText = "Balancing strength for player kingdom. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
         public float PlayerBoost { get; set; } = 0.00f;
+
+
+        [SettingPropertyBool("Calradia Expanded Kingdoms", Order = 1, RequireRestart = false, IsToggle = true, HintText = "Enables tweaks which affect the balancing of kingdoms."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*/Calradia Expanded Kingdoms")]
+        public bool KingdomBalanceStrengthCEKEnabled { get; set; } = false;
+
+        [SettingPropertyFloatingInteger("Nordlings Balancing Strength", -0.35f, 0.35f, "0%", Order = 9, RequireRestart = false, HintText = "Balancing strength for nordlings. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*/Calradia Expanded Kingdoms")]
+        public float NordlingsBoost { get; set; } = 0.00f;
+
+        [SettingPropertyFloatingInteger("Vagir Balancing Strength", -0.35f, 0.35f, "0%", Order = 8, RequireRestart = false, HintText = "Balancing strength for vagir. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*/Calradia Expanded Kingdoms")]
+        public float VagirBoost { get; set; } = 0.00f;
+
+        [SettingPropertyFloatingInteger("Royalist Vlandia Balancing Strength", -0.35f, 0.35f, "0%", Order = 2, RequireRestart = false, HintText = "Balancing strength for royalist vlandia. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*/Calradia Expanded Kingdoms")]
+        public float RoyalistVlandiaBoost { get; set; } = 0.00f;
+
+        [SettingPropertyFloatingInteger("Apolssaly Balancing Strength", -0.35f, 0.35f, "0%", Order = 5, RequireRestart = false, HintText = "Balancing strength for apolssaly. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*/Calradia Expanded Kingdoms")]
+        public float ApolssalyBoost { get; set; } = 0.00f;
+
+        [SettingPropertyFloatingInteger("Lyrion Balancing Strength", -0.35f, 0.35f, "0%", Order = 6, RequireRestart = false, HintText = "Balancing strength for lyrion. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*/Calradia Expanded Kingdoms")]
+        public float LyrionBoost { get; set; } = 0.00f;
+
+        [SettingPropertyFloatingInteger("Rebel Khuzait Balancing Strength", -0.35f, 0.35f, "0%", Order = 7, RequireRestart = false, HintText = "Balancing strength for rebel khuzait. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*/Calradia Expanded Kingdoms")]
+        public float RebelKhuzaitBoost { get; set; } = 0.00f;
+
+        [SettingPropertyFloatingInteger("Paleician Balancing Strength", -0.35f, 0.35f, "0%", Order = 1, RequireRestart = false, HintText = "Balancing strength for paleician. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*/Calradia Expanded Kingdoms")]
+        public float PaleicianBoost { get; set; } = 0.00f;
+
+        [SettingPropertyFloatingInteger("Ariorum Balancing Strength", -0.35f, 0.35f, "0%", Order = 4, RequireRestart = false, HintText = "Balancing strength for ariorum. Boosts or reduces the enabled tweaks further down. +/- 35% is pretty extreme."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*/Calradia Expanded Kingdoms")]
+        public float AriorumBoost { get; set; } = 0.00f;
+
+
 
         [SettingPropertyBool("Party sizes", Order = 10, RequireRestart = false, HintText = "Modifier for max party sizes in relation to Balancing Strength. A balancing strength of +20% results in +20% party sizes for the specific kingdom."), SettingPropertyGroup("Kingdom Tweaks/Faction Balancing*")]
         public bool BalancingPartySizeTweaksEnabled { get; set; } = false;
