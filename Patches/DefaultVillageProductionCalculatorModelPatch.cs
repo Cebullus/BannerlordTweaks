@@ -15,9 +15,9 @@ namespace BannerlordTweaks.Patches
             {
                 __result = (__result * settings.ProductionFoodTweakEnabled);
             }
-            if (village != null && BannerlordTweaksSettings.Instance is { } settings2 && settings2.BalancingFoodTweakEnabled && village.TradeBound.OwnerClan.Kingdom != null)
+            if (village != null && BannerlordTweaksSettings.Instance is { } settings2 && settings2.BalancingFoodTweakEnabled && settings2.KingdomBalanceStrengthEnabled && village.Settlement.OwnerClan.Kingdom != null)
             {
-                float num = village.TradeBound.OwnerClan.Kingdom.StringId switch
+                float num = village.Settlement.OwnerClan.Kingdom.StringId switch
                 {
                     "vlandia" => settings2.VlandiaBoost,
                     "battania" => settings2.BattaniaBoost,
@@ -29,6 +29,7 @@ namespace BannerlordTweaks.Patches
                     "aserai" => settings2.Aseraiboost,
                     _ => 0f
                 };
+                if (num == 0f && village.Settlement.OwnerClan.Kingdom.Leader == Hero.MainHero) num = settings2.PlayerBoost;
                 __result += (__result * num);
             }
         }
