@@ -27,35 +27,22 @@ namespace BannerlordTweaks.Patches
                     num = (int)Math.Ceiling(party.LeaderHero.GetSkillValue(DefaultSkills.Steward) * settings.StewardPartySizeBonus * ((party.LeaderHero == Hero.MainHero) ? 1:settings.PartySizeTweakAIFactor));
                     __result.Add((float)num, new TextObject("BT Steward bonus"));
                 }
-                if (settings.BalancingPartySizeTweaksEnabled && party.LeaderHero.Clan.Kingdom != null && party.LeaderHero != Hero.MainHero)
+                if (settings.BalancingPartySizeTweaksEnabled && settings.KingdomBalanceStrengthEnabled && party.LeaderHero.Clan.Kingdom != null)
                 {
-                    switch (party.LeaderHero.Clan.Kingdom.StringId)
+                    float num2 = party.LeaderHero.Clan.Kingdom.StringId switch
                     {
-                        case "vlandia":
-                            __result.Add((float)__result.ResultNumber * settings.VlandiaBoost, new TextObject("BT Vlandia Boost"));
-                            break;
-                        case "battania":
-                            __result.Add((float)__result.ResultNumber * settings.BattaniaBoost, new TextObject("BT Battania Boost"));
-                            break;
-                        case "empire":
-                            __result.Add((float)__result.ResultNumber * settings.Empire_N_Boost, new TextObject("BT Empire boost"));
-                            break;
-                        case "empire_s":
-                            __result.Add((float)__result.ResultNumber * settings.Empire_S_Boost, new TextObject("BT Empire(S) boost"));
-                            break;
-                        case "empire_w":
-                            __result.Add((float)__result.ResultNumber * settings.Empire_W_Boost, new TextObject("BT Empire(W) boost"));
-                            break;
-                        case "sturgia":
-                            __result.Add((float)__result.ResultNumber * settings.SturgiaBoost, new TextObject("BT Sturgia boost"));
-                            break;
-                        case "khuzait":
-                            __result.Add((float)__result.ResultNumber * settings.KhuzaitBoost, new TextObject("BT Khuzait boost"));
-                            break;
-                        case "aserai":
-                            __result.Add((float)__result.ResultNumber * settings.Aseraiboost, new TextObject("BT Aserai boost"));
-                            break;
-                    }
+                        "vlandia" => settings.VlandiaBoost,
+                        "battania" => settings.BattaniaBoost,
+                        "empire" => settings.Empire_N_Boost,
+                        "empire_s" => settings.Empire_S_Boost,
+                        "empire_w" => settings.Empire_W_Boost,
+                        "sturgia" => settings.SturgiaBoost,
+                        "khuzait" => settings.KhuzaitBoost,
+                        "aserai" => settings.Aseraiboost,
+                        _ => 0f
+                    };
+                    if (num2 == 0f && party.LeaderHero.Clan.Kingdom.Leader == Hero.MainHero) num2 = settings.PlayerBoost;
+                    __result.Add((float)__result.ResultNumber * num2, new TextObject("BT Balancing Tweak"));
                 }
             }
         }
