@@ -1,6 +1,7 @@
 ﻿using MCM.Abstractions.Attributes;
 using MCM.Abstractions.Attributes.v2;
 using MCM.Abstractions.Settings.Base.Global;
+using MCM.Abstractions.Dropdown;
 
 namespace BannerlordTweaks
 {
@@ -563,6 +564,9 @@ namespace BannerlordTweaks
         [SettingPropertyInteger("Minimum Days of Imprisonment", 0, 180, "0 Days",  Order = 3, RequireRestart = false, HintText = "The minimum number of days a lord will remain imprisoned before they can attempt to escape."), SettingPropertyGroup("Prisoner Tweaks/Imprisonment Time*")]
         public int MinimumDaysOfImprisonment { get; set; } = 10;
 
+        [SettingPropertyBool("Enable Missing Prisoner Hero Fix*", Order = 4, RequireRestart = true, HintText = "Will attempt to detect and release prisoner Heroes who may be bugged and do not respawn. Will trigger 3 days after the Minimum Days of Imprisonment setting."), SettingPropertyGroup("Prisoner Tweaks/Imprisonment Time*")]
+        public bool EnableMissingHeroFix { get; set; } = false;
+
         #endregion
 
         #region Prisoner Size Tweak
@@ -594,13 +598,6 @@ namespace BannerlordTweaks
 
         #endregion
 
-        #region Misc
-
-        [SettingPropertyBool("Enable Missing Prisoner Hero Fix", Order = 1, HintText = "Will attempt to detect and release prisoner Heroes who may be bugged and do not respawn. Will trigger 3 days after the Minimum Days of Imprisonment setting."), SettingPropertyGroup("Prisoner Tweaks/Misc")]
-        public bool EnableMissingHeroFix { get; set; } = false;
-
-        #endregion
-
         #endregion
 
         #region Settlement Tweaks #10
@@ -612,6 +609,17 @@ namespace BannerlordTweaks
 
         [SettingPropertyBool("Change To Culture Of Kingdom Faction Instead*", Order = 1, RequireRestart = true, IsToggle = false, HintText = "Instead of changing the faction to its owner-clan culture, change to its kingdom culture."), SettingPropertyGroup("Settlement Tweaks/Settlement Culture Transformation*")]
         public bool ChangeToKingdomCulture { get; set; } = false;
+
+        [SettingPropertyDropdown("Override Culture For Player Clan*", Order = 3, RequireRestart = true, HintText = "Overrides the culture to change to for player clan owned settlements."), SettingPropertyGroup("Settlement Tweaks/Settlement Culture Transformation*")]
+        public DropdownDefault<string> PlayerCultureOverride { get; } = new(new string[]
+        {
+            "No Override",
+            "vlandia",
+            "empire",
+            "sturgia",
+            "aserai",
+            "khuzait"
+        }, 0);
 
         [SettingPropertyInteger("Weeks for Settlement Culture Change",1,52, "0 Weeks", Order = 2, RequireRestart = false, HintText = "After how many weeks the culture of a settlement changes to its owner's culture (and produces recruits of the new culturegroup)."), SettingPropertyGroup("Settlement Tweaks/Settlement Culture Transformation*")]
         public int TimeToChanceCulture { get; set; } = 4;
