@@ -137,7 +137,7 @@
 					<string id="BT_Settings_002313_Desc" text="Modifies the amount of Smithing experience recieved." />
 
 			<string id="BT_Settings_002400" text="Pregnancy Tweaks" />
-			<string id="BT_Settings_002400_Desc" text="Enable bonuses to the skill experience your hero and companions members gain." />
+			<string id="BT_Settings_002400_Desc" text="Enables several tweaks related to pregnancy behavior." />
 				<string id="BT_Settings_002401" text="Disable Stillbirths"/>
 				<string id="BT_Settings_002401_Desc" text="Disables the chance of children dying when born." />
 				<string id="BT_Settings_002402" text="Disable Maternal Mortality"/>
@@ -186,13 +186,13 @@
 					<string id="BT_Settings_003203" text="Clan Parties Bonus Per Clan Tier"/>
 					<string id="BT_Settings_003203_Desc" text="Native has a calculation for this: 1 party for under tier 3, 2 parties for under tier 5, 3 parties for over tier 5. This setting is multiplied by your clan tier. A value of 0.5 will equate to 1 extra party per 2 clan tiers, which eqautes to the same as native." />
 				<string id="BT_Settings_003204" text="AI Lord Parties Limit"/>
-				<string id="BT_Settings_003204_Desc" text="Changes the base number of parties AI Lords can field. Warning! Once new parties are spawned, it takes a long time until they get removed if you changew your mind!" />
+				<string id="BT_Settings_003204_Desc" text="Changes the base number of parties AI Lords can field." />
 					<string id="BT_Settings_003205" text="Add to AI Lord Parties Limit"/>
 					<string id="BT_Settings_003205_Desc" text="This adds to the the base number of parties AI Lords can field. [Native is 1 for Tier 3 and below, 2 at T4, 3 at T5 and up.] Minor Factions are not included unless the option below is also enabled." />
 					<string id="BT_Settings_003206" text="Also Adjust Minor Factions"/>
-					<string id="BT_Settings_003206_Desc" text="Changes the base number of parties AI Minor Factiopn Lords can field. [Native is 1-4, depending on Clan tier.]" />
+					<string id="BT_Settings_003206_Desc" text="Changes the base number of parties AI Minor Faction Lords can field. [Native is 1-4, depending on Clan tier.]" />
 				<string id="BT_Settings_003207" text="Custom Spawn Parties Limit"/>
-				<string id="BT_Settings_003207_Desc" text="Changes the base number of parties Custom Spawn lords can field. Warning! Once new parties are spawned, it takes a long time until they get removed if you changew your mind!" />
+				<string id="BT_Settings_003207_Desc" text="Changes the base number of parties Custom Spawn lords can field." />
 					<string id="BT_Settings_003208" text="Add to Custom Spawn Parties Limit"/>
 					<string id="BT_Settings_003208_Desc" text="This adds to the the base number of parties Custom Lords can field. [Native is 1 for Tier 3 and below, 2 at T4, 3 at T5 and up.]." />
 
@@ -209,7 +209,7 @@
 				<string id="BT_Settings_004104_Desc" text="Native value is false. This disables crafting stamina completely. You will still lose crafting stamina when you craft, but you will still be able to craft when you hit zero." />
 
 			<string id="BT_Settings_004200" text="Smelting" />
-			<string id="BT_Settings_004200_Desc" text="Native value is false. Prevent weapons that you have locked in your inventory from showing up in the smelting list to prevent accidental smelting." />
+			<string id="BT_Settings_004200_Desc" text="Enables tweaks which affect smelting of weapons." />
 				<string id="BT_Settings_004201" text="Hide Locked Weapons in Smelting Menu"/>
 				<string id="BT_Settings_004201_Desc" text="Native value is false. Prevent weapons that you have locked in your inventory from showing up in the smelting list to prevent accidental smelting." />
 				<string id="BT_Settings_004202" text="Enable Unlocking Parts From Smelted Weapons"/>
@@ -258,7 +258,7 @@
 					<string id="BT_Settings_005216" text="Lyrion Balancing Strength"/>
 					<string id="BT_Settings_005216_Desc" text="Balancing strength for lyrion. Boosts or reduces the enabled balancing tweaks." />
 					<string id="BT_Settings_005217" text="Khergit Balancing Strength"/>
-					<string id="BT_Settings_005217_Desc" text="Balancing strength for khergit. Boosts or reduces the enabled balancing tweaksn." />
+					<string id="BT_Settings_005217_Desc" text="Balancing strength for khergit. Boosts or reduces the enabled balancing tweaks." />
 					<string id="BT_Settings_005218" text="Paleician Balancing Strength"/>
 					<string id="BT_Settings_005218_Desc" text="Balancing strength for paleician. Boosts or reduces the enabled balancing tweaks." />
 					<string id="BT_Settings_005219" text="Ariorum Balancing Strength"/>
@@ -287,7 +287,7 @@
 				<string id="BT_Settings_005230_Desc" text="Modifier for max party limit (1.0 x Balancing Strength)." />
 				<string id="BT_Settings_005231" text="Village Food Production Balancing"/>
 				<string id="BT_Settings_005231_Desc" text="Modifier for daily production of food goods in villages (1.0 x Balancing Strength)." />
-				<string id="BT_Settings_005232" text="Recruit replenish time Balancing"/>
+				<string id="BT_Settings_005232" text="Faster Recruiting Balancing"/>
 				<string id="BT_Settings_005232_Desc" text="Flat % bonus chance of new recruits to spawn in settlements (0.75 x Balancing Strength)." />
 				<string id="BT_Settings_005233" text="Taxation Efficiency Balancing"/>
 				<string id="BT_Settings_005233_Desc" text="Modifier for tax income from prosperity in towns and castles and trade tax income in villages (1.0 x Balancing Strength)." />
@@ -298,7 +298,7 @@
 	
 		<string id="BT_Settings_006000" text="Party Tweaks" />
 			<string id="BT_Settings_006100" text="Cohesion Tweaks" />
-			<string id="BT_Settings_006100_Desc" text="Armies composed of only clan parties lose no cohesion." />
+			<string id="BT_Settings_006100_Desc" text="Enables tweaks affecting cohesion" />
 				<string id="BT_Settings_006101" text="Cohesion Degradation Factor"/>
 				<string id="BT_Settings_006101_Desc" text="Modifier to how much cohesion should degrade over time. Vanilla is 100%, 0% is disabled." />
 				<string id="BT_Settings_006102" text="All-Clan Armies Lose No Cohesion"/>

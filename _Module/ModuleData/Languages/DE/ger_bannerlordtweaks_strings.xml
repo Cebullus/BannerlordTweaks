@@ -15,7 +15,7 @@
 				<string id="BT_Settings_000103" text="Moralmenge aus Schlachten" />
 				<string id="BT_Settings_000103_Desc" text="Originalwert ist 100%. Die Menge an Moral, welche du von Schlachten erhälst wird mit diesem Wert multipliziert." />
 				<string id="BT_Settings_000104" text="Auch auf KI anwenden" />
-				<string id="BT_Settings_000104_Desc" text="Wendet die Ruf-, Einfluss- und Moralanpassungen auf KI-Einheiten an." />
+				<string id="BT_Settings_000104_Desc" text="Wendet die Ruf-, Einfluss- und Moralanpassungen auf KI-Truppenverbände an." />
 				<string id="BT_Settings_000105" text="Zeige Berechnungsnachricht" />
 				<string id="BT_Settings_000105_Desc" text="Blendet eine detailierte Berechnungsnachricht für Ruf-, Einfluss- und Moralanpassungen im Nachtenfenster ein." />
 
@@ -84,245 +84,245 @@
 				<string id="BT_Settings_001210" text="Spielerkartengeschwindigkeitsbonusmenge"/>
 				<string id="BT_Settings_001210_Desc" text="Originalwerte: Sehr leicht: 10%, Leicht: 5%, Realistisch: 0%. Dieser Wert bestimmt die Bonusgeschwindigkeit auf der Karte für den Spieler." />
 
-		<string id="BT_Settings_002000" text="Character Tweaks" />
-			<string id="BT_Settings_002100" text="Age Tweaks" />
-			<string id="BT_Settings_002100_Desc" text="Enables the tweaking of character age behavior." />
-				<string id="BT_Settings_002101" text="Become Infant Age"/>
-				<string id="BT_Settings_002101_Desc" text="Native: 3. Must be less than Become Child Age." />
-				<string id="BT_Settings_002102" text="Become Child Age"/>
-				<string id="BT_Settings_002102_Desc" text="Native: 6. Must be less than Become Teenager Age." />
-				<string id="BT_Settings_002103" text="Become Teenager Age"/>
-				<string id="BT_Settings_002103_Desc" text="Native: 14. Must be less than Hero Comes Of Age." />
-				<string id="BT_Settings_002104" text="Hero Comes Of Age"/>
-				<string id="BT_Settings_002104_Desc" text="Native: 18. Must be less than Become Old Age." />
-				<string id="BT_Settings_002105" text="Become Old Age"/>
-				<string id="BT_Settings_002105_Desc" text="Native: 47. Must be less than Max Age." />
-				<string id="BT_Settings_002106" text="Max Age"/>
+		<string id="BT_Settings_002000" text="Charakteranpassungen" />
+			<string id="BT_Settings_002100" text="Alteranpassungen" />
+			<string id="BT_Settings_002100_Desc" text="Aktiviert Anpassungen bezüglich Charakteralter." />
+				<string id="BT_Settings_002101" text="Beginn Säuglingsalter"/>
+				<string id="BT_Settings_002101_Desc" text="Original: 3. Muss unter Kindesalter liegen." />
+				<string id="BT_Settings_002102" text="Beginn Kindesalter"/>
+				<string id="BT_Settings_002102_Desc" text="Original: 6. Muss unter dem jugendlichen Alter liegen." />
+				<string id="BT_Settings_002103" text="Beginn jugendliches Alter"/>
+				<string id="BT_Settings_002103_Desc" text="Original: 14. Muss unter dem erwachsenen Alter liegen." />
+				<string id="BT_Settings_002104" text="Held wird erwachsen"/>
+				<string id="BT_Settings_002104_Desc" text="Original: 18. Muss unter dem Beginn des Altseins liegen." />
+				<string id="BT_Settings_002105" text="Beginn des Altseins"/>
+				<string id="BT_Settings_002105_Desc" text="Native: 47. Muss unter dem maximalen Alter liegen." />
+				<string id="BT_Settings_002106" text="Maximales Alter"/>
 				<string id="BT_Settings_002106_Desc" text="Native: 125." />
 
-			<string id="BT_Settings_002200" text="Attribute-Focus Points Tweaks" />
-			<string id="BT_Settings_002200_Desc" text="Changes the values used to calculate how many Attribute and Focus points Heroes gain." />
-				<string id="BT_Settings_002201" text="Levels per Attribute Point"/>
-				<string id="BT_Settings_002201_Desc" text="Native value is 4. How many levels you need to gain to receive an attribute point." />
-				<string id="BT_Settings_002202" text="Focus Point Per Level"/>
-				<string id="BT_Settings_002202_Desc" text="Native value is 1. This is the amount of focus points earned per level." />
+			<string id="BT_Settings_002200" text="Attributfokus Punkteanpassungen" />
+			<string id="BT_Settings_002200_Desc" text="Verändert die Punkte mit denen berechnet wird, wieviele Attribut und Fokuspunkte Charaktere bekommen." />
+				<string id="BT_Settings_002201" text="Charakterlevel pro Attributpunkt."/>
+				<string id="BT_Settings_002201_Desc" text="Originalwert ist 4. Wieviele Level benötigt werden, um einen Attributpunkt zu erhalten." />
+				<string id="BT_Settings_002202" text="Fokuspunkte pro Level"/>
+				<string id="BT_Settings_002202_Desc" text="Originalwert ist 1. Dies ist die Menge an Fokuspunkten, die man je Level erhält." />
 
-			<string id="BT_Settings_002300" text="Hero Skill Experience" />
-			<string id="BT_Settings_002300_Desc" text="Enable bonuses to the skill experience your hero and companions members gain." />
-				<string id="BT_Settings_002301" text="Player Skill Experience"/>
-				<string id="BT_Settings_002301_Desc" text="Applies a modifier to the amount of experience recieved for skills. Affects the player only. 100% = No Bonus." />
-				<string id="BT_Settings_002302" text="Player Skill Experience Amount"/>
-				<string id="BT_Settings_002302_Desc" text="Applies a modifier to the amount of experience recieved for skills. Affects the player only. 100% = No Bonus." />
-				<string id="BT_Settings_002303" text="Companion Skill Experience"/>
-				<string id="BT_Settings_002303_Desc" text="Applies a modifier to the amount of experience recieved for skills. Affects Compaions only. 100% = No Bonus." />
-				<string id="BT_Settings_002304" text="Companion Skill Experience Amount"/>
-				<string id="BT_Settings_002304_Desc" text="Applies a modifier to the amount of experience recieved for skills. Affects the Companion only. 100% = No Bonus." />
-				<string id="BT_Settings_002305" text="Per Skill Bonuses"/>
-				<string id="BT_Settings_002305_Desc" text="Modifies the amount of experience recieved for specific skills before applying global experience modifier. Affects the player and companions only. 1.0 = No Bonus. 1.1 = 10%, etc." />
-					<string id="BT_Settings_002306" text="Per-Skill Experience Amount: Engineering"/>
-					<string id="BT_Settings_002306_Desc" text="Modifies the amount of Engineering experience recieved." />
-					<string id="BT_Settings_002307" text="Per-Skill Experience Amount: Leadership"/>
-					<string id="BT_Settings_002307_Desc" text="Modifies the amount of Leadership experience recieved." />
-					<string id="BT_Settings_002308" text="Per-Skill Experience Amount: Medicine"/>
-					<string id="BT_Settings_002308_Desc" text="Modifies the amount of Medicine experience recieved." />
-					<string id="BT_Settings_002309" text="Per-Skill Experience Amount: Riding"/>
-					<string id="BT_Settings_002309_Desc" text="Modifies the amount of Riding experience recieved." />
-					<string id="BT_Settings_002310" text="Per-Skill Experience Amount: Roguery"/>
-					<string id="BT_Settings_002310_Desc" text="Modifies the amount of Roguery experience recieved." />
-					<string id="BT_Settings_002311" text="Per-Skill Experience Amount: Scouting"/>
-					<string id="BT_Settings_002311_Desc" text="Modifies the amount of Scouting experience recieved." />
-					<string id="BT_Settings_002312" text="Per-Skill Experience Amount: Trade"/>
-					<string id="BT_Settings_002312_Desc" text="Modifies the amount of Trade experience recieved." />
-					<string id="BT_Settings_002313" text="Per-Skill Experience Amount: Smithing"/>
-					<string id="BT_Settings_002313_Desc" text="Modifies the amount of Smithing experience recieved." />
+			<string id="BT_Settings_002300" text="Heldenfähigkeitserfahrung" />
+			<string id="BT_Settings_002300_Desc" text="Aktiviert Boni für die Fähigkeitserfahrung, welche dder Spieler und seine Begleiter erhalten." />
+				<string id="BT_Settings_002301" text="Spielerfähigkeitserfahrung"/>
+				<string id="BT_Settings_002301_Desc" text="Wendet einen Modifikator auf die Menge an Fähigkeitserfahrung an, die der Spieler erhält. 100% = Kein Bonus." />
+				<string id="BT_Settings_002302" text="Menge Spielerfähigkeitserfahrung"/>
+				<string id="BT_Settings_002302_Desc" text="Wendet einen Modifikator auf die Menge an Fähigkeitserfahrung an, die der Spieler erhält. 100% = Kein Bonus." />
+				<string id="BT_Settings_002303" text="Begleiterfähigkeitserfahrung"/>
+				<string id="BT_Settings_002303_Desc" text="Wendet einen Modifikator auf die Menge an Fähigkeitserfahrung an, die Begleiter erhalten. 100% = Kein Bonus." />
+				<string id="BT_Settings_002304" text="Menge Begleiterfähigkeitserfahrung"/>
+				<string id="BT_Settings_002304_Desc" text="Wendet einen Modifikator auf die Menge an Fähigkeitserfahrung an, die Begleiter erhalten. 100% = Kein Bonus." />
+				<string id="BT_Settings_002305" text="Extra Boni pro Fähigkeit"/>
+				<string id="BT_Settings_002305_Desc" text="Verändert die Menge für spezifische Fähigkeiten, bevor die globalen Modifikatoren angewendet werden. Betrifft nur den Spieler und seine Begleiter. 100% = Kein Bonus. 110% = +10% usw." />
+					<string id="BT_Settings_002306" text="Menge für Fähigkeit: Technik"/>
+					<string id="BT_Settings_002306_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Technikfähigkeit." />
+					<string id="BT_Settings_002307" text="Menge für Fähigkeit: Führung"/>
+					<string id="BT_Settings_002307_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Führungsfähigkeit." />
+					<string id="BT_Settings_002308" text="Menge für Fähigkeit: Medizin"/>
+					<string id="BT_Settings_002308_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Medizinfähigkeit." />
+					<string id="BT_Settings_002309" text="Menge für Fähigkeit: Reiten"/>
+					<string id="BT_Settings_002309_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Reitenfähigkeit." />
+					<string id="BT_Settings_002310" text="Menge für Fähigkeit: Schurkerei"/>
+					<string id="BT_Settings_002310_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Schurkereifähigkeit." />
+					<string id="BT_Settings_002311" text="Menge für Fähigkeit: Kundschaften"/>
+					<string id="BT_Settings_002311_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Kundschaftenfhäigkeit." />
+					<string id="BT_Settings_002312" text="Menge für Fähigkeit: Handel"/>
+					<string id="BT_Settings_002312_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Handelsfähigkeit." />
+					<string id="BT_Settings_002313" text="Menge für Fähigkeit: Schmieden"/>
+					<string id="BT_Settings_002313_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Schmiedefähigkeit." />
 
-			<string id="BT_Settings_002400" text="Pregnancy Tweaks" />
-			<string id="BT_Settings_002400_Desc" text="Enable bonuses to the skill experience your hero and companions members gain." />
-				<string id="BT_Settings_002401" text="Disable Stillbirths"/>
-				<string id="BT_Settings_002401_Desc" text="Disables the chance of children dying when born." />
-				<string id="BT_Settings_002402" text="Disable Maternal Mortality"/>
-				<string id="BT_Settings_002402_Desc" text="Disables the chance of mothers dying when giving birth." />
-				<string id="BT_Settings_002403" text="Pregnancy Duration Tweak"/>
-				<string id="BT_Settings_002403_Desc" text="Allows for adjusting the duration for a pregnancy." />
-				<string id="BT_Settings_002404" text="Pregnancy Duration"/>
-				<string id="BT_Settings_002404_Desc" text="Native value is 36 days." />
-				<string id="BT_Settings_002405" text="Gender Ratio Tweak"/>
-				<string id="BT_Settings_002405_Desc" text="Allows for adjusting the gender ratio of births." />
-				<string id="BT_Settings_002406" text="Probability for female children"/>
-				<string id="BT_Settings_002406_Desc" text="Native value is 51%. Set to 0% to disable female births." />
-				<string id="BT_Settings_002407" text="Twins Probability Tweak"/>
-				<string id="BT_Settings_002407_Desc" text="Allows for adjusting the chance of giving birth to twins." />
-				<string id="BT_Settings_002408" text="Probability to deliver twins"/>
-				<string id="BT_Settings_002408_Desc" text="Native value is 3%. Determines the chance of giving birth to twins." />
-				<string id="BT_Settings_002409" text="Pregnancy Chance Tweaks"/>
-				<string id="BT_Settings_002409_Desc" text="Enabling this will completely override the daily pregnancy check. All settings below will be applied!" />
-				<string id="BT_Settings_002410" text="Player is Infertile"/>
-				<string id="BT_Settings_002410_Desc" text="Native: disabled. If enabled, the player will not be able to have children." />
-				<string id="BT_Settings_002411" text="Min Pregnancy Age"/>
-				<string id="BT_Settings_002411_Desc" text="Native: 18. Minimum age that someone can get pregnant." />
-				<string id="BT_Settings_002412" text="Max Pregnancy Age"/>
-				<string id="BT_Settings_002412_Desc" text="Native: 45. Maximum age that someone can get pregnant." />
-				<string id="BT_Settings_002413" text="Clan Fertility Bonus"/>
-				<string id="BT_Settings_002413_Desc" text="Adds modifier to your clan members to become pregnant. 100% = No Bonus, 200% = 2x chance. Note: May not do much after ~6-8 kids due to the base pregnancy calculations." />
-				<string id="BT_Settings_002414" text="Max Children"/>
-				<string id="BT_Settings_002414_Desc" text="Default: 5. Maximum number of children that someone can have." />
+			<string id="BT_Settings_002400" text="Schwangerschaftsanpassungen" />
+			<string id="BT_Settings_002400_Desc" text="Aktiviert verschiedene Anpassungen bezüglich dem Schwangerschaftsablauf." />
+				<string id="BT_Settings_002401" text="Deaktiviere Totgeburten"/>
+				<string id="BT_Settings_002401_Desc" text="Deaktiviert die Chance, dass Kinder als Totgeburt zur Welt kommen." />
+				<string id="BT_Settings_002402" text="Deaktiviere mütterliche Sterblichkeit"/>
+				<string id="BT_Settings_002402_Desc" text="Deaktiviert die Chance, dass Mütter bei der Geburt sterben." />
+				<string id="BT_Settings_002403" text="Schwangerschaftsdauer"/>
+				<string id="BT_Settings_002403_Desc" text="Erlaubt die Anpassung der Schwangerschaftsdauer." />
+				<string id="BT_Settings_002404" text="Schwangerschaftsdauer"/>
+				<string id="BT_Settings_002404_Desc" text="Originaldauer ist 36 Tage." />
+				<string id="BT_Settings_002405" text="Geschlechtsverhältnis"/>
+				<string id="BT_Settings_002405_Desc" text="Erlaubt die Anpassung der Wahrscheinlichkeit für weibliche Kinder." />
+				<string id="BT_Settings_002406" text="Wahrscheinlichkeit für weibliche Kinder"/>
+				<string id="BT_Settings_002406_Desc" text="Originalwahrscheinlichkeit ist 51%. 100% deaktiviert männliche Kinder." />
+				<string id="BT_Settings_002407" text="Zwillingwahrscheinlichkeit"/>
+				<string id="BT_Settings_002407_Desc" text="Erlaubt die Anpassung der Chance auf Zwillinge." />
+				<string id="BT_Settings_002408" text="Zwillingwahrscheinlichkeit"/>
+				<string id="BT_Settings_002408_Desc" text="Originalwahrscheinlichkeit ist 3%. Ergibt die Wahrscheinlichhkeit, bei der Geburt Zwillinge zu bekommen." />
+				<string id="BT_Settings_002409" text="Schwangerschaftswahrscheinlichkeit"/>
+				<string id="BT_Settings_002409_Desc" text="Wenn dies aktiviert ist, wird die gesamte tägliche Schwangerschaftsroutine überschrieben. Alle nachfolgenden Anpassungen werden aktiviert!" />
+				<string id="BT_Settings_002410" text="Spieler ist unfruchtbar"/>
+				<string id="BT_Settings_002410_Desc" text="Original: deaktiviert. Wenn aktiviert wird der Spieler keine Kinder zeugen können." />
+				<string id="BT_Settings_002411" text="Mindestalter Schwangerschaft"/>
+				<string id="BT_Settings_002411_Desc" text="Original: 18. Mindestalter, um schwanger werden zu können." />
+				<string id="BT_Settings_002412" text="Maximalalter Schwangerschaft"/>
+				<string id="BT_Settings_002412_Desc" text="Original: 45. Maximalalter, um schwanger werden zu können." />
+				<string id="BT_Settings_002413" text="Clanfruchtbarkeitsbonus"/>
+				<string id="BT_Settings_002413_Desc" text="Aktiviert einen Modifikator für die Chance, dass Mitglieder in deinem Clan schwanger werden können. 100% = Kein Bonus, 200% = 2x Chance. Hinweis: Nach 6-8 Kindern wird dies keine großen Auswirkungen mehr haben." />
+				<string id="BT_Settings_002414" text="Maximalanzahl Kinder"/>
+				<string id="BT_Settings_002414_Desc" text="Original: 5. Wieviele Kinder maximal zeugbar sind." />
 
-		<string id="BT_Settings_003000" text="Clan Tweaks" />
-			<string id="BT_Settings_003100" text="Companion Limit Tweak" />
-			<string id="BT_Settings_003100_Desc" text="Sets the base companion limit and the bonus gained per clan tier." />
-				<string id="BT_Settings_003101" text="Base Companion Limit"/>
-				<string id="BT_Settings_003101_Desc" text="Native value is 3. Sets the base companion limit." />
-				<string id="BT_Settings_003102" text="Companion Bonus Per Clan Tier"/>
-				<string id="BT_Settings_003102_Desc" text="Native value is 1. Sets the bonus to companion limit per clan tier. This value is multiplied by your clan tier. Note that Leadership 'We Pledge Our Swords' perk will also increse this number by 1." />
-				<string id="BT_Settings_003103" text="Enable Unlimited Wanderers Patch"/>
-				<string id="BT_Settings_003103_Desc" text="Removes the soft cap on the maximum number of potential companions who can spawn. Native limits the # of wanderers to ~25. This will remove that limit. Note: Requires a new campaign to take effect, as the cap is set when a new game is generated. Credit to Bleinz for his UnlimitedWanderers mod." />
+		<string id="BT_Settings_003000" text="Clananpassungen" />
+			<string id="BT_Settings_003100" text="Begleiterlimit" />
+			<string id="BT_Settings_003100_Desc" text="Bestimmt den Grundwert sowie Bonus je Clanstufe für die Maximalmenge an Begleitern." />
+				<string id="BT_Settings_003101" text="Grundwert Begleiter"/>
+				<string id="BT_Settings_003101_Desc" text="Originalwert ist 3. Bestimmt den Grundmenge an Begleitern, die man haben kann." />
+				<string id="BT_Settings_003102" text="Bonusbegleiter je Clanstufe"/>
+				<string id="BT_Settings_003102_Desc" text="Originalwert ist 1. Bestimmt die Menge an Begleitern, welche man zusätzlich zum Grundwert je Clanstufe führen kann. Dieser Wert wird mit der Clanstufe multipliziert. Hinweis: Die Führungsfähigkeit 'Wir schwören auf unsere Schwerter' wird diesen Wert auch um 1 erhöhen." />
+				<string id="BT_Settings_003103" text="Aktiviere unbegrenzte Wanderer"/>
+				<string id="BT_Settings_003103_Desc" text="Entfernt das Softlimit, welches bestimmt, wieviele Wanderer im Spiel erscheinen können. Im Originalspiel ist dieses Limit bei etwa 25 Wanderern. Hiermit wird dieses Limit entfernt. Hinweis: Nur wirksam für eine neue Kampagne. Danke an Bleinz für seine UnlimitedWanderers Mod." />
 
-			<string id="BT_Settings_003200" text="Party Limits" />
-			<string id="BT_Settings_003200_Desc" text="Changes the number of parties you and ai lords can field and the bonus gained per clan tier." />
-				<string id="BT_Settings_003201" text="Player Parties Limit"/>
-				<string id="BT_Settings_003201_Desc" text="Changes the base number of parties you can field and the bonus gained per clan tier." />
-					<string id="BT_Settings_003202" text="Base Clan Parties Limit"/>
-					<string id="BT_Settings_003202_Desc" text="Native value is 1. This is the number of parties you can field at the start." />
-					<string id="BT_Settings_003203" text="Clan Parties Bonus Per Clan Tier"/>
-					<string id="BT_Settings_003203_Desc" text="Native has a calculation for this: 1 party for under tier 3, 2 parties for under tier 5, 3 parties for over tier 5. This setting is multiplied by your clan tier. A value of 0.5 will equate to 1 extra party per 2 clan tiers, which eqautes to the same as native." />
-				<string id="BT_Settings_003204" text="AI Lord Parties Limit"/>
-				<string id="BT_Settings_003204_Desc" text="Changes the base number of parties AI Lords can field. Warning! Once new parties are spawned, it takes a long time until they get removed if you changew your mind!" />
-					<string id="BT_Settings_003205" text="Add to AI Lord Parties Limit"/>
-					<string id="BT_Settings_003205_Desc" text="This adds to the the base number of parties AI Lords can field. [Native is 1 for Tier 3 and below, 2 at T4, 3 at T5 and up.] Minor Factions are not included unless the option below is also enabled." />
-					<string id="BT_Settings_003206" text="Also Adjust Minor Factions"/>
-					<string id="BT_Settings_003206_Desc" text="Changes the base number of parties AI Minor Factiopn Lords can field. [Native is 1-4, depending on Clan tier.]" />
-				<string id="BT_Settings_003207" text="Custom Spawn Parties Limit"/>
-				<string id="BT_Settings_003207_Desc" text="Changes the base number of parties Custom Spawn lords can field. Warning! Once new parties are spawned, it takes a long time until they get removed if you changew your mind!" />
-					<string id="BT_Settings_003208" text="Add to Custom Spawn Parties Limit"/>
-					<string id="BT_Settings_003208_Desc" text="This adds to the the base number of parties Custom Lords can field. [Native is 1 for Tier 3 and below, 2 at T4, 3 at T5 and up.]." />
+			<string id="BT_Settings_003200" text="Truppenverbandsbegrenzung" />
+			<string id="BT_Settings_003200_Desc" text="Verändert die Menge an Truppenverbänden, welche du und KI-Lords befehligen können sowie den Bonus pro Clanstufe." />
+				<string id="BT_Settings_003201" text="Spielertruppenverbandsbegrenzung"/>
+				<string id="BT_Settings_003201_Desc" text="Verändert die Grundmenge an Truppenverbänden, welche der Spieler anführen kann sowie den Bonus pro CLanstufe." />
+					<string id="BT_Settings_003202" text="Grundmenge Truppenverbände"/>
+					<string id="BT_Settings_003202_Desc" text="Originalmenge ist 1. Dies bestimmt die Grundmenge an Truppenverbänden, die der Spieler von Spielbeginn an führen kann." />
+					<string id="BT_Settings_003203" text="Bonusanzahl je Clanstufe"/>
+					<string id="BT_Settings_003203_Desc" text="Im Originalspiel wird die Menge wie folgt berechnet: 1 Truppenverband bis Clanstufe 3, 2 Truppenverbände bis Clanstufe 5, 3 Truppenverbände über Clanstufe 5. Dieser Wert wird mit der Clanstufe multipliziert. Ein Wert von 0,5 resultiert in 1 zusätzlichem Truppenverband alle 2 Clanstufen, was dem Original entspricht." />
+				<string id="BT_Settings_003204" text="KI-Lord Truppenverbandsbegrenzung"/>
+				<string id="BT_Settings_003204_Desc" text="Verändert die Grundmenge an Truppenverbänden, welche KI-Lords anführen können." />
+					<string id="BT_Settings_003205" text="Zusätzliche Truppenverbände für KI-Lords"/>
+					<string id="BT_Settings_003205_Desc" text="Dieser Wert wird auf die maximale Anzahl an Truppenverbände, welche KI-Lords führen können, hinzugerechnet (Originalwert ist 1 bis Clanstufe 3, 2 ab Stufe 4, 3 über Stufe 5). Nebenfraktionen bleiben unverändert." />
+					<string id="BT_Settings_003206" text="Auch auf Nebenfraktionen anwenden"/>
+					<string id="BT_Settings_003206_Desc" text="Verändert die Grundmenge an Truppenverbänden, welche KI-Lords von Nebenfraktionen anführen können. Originalmenge ist 1-4, abhängig von der Clanstufe." />
+				<string id="BT_Settings_003207" text="CS Truppenverbandsbegrenzung"/>
+				<string id="BT_Settings_003207_Desc" text="Verändert die Grundmenge an Truppenverbänden, welche KI-Lords aus der Custom Spawns Mod anführen können." />
+					<string id="BT_Settings_003208" text="Zusätzliche Truppenverbandsmenge CS"/>
+					<string id="BT_Settings_003208_Desc" text="Der Wert wird zur Grundmenge an Truppenverbänden addiert, welche KI-Lords aus der Custom Spawns Mod anführen können. [Originalmenge ist 1 bis Clanstufe 3, 2 ab Stufe 4, 3 ab Clanstufe 5.]." />
 
-		<string id="BT_Settings_004000" text="Crafting Tweaks" />
-			<string id="BT_Settings_004100" text="Crafting Stamina" />
-			<string id="BT_Settings_004100_Desc" text="Enables tweaks which affect crafting stamina." />
-				<string id="BT_Settings_004101" text="Max Crafting Stamina"/>
-				<string id="BT_Settings_004101_Desc" text="Native value is 400. Sets the maximum crafting stamina value." />
-				<string id="BT_Settings_004102" text="Crafting Stamina Gain"/>
-				<string id="BT_Settings_004102_Desc" text="Native value is 5. You gain this amount of crafting stamina per hour." />
-				<string id="BT_Settings_004103" text="Crafting Stamina Gain Outside Settlement"/>
-				<string id="BT_Settings_004103_Desc" text="Native value is 0%. In % of Crafting Stamina Gain. In native, you do not gain crafting stamina if you are not resting inside a settlement." />
-				<string id="BT_Settings_004104" text="Ignore Crafting Stamina"/>
-				<string id="BT_Settings_004104_Desc" text="Native value is false. This disables crafting stamina completely. You will still lose crafting stamina when you craft, but you will still be able to craft when you hit zero." />
+		<string id="BT_Settings_004000" text="Handwerksanpassung" />
+			<string id="BT_Settings_004100" text="Handwerksausdauer" />
+			<string id="BT_Settings_004100_Desc" text="Aktiviert Anpassungen bezüglich Handwerksausdauer." />
+				<string id="BT_Settings_004101" text="Maximale Handwerksausdauer"/>
+				<string id="BT_Settings_004101_Desc" text="Originalgrenze ist 400. Bestimmt das Maximum der Handwerksausdauer." />
+				<string id="BT_Settings_004102" text="Regenerationsrate Handwerksausdauer"/>
+				<string id="BT_Settings_004102_Desc" text="Originalwert ist 5. Du erhälst die angegebene Menge an Ausdauer je Stunde." />
+				<string id="BT_Settings_004103" text="Regeneration außerhalb Siedlung"/>
+				<string id="BT_Settings_004103_Desc" text="Originalwert ist 0%. In % der normalen Regenerationsrate. Im Originalspiel erhält man keine Handwerksausdauer außerhalb von Siedlungen." />
+				<string id="BT_Settings_004104" text="Ignoriere Ausdauer"/>
+				<string id="BT_Settings_004104_Desc" text="Originalwert is deaktiviert. Durch diese Einstellung wird Ausdauer vollständig ignoriert. Du verlierst zwar trotzdem Ausdauer, kannst aber auch bei 0 Ausdauer weiter Handwerk betreiben." />
 
-			<string id="BT_Settings_004200" text="Smelting" />
-			<string id="BT_Settings_004200_Desc" text="Native value is false. Prevent weapons that you have locked in your inventory from showing up in the smelting list to prevent accidental smelting." />
-				<string id="BT_Settings_004201" text="Hide Locked Weapons in Smelting Menu"/>
-				<string id="BT_Settings_004201_Desc" text="Native value is false. Prevent weapons that you have locked in your inventory from showing up in the smelting list to prevent accidental smelting." />
-				<string id="BT_Settings_004202" text="Enable Unlocking Parts From Smelted Weapons"/>
-				<string id="BT_Settings_004202_Desc" text="Native value is false. Unlock the parts that a weapon is made of when you smelt it." />
+			<string id="BT_Settings_004200" text="Einschmelzen" />
+			<string id="BT_Settings_004200_Desc" text="Aktiviert Anpassungen, welche das Einschmelzen von Waffen betreffen." />
+				<string id="BT_Settings_004201" text="Verstecke gesperrte Waffen"/>
+				<string id="BT_Settings_004201_Desc" text="Originalwert ist deaktiviert. Blendet im Inventar gesperrte Waffen aus dem Einschmelmenü aus um versehentliches Einschmelzen zu verhindern." />
+				<string id="BT_Settings_004202" text="Einschmelzen schaltet Teile frei"/>
+				<string id="BT_Settings_004202_Desc" text="Originalwert ist deaktiviert. Schaltet die Waffenteile der eingeschmolzenen Waffen frei." />
 
-		<string id="BT_Settings_005000" text="Kingdom Tweaks" />
-			<string id="BT_Settings_005100" text="Lord Bartering" />
-			<string id="BT_Settings_005100_Desc" text="Enables tweaks which affect bartering (Marriage, Factions Joining You, etc.)" />
-				<string id="BT_Settings_005101" text="Faction Joining Barter Adjustment"/>
-				<string id="BT_Settings_005101_Desc" text="Adjust the % cost of swaying a faction to join your kingdom. Native value is 100% (no change)." />
-				<string id="BT_Settings_005102" text="Relationship favored Faction Joining Barter"/>
-				<string id="BT_Settings_005102_Desc" text="An alternate formula for calculating cost of swaying a faction to join your kingdom, with more emphasis on relationsip. [The higher your relationship to the lord, the cheaper the barter]." />
+		<string id="BT_Settings_005000" text="Königreichsanpassungen" />
+			<string id="BT_Settings_005100" text="Verhandlungen" />
+			<string id="BT_Settings_005100_Desc" text="Aktiviert Anpassungen, welche Verhandlungen mit Lords betreffen (Heirat, Fraktionsbeitritte usw.)" />
+				<string id="BT_Settings_005101" text="Fraktionsbeitrittskosten"/>
+				<string id="BT_Settings_005101_Desc" text="Passt die Kosten für Überredungen zum Fraktionsbeitritt in % zum Originalwert an. Originalwert ist 100%." />
+				<string id="BT_Settings_005102" text="Stärkere Beachtung von Beziehungen"/>
+				<string id="BT_Settings_005102_Desc" text="Eine alternative Formel zur Berechnung von Verhandlungskosten, welche die Beziehung zwischen den Verhandlungspartnern stärker beachtet. Je besser die Beziehung ist, desto preiswerter wird die Verhandlung." />
 
-			<string id="BT_Settings_005200" text="Faction Balancing" />
-			<string id="BT_Settings_005200_Desc" text="Enables tweaks which affect the balancing of kingdoms." />
-				<string id="BT_Settings_005201" text="Balancing Modifiers For Vanilla Kingdoms"/>
-				<string id="BT_Settings_005201_Desc" text="Enables tweaks which affect the balancing of kingdoms in vanilla game." />
-					<string id="BT_Settings_005202" text="Vlandia Balancing Strength"/>
-					<string id="BT_Settings_005202_Desc" text="Balancing strength for vlandia. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005203" text="Sturgia Balancing Strength"/>
-					<string id="BT_Settings_005203_Desc" text="Balancing strength for sturgia. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005204" text="Battania Balancing Strength"/>
-					<string id="BT_Settings_005204_Desc" text="Balancing strength for battania. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005205" text="Northern Empire Balancing Strength"/>
-					<string id="BT_Settings_005205_Desc" text="Balancing strength for northern empire. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005206" text="Southern Empire Balancing Strength"/>
-					<string id="BT_Settings_005206_Desc" text="Balancing strength for southern empire. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005207" text="Western Empire Balancing Strength"/>
-					<string id="BT_Settings_005207_Desc" text="Balancing strength for western empire. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005208" text="Aserai Balancing Strength"/>
-					<string id="BT_Settings_005208_Desc" text="Balancing strength for aserai. Boosts or reduces the enabled tweaks balancing tweaks." />
-					<string id="BT_Settings_005209" text="Khuzait Balancing Strength"/>
-					<string id="BT_Settings_005209_Desc" text="Balancing strength for khuzait. Boosts or reduces the enabled tweaks balancing tweaks." />
-					<string id="BT_Settings_005210" text="Player Kingdom Balancing Strength"/>
-					<string id="BT_Settings_005210_Desc" text="Balancing strength for player kingdom. Boosts or reduces the enabled balancing tweaks." />
-				<string id="BT_Settings_005211" text="Balancing Modifiers For Calradia Expanded Kingdoms"/>
-				<string id="BT_Settings_005211_Desc" text="Enables tweaks which affect the balancing of kingdoms in the mod Calradia Expanded Kingdoms." />
-					<string id="BT_Settings_005212" text="Nordlings Balancing Strength"/>
-					<string id="BT_Settings_005212_Desc" text="Balancing strength for nordlings. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005213" text="Vagir Balancing Strength"/>
-					<string id="BT_Settings_005213_Desc" text="Balancing strength for vagir. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005214" text="Royalist Vlandia Balancing Strength"/>
-					<string id="BT_Settings_005214_Desc" text="Balancing strength for royalist vlandia. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005215" text="Apolssaly Balancing Strength"/>
-					<string id="BT_Settings_005215_Desc" text="Balancing strength for apolssaly. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005216" text="Lyrion Balancing Strength"/>
-					<string id="BT_Settings_005216_Desc" text="Balancing strength for lyrion. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005217" text="Khergit Balancing Strength"/>
-					<string id="BT_Settings_005217_Desc" text="Balancing strength for khergit. Boosts or reduces the enabled balancing tweaksn." />
-					<string id="BT_Settings_005218" text="Paleician Balancing Strength"/>
-					<string id="BT_Settings_005218_Desc" text="Balancing strength for paleician. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005219" text="Ariorum Balancing Strength"/>
-					<string id="BT_Settings_005219_Desc" text="Balancing strength for ariorum. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005220" text="Calradian Empire Balancing Strength"/>
-					<string id="BT_Settings_005220_Desc" text="Balancing strength for calradian empire. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005221" text="Dryatican Republic Balancing Strength"/>
-					<string id="BT_Settings_005221_Desc" text="BBalancing strength for dryatican republic. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005222" text="Battania Balancing Strength"/>
-					<string id="BT_Settings_005222_Desc" text="Balancing strength for battania. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005223" text="Cortanian Vlandia Balancing Strength"/>
-					<string id="BT_Settings_005223_Desc" text="Balancing strength for cortanian vlandia. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005224" text="Sturgia Balancing Strength"/>
-					<string id="BT_Settings_005224_Desc" text="Balancing strength for sturgia. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005225" text="Khuzait Balancing Strength"/>
-					<string id="BT_Settings_005225_Desc" text="Balancing strength for khuzait. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005226" text="Aserai Balancing Strength"/>
-					<string id="BT_Settings_005226_Desc" text="Balancing strength for aserai. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005227" text="Western Empire Balancing Strength"/>
-					<string id="BT_Settings_005227_Desc" text="Balancing strength for western empire. Boosts or reduces the enabled balancing tweaks." />
-					<string id="BT_Settings_005228" text="Player Kingdom Balancing Strength"/>
-					<string id="BT_Settings_005228_Desc" text="Balancing strength for player kingdom. Boosts or reduces the enabled balancing tweaks." />
-				<string id="BT_Settings_005229" text="Party Sizes Balancing"/>
-				<string id="BT_Settings_005229_Desc" text="Modifier for max party sizes (1.0 x Balancing Strength)." />
-				<string id="BT_Settings_005230" text="Party Count Limit Balancing"/>
-				<string id="BT_Settings_005230_Desc" text="Modifier for max party limit (1.0 x Balancing Strength)." />
-				<string id="BT_Settings_005231" text="Village Food Production Balancing"/>
-				<string id="BT_Settings_005231_Desc" text="Modifier for daily production of food goods in villages (1.0 x Balancing Strength)." />
-				<string id="BT_Settings_005232" text="Recruit replenish time Balancing"/>
-				<string id="BT_Settings_005232_Desc" text="Flat % bonus chance of new recruits to spawn in settlements (0.75 x Balancing Strength)." />
-				<string id="BT_Settings_005233" text="Taxation Efficiency Balancing"/>
-				<string id="BT_Settings_005233_Desc" text="Modifier for tax income from prosperity in towns and castles and trade tax income in villages (1.0 x Balancing Strength)." />
-				<string id="BT_Settings_005234" text="Wage costs Balancing"/>
-				<string id="BT_Settings_005234_Desc" text="Modifier for troop and garrison wages (1.0 x Balancing Strength)." />
-				<string id="BT_Settings_005235" text="Quality of Recruitment Balancing"/>
-				<string id="BT_Settings_005235_Desc" text="Increases the chance for upgraded recruits (1.0 x Balancing Strength). Basic troops will not be upgraded to noble troops with the extra chance. No effect if balancing strength is lower than 0% (no decrease in chance for upgrades)." />
+			<string id="BT_Settings_005200" text="Fraktionstärkenausgleich" />
+			<string id="BT_Settings_005200_Desc" text="Aktiviert Anpassungen bezüglich Stärkenausgleich zwischen Fraktionen." />
+				<string id="BT_Settings_005201" text="Ausgleichsstärke für Originalkönigreiche"/>
+				<string id="BT_Settings_005201_Desc" text="Aktiviert den Ausgleich von Fraktionsstärken für Königreiche im Originalspiel. Jedes Königreich wird je nach eingestelltem Wert gestärkt oder gehindert." />
+					<string id="BT_Settings_005202" text="Vlandia Ausgleichsstärke"/>
+					<string id="BT_Settings_005202_Desc" text="Stärkenausgleich für Vlandia. Verstärkt oder behindert Vlandia in den aktivierten Bereichen." />
+					<string id="BT_Settings_005203" text="Sturgia Ausgleichsstärke"/>
+					<string id="BT_Settings_005203_Desc" text="Stärkenausgleich für Sturgia. Verstärkt oder behindert Sturgia in den aktivierten Bereichen." />
+					<string id="BT_Settings_005204" text="Battania Ausgleichsstärke"/>
+					<string id="BT_Settings_005204_Desc" text="Stärkenausgleich für Battania. Verstärkt oder behindert Battania in den aktivierten Bereichen." />
+					<string id="BT_Settings_005205" text="Nördliches Imperium Ausgleichsstärke"/>
+					<string id="BT_Settings_005205_Desc" text="Stärkenausgleich für das nördliche Imperium. Verstärkt oder behindert das nördliche Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005206" text="Südliches Imperium Ausgleichsstärke"/>
+					<string id="BT_Settings_005206_Desc" text="Stärkenausgleich für das südliche Imperium. Verstärkt oder behindert das südliche Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005207" text="Westliches Imperium Ausgleichsstärke"/>
+					<string id="BT_Settings_005207_Desc" text="Stärkenausgleich für das westliche Imperium. Verstärkt oder behindert das westliche Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005208" text="Aserai Ausgleichsstärke"/>
+					<string id="BT_Settings_005208_Desc" text="Stärkenausgleich für die Aserai. Verstärkt oder behindert die Aserai in den aktivierten Bereichen." />
+					<string id="BT_Settings_005209" text="Khuzait Ausgleichsstärke"/>
+					<string id="BT_Settings_005209_Desc" text="Stärkenausgleich für die Khuzait. Verstärkt oder behindert die Khuzait in den aktivierten Bereichen." />
+					<string id="BT_Settings_005210" text="Spielerkönigreich Ausgleichsstärke"/>
+					<string id="BT_Settings_005210_Desc" text="Stärkenausgleich für das Spielerkönigreich. Verstärkt oder behindert das Königreich des Spielers in den aktivierten Bereichen." />
+				<string id="BT_Settings_005211" text="Ausgleichsstärke für Calradia Expanded Königreiche"/>
+				<string id="BT_Settings_005211_Desc" text="Aktiviert den Ausgleich von Fraktionsstärken für Köänigreiche im Mod Calradia Expanded Kingdoms. Jedes Königreich wird je nach eingestelltem Wert gestärkt oder gehindert." />
+					<string id="BT_Settings_005212" text="Nordlings Ausgleichsstärke"/>
+					<string id="BT_Settings_005212_Desc" text="Stärkenausgleich für die Nordlinge. Verstärkt oder behindert die Nordlinge in den aktivierten Bereichen." />
+					<string id="BT_Settings_005213" text="Vagir Ausgleichsstärke"/>
+					<string id="BT_Settings_005213_Desc" text="Stärkenausgleich für die Vaegir. Verstärkt oder behindert die Vaegir in den aktivierten Bereichen." />
+					<string id="BT_Settings_005214" text="Royales Vlandia Ausgleichsstärke"/>
+					<string id="BT_Settings_005214_Desc" text="Stärkenausgleich für die royalen Vlandia. Verstärkt oder behindert die royalen Vlandia in den aktivierten Bereichen." />
+					<string id="BT_Settings_005215" text="Apolssaly Ausgleichsstärke"/>
+					<string id="BT_Settings_005215_Desc" text="Stärkenausgleich für die Apolssaly. Verstärkt oder behindert die Apolssaly in den aktivierten Bereichen." />
+					<string id="BT_Settings_005216" text="Lyrion Ausgleichsstärke"/>
+					<string id="BT_Settings_005216_Desc" text="Stärkenausgleich für Lyrion. Verstärkt oder behindert Lyrion in den aktivierten Bereichen." />
+					<string id="BT_Settings_005217" text="Khergit Ausgleichsstärke"/>
+					<string id="BT_Settings_005217_Desc" text="Stärkenausgleich für die Khergit. Verstärkt oder behindert die Khergit in den aktivierten Bereichen." />
+					<string id="BT_Settings_005218" text="Paleician Ausgleichsstärke"/>
+					<string id="BT_Settings_005218_Desc" text="Stärkenausgleich für Paleician. Verstärkt oder behindert die Paleician in den aktivierten Bereichen." />
+					<string id="BT_Settings_005219" text="Ariorum Ausgleichsstärke"/>
+					<string id="BT_Settings_005219_Desc" text="Stärkenausgleich für Ariorum. Verstärkt oder behindert Ariorum in den aktivierten Bereichen." />
+					<string id="BT_Settings_005220" text="Calradisches Imperium Ausgleichsstärke"/>
+					<string id="BT_Settings_005220_Desc" text="Stärkenausgleich für das calradische Imperium. Verstärkt oder behindert das calradische Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005221" text="Dryaticanische Republik Ausgleichsstärke"/>
+					<string id="BT_Settings_005221_Desc" text="Stärkenausgleich für das dryaticanische Imperium. Verstärkt oder behindert das dryaticanische Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005222" text="Battania Ausgleichsstärke"/>
+					<string id="BT_Settings_005222_Desc" text="Stärkenausgleich für Battania. Verstärkt oder behindert Battania in den aktivierten Bereichen." />
+					<string id="BT_Settings_005223" text="Cortanische Vlandia Ausgleichsstärke"/>
+					<string id="BT_Settings_005223_Desc" text="Stärkenausgleich für das cortanische Vlandia. Verstärkt oder behindert das cortanische Vlandia in den aktivierten Bereichen." />
+					<string id="BT_Settings_005224" text="Sturgia Ausgleichsstärke"/>
+					<string id="BT_Settings_005224_Desc" text="Stärkenausgleich für Sturgia. Verstärkt oder behindert Sturgia in den aktivierten Bereichen." />
+					<string id="BT_Settings_005225" text="Khuzait Ausgleichsstärke"/>
+					<string id="BT_Settings_005225_Desc" text="Stärkenausgleich für die Khuzait. Verstärkt oder behindert die Khuzait in den aktivierten Bereichen." />
+					<string id="BT_Settings_005226" text="Aserai Ausgleichsstärke"/>
+					<string id="BT_Settings_005226_Desc" text="Stärkenausgleich für die Aserai. Verstärkt oder behindert die Aserai in den aktivierten Bereichen." />
+					<string id="BT_Settings_005227" text="Westliches Imperium Ausgleichsstärke"/>
+					<string id="BT_Settings_005227_Desc" text="Stärkenausgleich für das westliche Imperium. Verstärkt oder behindert das westliche Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005228" text="Spielerkönigreich Ausgleichsstärke"/>
+					<string id="BT_Settings_005228_Desc" text="Stärkenausgleich für das Spielerkönigreich. Verstärkt oder behindert das Königreich des Spielers in den aktivierten Bereichen." />
+				<string id="BT_Settings_005229" text="Truppenverbandsgrößen"/>
+				<string id="BT_Settings_005229_Desc" text="Modifiziert die maximale Größe der Truppenverbände (1.0 x Ausgleichsstärke)." />
+				<string id="BT_Settings_005230" text="Truppenverbandsbegrenzung"/>
+				<string id="BT_Settings_005230_Desc" text="Modifiziert die maximale Anzahl von Truppenverbänden (1.0 x Ausgleichsstärke)." />
+				<string id="BT_Settings_005231" text="Nahrungsgüterproduktion in Dörfern"/>
+				<string id="BT_Settings_005231_Desc" text="Modifiziert die Anzahl der täglich in Dörfern produzierten Nahrungsgüter (1.0 x Balancing Strength)." />
+				<string id="BT_Settings_005232" text="Schnellere Rekrutierung"/>
+				<string id="BT_Settings_005232_Desc" text="Extrachance, täglich neue Rekruten zu erschaffen (0.75 x Balancing Strength)." />
+				<string id="BT_Settings_005233" text="Effiziente Steuereintreibung"/>
+				<string id="BT_Settings_005233_Desc" text="Modifiziert die Steuereinnahmen durch Wohlstand in Städten und Burgen sowie Handelssteuereinnahmen in Dörfern (1.0 x Balancing Strength)." />
+				<string id="BT_Settings_005234" text="Truppensold"/>
+				<string id="BT_Settings_005234_Desc" text="Modifiziert die Besoldung von Truppen und Garnissontruppenages (1.0 x Balancing Strength)." />
+				<string id="BT_Settings_005235" text="Qualität der Rekruten"/>
+				<string id="BT_Settings_005235_Desc" text="Erhöht die tägliche Chance auf verbesserte Rekruten (1.0 x Balancing Strength). Basistruppen werden nicht zusätzlich in noble Truppen umgewandelt. Kein Effekt, wenn der jeweilige Stärkenausgleich unter 0% liegt (keine Senkung der Chance auf Verbesserungen)." />
 
-		<string id="BT_Settings_006000" text="Party Tweaks" />
-			<string id="BT_Settings_006100" text="Cohesion Tweaks" />
-			<string id="BT_Settings_006100_Desc" text="Armies composed of only clan parties lose no cohesion." />
-				<string id="BT_Settings_006101" text="Cohesion Degradation Factor"/>
-				<string id="BT_Settings_006101_Desc" text="Modifier to how much cohesion should degrade over time. Vanilla is 100%, 0% is disabled." />
-				<string id="BT_Settings_006102" text="All-Clan Armies Lose No Cohesion"/>
-				<string id="BT_Settings_006102_Desc" text="Armies composed of only clan parties lose no cohesion." />
+		<string id="BT_Settings_006000" text="Truppenverbandsanpassungen" />
+			<string id="BT_Settings_006100" text="Zusammenhalt" />
+			<string id="BT_Settings_006100_Desc" text="Aktiviert Anpassungen, welche den Armeezusammenhalt betreffen." />
+				<string id="BT_Settings_006101" text="Zusammenhaltsverfall"/>
+				<string id="BT_Settings_006101_Desc" text="Modifiziert wie schnell der Zusammenhalt in Armeen zerfällt. Originalwert ist 100%, 0% bedeutet gar keinen Zerfall des Zusammenhaltes." />
+				<string id="BT_Settings_006102" text="Claninterne Armeen zerfallen nicht"/>
+				<string id="BT_Settings_006102_Desc" text="Armeen, welche nur aus Clan-eigenen Truppenverbänden bestehen, zerfallen nicht wegen fehlendem Zusammenhalt." />
 
-			<string id="BT_Settings_006200" text="Player Caravan Party Size" />
-			<string id="BT_Settings_006200_Desc" text="Applies a configured value to your caravan party size." />
-				<string id="BT_Settings_006201" text="Player Caravan Party Size Amount"/>
-				<string id="BT_Settings_006201_Desc" text="Native: 30. Be aware that bigger parties are also slower parties." />
+			<string id="BT_Settings_006200" text="Spielerkarawanengröße" />
+			<string id="BT_Settings_006200_Desc" text="Bestimmt die Größ0e von SPieler-eigenen Karawanen" />
+				<string id="BT_Settings_006201" text="Größe von Spielerkarawanen"/>
+				<string id="BT_Settings_006201_Desc" text="Original: 30. Beachte, dass größere Truppenverbände auch langsamer sind." />
 
-			<string id="BT_Settings_006300" text="Party Size" />
-			<string id="BT_Settings_006300_Desc" text="Applies a bonues to you and AI lord's party size based on leadership and steward skills." />
-				<string id="BT_Settings_006301" text="Leadership Bonus"/>
-				<string id="BT_Settings_006301_Desc" text="Applies a bonus equal to the set percentage of your leadership skill to your party size." />
-				<string id="BT_Settings_006302" text="Leadership Bonus Player"/>
-				<string id="BT_Settings_006302_Desc" text="Applies a bonus equal to the set percentage of your leadership skill to your party size." />
-				<string id="BT_Settings_006303" text="Steward Bonus"/>
-				<string id="BT_Settings_006303_Desc" text="Applies a bonus equal to the set percentage of your steward skill to your party size." />
-				<string id="BT_Settings_006304" text="Steward Bonus Player"/>
-				<string id="BT_Settings_006304_Desc" text="Applies a bonus equal to the set percentage of your steward skill to your party size." />
-				<string id="BT_Settings_006305" text="Party Size Relation Player-AI"/>
-				<string id="BT_Settings_006305_Desc" text="The percentage of the party size bonus set for the player to also apply for ai lords. 0% results in no bonus for ai. You may also want to increase food production amounts (Village Production, bigger demand)." />
+			<string id="BT_Settings_006300" text="Truppenverbandsgröße" />
+			<string id="BT_Settings_006300_Desc" text="Wendet einen Bonus auf die maximale Truppenverbandsgröße basierend auf der Führungs- und Verwaltungsfähigkeit für dich und KI-Lords an." />
+				<string id="BT_Settings_006301" text="Führungsbonus"/>
+				<string id="BT_Settings_006301_Desc" text="Wendet einen Bonus auf die maximale Truppenverbandsgröße an, welcher dem eingestellten Prozentsatz deiner Führungsfähigkeit entspricht." />
+				<string id="BT_Settings_006302" text="führungsfähigkeit Spieler"/>
+				<string id="BT_Settings_006302_Desc" text="Wendet einen Bonus auf die maximale Truppenverbandsgröße an, welcher dem eingestellten Prozentsatz deiner Führungsfähigkeit entspricht." />
+				<string id="BT_Settings_006303" text="Verwaltungsbonus"/>
+				<string id="BT_Settings_006303_Desc" text="Wendet einen Bonus auf die maximale Truppenverbandsgröße an, welcher dem eingestellten Prozentsatz deiner Verwaltungsfähigkeit entspricht." />
+				<string id="BT_Settings_006304" text="Verwaltungsfähigkeit Spieler"/>
+				<string id="BT_Settings_006304_Desc" text="Wendet einen Bonus auf die maximale Truppenverbandsgröße an, welcher dem eingestellten Prozentsatz deiner Verwaltungsfähigkeit entspricht." />
+				<string id="BT_Settings_006305" text="Verhältnis Bonusgröße KI - SPieler"/>
+				<string id="BT_Settings_006305_Desc" text="Der für den Spieler ermittelte Bonus für die Truppenverbandsgröße wird mit dem angegebenen prozentsatz auch für KI-Lords angewendet. 0% resultiert in keiner Erhöhung für die KI. Eventuell solltest du eine Erhöhung der Nahrungsproduktion in Dörfern in Erwägung ziehen (mehr Nachfrage)." />
 
-			<string id="BT_Settings_006400" text="Wages" />
+			<string id="BT_Settings_006400" text="Besoldung" />
 			<string id="BT_Settings_006400_Desc" text="Allows you to reduce/increase wages for various groups." />
 				<string id="BT_Settings_006401" text="Party Wage Adjustment"/>
 				<string id="BT_Settings_006401_Desc" text="Adjusts party wages to a % of native value. Native is 100%." />

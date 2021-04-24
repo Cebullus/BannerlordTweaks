@@ -247,7 +247,7 @@ namespace BannerlordTweaks
 
         #region Character Tweaks - Pregnancy Tweaks
 
-        [SettingPropertyBool("{=BT_Settings_002400}Pregnancy Tweaks"+"*", Order = 1, IsToggle = true, RequireRestart = true, HintText = "{=BT_Settings_002400_Desc}Enable bonuses to the skill experience your hero and companions members gain."), SettingPropertyGroup("{=BT_Settings_002000}Character Tweaks"+"/"+"{=BT_Settings_002400}Pregnancy Tweaks" + "*", GroupOrder =4)]
+        [SettingPropertyBool("{=BT_Settings_002400}Pregnancy Tweaks"+"*", Order = 1, IsToggle = true, RequireRestart = true, HintText = "{=BT_Settings_002400_Desc}Enables several tweaks related to pregnancy behavior."), SettingPropertyGroup("{=BT_Settings_002000}Character Tweaks"+"/"+"{=BT_Settings_002400}Pregnancy Tweaks" + "*", GroupOrder =4)]
         public bool PregnancyTweaksEnabled { get; set; } = false;
 
         [SettingPropertyBool("{=BT_Settings_002401}Disable Stillbirths", Order = 2, RequireRestart = false, HintText = "{=BT_Settings_002401_Desc}Disables the chance of children dying when born."), SettingPropertyGroup("{=BT_Settings_002000}Character Tweaks" + "/" + "{=BT_Settings_002400}Pregnancy Tweaks" + "*")]
@@ -332,20 +332,20 @@ namespace BannerlordTweaks
 
         #region Clan Tweaks - AI Lord Parties Limmit
 
-        [SettingPropertyBool("{=BT_Settings_003204}AI Lord Parties Limit", Order = 1, RequireRestart = false, IsToggle = true, HintText = "{=BT_Settings_003204_Desc}Changes the base number of parties AI Lords can field. Warning! Once new parties are spawned, it takes a long time until they get removed if you changew your mind!"), SettingPropertyGroup("{=BT_Settings_003000}Clan Tweaks" + "/" + "{=BT_Settings_003200}Party Limits" + "*/" + "{=BT_Settings_003204}AI Lord Parties Limit", GroupOrder = 2)]
+        [SettingPropertyBool("{=BT_Settings_003204}AI Lord Parties Limit", Order = 1, RequireRestart = false, IsToggle = true, HintText = "{=BT_Settings_003204_Desc}Changes the base number of parties AI Lords can field."), SettingPropertyGroup("{=BT_Settings_003000}Clan Tweaks" + "/" + "{=BT_Settings_003200}Party Limits" + "*/" + "{=BT_Settings_003204}AI Lord Parties Limit", GroupOrder = 2)]
         public bool AIClanPartiesLimitTweakEnabled { get; set; } = false;
 
         [SettingPropertyInteger("{=BT_Settings_003205}Add to AI Lord Parties Limit", 1, 10, "0 Extra Parties", Order = 2, RequireRestart = false, HintText = "{=BT_Settings_003205_Desc}This adds to the the base number of parties AI Lords can field. [Native is 1 for Tier 3 and below, 2 at T4, 3 at T5 and up.] Minor Factions are not included unless the option below is also enabled."), SettingPropertyGroup("{=BT_Settings_003000}Clan Tweaks" + "/" + "{=BT_Settings_003200}Party Limits" + "*/" + "{=BT_Settings_003204}AI Lord Parties Limit")]
         public int BaseAIClanPartiesLimit { get; set; } = 0;
 
-        [SettingPropertyBool("{=BT_Settings_003206}Also Adjust Minor Factions", Order = 3, RequireRestart = false, HintText = "{=BT_Settings_003206_Desc}Changes the base number of parties AI Minor Factiopn Lords can field. [Native is 1-4, depending on Clan tier.]"), SettingPropertyGroup("{=BT_Settings_003000}Clan Tweaks" + "/" + "{=BT_Settings_003200}Party Limits" + "*/" + "{=BT_Settings_003204}AI Lord Parties Limit")]
+        [SettingPropertyBool("{=BT_Settings_003206}Also Adjust Minor Factions", Order = 3, RequireRestart = false, HintText = "{=BT_Settings_003206_Desc}Changes the base number of parties AI Minor Faction Lords can field. [Native is 1-4, depending on Clan tier.]"), SettingPropertyGroup("{=BT_Settings_003000}Clan Tweaks" + "/" + "{=BT_Settings_003200}Party Limits" + "*/" + "{=BT_Settings_003204}AI Lord Parties Limit")]
         public bool AIMinorClanPartiesLimitTweakEnabled { get; set; } = false;
 
         #endregion
 
         #region Clan Tweaks - Custom Spawns Parties Tweak
 
-        [SettingPropertyBool("{=BT_Settings_003207}Custom Spawn Parties Limit", Order = 1, RequireRestart = false, IsToggle = true, HintText = "{=BT_Settings_003207_Desc}Changes the base number of parties Custom Spawn lords can field. Warning! Once new parties are spawned, it takes a long time until they get removed if you changew your mind!"), SettingPropertyGroup("{=BT_Settings_003000}Clan Tweaks" + "/" + "{=BT_Settings_003200}Party Limits" + "*/" + "{=BT_Settings_003207}Custom Spawns Parties Limit", GroupOrder = 3)]
+        [SettingPropertyBool("{=BT_Settings_003207}Custom Spawn Parties Limit", Order = 1, RequireRestart = false, IsToggle = true, HintText = "{=BT_Settings_003207_Desc}Changes the base number of parties Custom Spawn lords can field."), SettingPropertyGroup("{=BT_Settings_003000}Clan Tweaks" + "/" + "{=BT_Settings_003200}Party Limits" + "*/" + "{=BT_Settings_003207}Custom Spawns Parties Limit", GroupOrder = 3)]
         public bool AICustomSpawnPartiesLimitTweakEnabled { get; set; } = false;
 
         [SettingPropertyInteger("{=BT_Settings_003208}Add to Custom Spawn Parties Limit", 1, 10, "0 Extra Parties", Order = 2, RequireRestart = false, HintText = "{=BT_Settings_003208_Desc}This adds to the the base number of parties Custom Lords can field. [Native is 1 for Tier 3 and below, 2 at T4, 3 at T5 and up.]."), SettingPropertyGroup("{=BT_Settings_003000}Clan Tweaks" + "/" + "{=BT_Settings_003200}Party Limits" + "*/" + "{=BT_Settings_003207}Custom Spawns Parties Limit")]
@@ -378,7 +378,7 @@ namespace BannerlordTweaks
 
         #region Crafting Tweaks - Smelting
 
-        [SettingPropertyBool("{=BT_Settings_004200}Smelting"+"*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_004200_Desc}Native value is false. Prevent weapons that you have locked in your inventory from showing up in the smelting list to prevent accidental smelting."), SettingPropertyGroup("{=BT_Settings_004000}Crafting Tweaks" + "/" + "{=BT_Settings_004200}Smelting"+"*", GroupOrder =2)]
+        [SettingPropertyBool("{=BT_Settings_004200}Smelting"+"*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_004200_Desc}Enables tweaks which affect smelting of weapons."), SettingPropertyGroup("{=BT_Settings_004000}Crafting Tweaks" + "/" + "{=BT_Settings_004200}Smelting"+"*", GroupOrder =2)]
         public bool SmeltingTweakEnabled { get; set; } = false;
 
         [SettingPropertyBool("{=BT_Settings_004201}Hide Locked Weapons in Smelting Menu", Order = 1, RequireRestart = false, HintText = "{=BT_Settings_004201_Desc}Native value is false. Prevent weapons that you have locked in your inventory from showing up in the smelting list to prevent accidental smelting."), SettingPropertyGroup("{=BT_Settings_004000}Crafting Tweaks" + "/" + "{=BT_Settings_004200}Smelting" + "*")]
@@ -509,7 +509,7 @@ namespace BannerlordTweaks
         [SettingPropertyBool("{=BT_Settings_005231}Village Food Production Balancing", Order = 6, RequireRestart = false, HintText = "{=BT_Settings_005231_Desc}Modifier for daily production of food goods in villages (1.0 x Balancing Strength)."), SettingPropertyGroup("{=BT_Settings_005000}Kingdom Tweaks" + "/" + "{=BT_Settings_005200}Faction Balancing" + "*")]
         public bool BalancingFoodTweakEnabled { get; set; } = false;
 
-        [SettingPropertyBool("{=BT_Settings_005232}Recruit replenish time Balancing", Order = 7, RequireRestart = false, HintText = "{=BT_Settings_005232_Desc}Flat % bonus chance of new recruits to spawn in settlements (0.75 x Balancing Strength)."), SettingPropertyGroup("{=BT_Settings_005000}Kingdom Tweaks" + "/" + "{=BT_Settings_005200}Faction Balancing" + "*")]
+        [SettingPropertyBool("{=BT_Settings_005232}Faster Recruitment Balancing", Order = 7, RequireRestart = false, HintText = "{=BT_Settings_005232_Desc}Flat % bonus chance of new recruits to spawn in settlements (0.75 x Balancing Strength)."), SettingPropertyGroup("{=BT_Settings_005000}Kingdom Tweaks" + "/" + "{=BT_Settings_005200}Faction Balancing" + "*")]
         public bool BalancingTimeRecruitsTweaksEnabled { get; set; } = false;
 
         [SettingPropertyBool("{=BT_Settings_005233}Taxation Efficiency Balancing", Order = 8, RequireRestart = false, HintText = "{=BT_Settings_005233_Desc}Modifier for tax income from prosperity in towns and castles and trade tax income in villages (1.0 x Balancing Strength)."), SettingPropertyGroup("{=BT_Settings_005000}Kingdom Tweaks" + "/" + "{=BT_Settings_005200}Faction Balancing" + "*")]
@@ -529,7 +529,7 @@ namespace BannerlordTweaks
 
         #region Party Tweaks - Cohesion Tweaks
 
-        [SettingPropertyBool("{=BT_Settings_006100}Cohesion Tweaks"+"*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_006100_Desc}Armies composed of only clan parties lose no cohesion."), SettingPropertyGroup("{=BT_Settings_006000}Party Tweaks"+"/"+ "{=BT_Settings_006100}Cohesion Tweaks"+"*", GroupOrder =1)]
+        [SettingPropertyBool("{=BT_Settings_006100}Cohesion Tweaks"+"*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_006100_Desc}Enables tweaks affecting cohesion."), SettingPropertyGroup("{=BT_Settings_006000}Party Tweaks"+"/"+ "{=BT_Settings_006100}Cohesion Tweaks"+"*", GroupOrder =1)]
         public bool BTCohesionTweakEnabled { get; set; } = false;
 
         [SettingPropertyFloatingInteger("{=BT_Settings_006101}Cohesion Degradation Factor", 0f, 1f, "0%", Order = 2, RequireRestart = false, HintText = "{=BT_Settings_006101_Desc}Modifier to how much cohesion should degrade over time. Vanilla is 100%, 0% is disabled."), SettingPropertyGroup("{=BT_Settings_006000}Party Tweaks" + "/" + "{=BT_Settings_006100}Cohesion Tweaks" + "*")]
