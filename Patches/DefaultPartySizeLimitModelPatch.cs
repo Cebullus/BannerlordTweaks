@@ -29,18 +29,22 @@ namespace BannerlordTweaks.Patches
                 }
                 if (settings.BalancingPartySizeTweaksEnabled && settings.KingdomBalanceStrengthEnabled && party.LeaderHero.Clan.Kingdom != null)
                 {
-                    float num2 = party.LeaderHero.Clan.Kingdom.StringId switch
+                    float num2 = 0f;
+                    if (settings.KingdomBalanceStrengthVanEnabled)
                     {
-                        "vlandia" => settings.VlandiaBoost,
-                        "battania" => settings.BattaniaBoost,
-                        "empire" => settings.Empire_N_Boost,
-                        "empire_s" => settings.Empire_S_Boost,
-                        "empire_w" => settings.Empire_W_Boost,
-                        "sturgia" => settings.SturgiaBoost,
-                        "khuzait" => settings.KhuzaitBoost,
-                        "aserai" => settings.AseraiBoost,
-                        _ => 0f
-                    };
+                        num2 = party.LeaderHero.Clan.Kingdom.StringId switch
+                        {
+                            "vlandia" => settings.VlandiaBoost,
+                            "battania" => settings.BattaniaBoost,
+                            "empire" => settings.Empire_N_Boost,
+                            "empire_s" => settings.Empire_S_Boost,
+                            "empire_w" => settings.Empire_W_Boost,
+                            "sturgia" => settings.SturgiaBoost,
+                            "khuzait" => settings.KhuzaitBoost,
+                            "aserai" => settings.AseraiBoost,
+                            _ => 0f
+                        };
+                    }
 
                     if (settings.KingdomBalanceStrengthCEKEnabled)
                     {
@@ -54,11 +58,19 @@ namespace BannerlordTweaks.Patches
                             "rebel_khuzait" => settings.RebelKhuzaitBoost,
                             "paleician" => settings.PaleicianBoost,
                             "ariorum" => settings.AriorumBoost,
+                            "vlandia" => settings.Vlandia_CEK_Boost,
+                            "battania" => settings.Battania_CEK_Boost,
+                            "empire" => settings.Empire_CEK_Boost,
+                            "empire_s" => settings.Empire_S_CEK_Boost,
+                            "empire_w" => settings.Empire_W_CEK_Boost,
+                            "sturgia" => settings.Sturgia_CEK_Boost,
+                            "khuzait" => settings.Khuzait_CEK_Boost,
+                            "aserai" => settings.Aserai_CEK_Boost,
                             _ => 0f
                         };
                     }
 
-                    if (num2 == 0f && party.LeaderHero.Clan.Kingdom.Leader == Hero.MainHero) num2 = settings.PlayerBoost;
+                    if (num2 == 0f && party.LeaderHero.Clan.Kingdom.Leader == Hero.MainHero) num2 = (settings.KingdomBalanceStrengthCEKEnabled)?settings.Player_CEK_Boost:settings.PlayerBoost;
                     __result.Add((float)__result.ResultNumber * num2, new TextObject("BT Balancing Tweak"));
                 }
             }

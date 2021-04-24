@@ -26,11 +26,12 @@ namespace BannerlordTweaks
 		{
 			Dictionary<Settlement, CultureObject> startingCultures = new();
 
-			if (BannerlordTweaksSettings.Instance is { } settings && settings.PlayerCultureOverride.SelectedValue != "No Override")
+			if (BannerlordTweaksSettings.Instance is { } settings && settings.PlayerCultureOverride.SelectedValue != "No Override" && settings.PlayerCultureOverride.SelectedValue != "CALRADIA EXPANDED KINGDOMS ONLY:")
 			{
-				foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId select kingdom.Culture)
+				foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId || (settings.PlayerCultureOverride.SelectedValue == "khergit" && kingdom.Culture.StringId == "rebkhu") select kingdom.Culture)
 				{
 					OverrideCulture = Culture;
+					break;
 				}
 				if (OverrideCulture == null && settings.ChangeToKingdomCulture && Clan.PlayerClan.Kingdom != null)
 				{
@@ -92,9 +93,10 @@ namespace BannerlordTweaks
 			{
 				if (clan == Clan.PlayerClan)
 				{
-					foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId select kingdom.Culture)
+					foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId || (settings.PlayerCultureOverride.SelectedValue == "khergit" && kingdom.Culture.StringId == "rebkhu") select kingdom.Culture)
 					{
 						OverrideCulture = Culture;
+						break;
 					}
 					if (OverrideCulture == null && settings.ChangeToKingdomCulture && Clan.PlayerClan.Kingdom != null)
 					{
@@ -128,9 +130,10 @@ namespace BannerlordTweaks
 
 			if (BannerlordTweaksSettings.Instance is { } settings && settlement.OwnerClan == Clan.PlayerClan)
 			{
-				foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId select kingdom.Culture)
+				foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId || (settings.PlayerCultureOverride.SelectedValue == "khergit" && kingdom.Culture.StringId == "rebkhu") select kingdom.Culture)
 				{
 					OverrideCulture = Culture;
+					break;
 				}
 				if (OverrideCulture == null && settings.ChangeToKingdomCulture && Clan.PlayerClan.Kingdom != null)
 				{
