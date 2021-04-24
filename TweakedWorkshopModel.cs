@@ -17,16 +17,14 @@ namespace BannerlordTweaks
 
         public override int GetBuyingCostForPlayer(Workshop workshop)
         {
-            if (workshop == null) throw new ArgumentNullException(nameof(workshop));
-            if (BannerlordTweaksSettings.Instance is { } settings && settings.WorkshopBuyingCostTweakEnabled)
+            if (BannerlordTweaksSettings.Instance is { } settings && settings.WorkshopBuyingCostTweakEnabled && workshop != null)
                 return workshop.WorkshopType.EquipmentCost + (int)workshop.Settlement.Prosperity / 2 + settings.WorkshopBaseCost;
             else
                 return base.GetBuyingCostForPlayer(workshop);
         }
         public override int GetConvertProductionCost(WorkshopType workshopType)
         {
-            if (workshopType == null) throw new ArgumentNullException(nameof(workshopType));
-            if (BannerlordTweaksSettings.Instance is { } settings && settings.WorkshopEffectivnessEnabled)
+            if (BannerlordTweaksSettings.Instance is { } settings && settings.WorkshopEffectivnessEnabled && workshopType != null)
                 return (int)MathF.Round(base.GetConvertProductionCost(workshopType) * (1f/settings.WorkshopEffectivnessFactor));
             else
                 return base.GetConvertProductionCost(workshopType);
