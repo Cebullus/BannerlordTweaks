@@ -202,7 +202,7 @@ namespace BannerlordTweaks
         [SettingPropertyBool("{=BT_Settings_002301}Player Skill Experience", Order = 2, RequireRestart = false, IsToggle = true, HintText = "{=BT_Settings_002301_Desc}Applies a modifier to the amount of experience recieved for skills. Affects the player only. 100% = No Bonus."), SettingPropertyGroup("{=BT_Settings_002000}Character Tweaks" + "/" + "{=BT_Settings_002300}Hero Skill Experience" + "*/" + "{=BT_Settings_002301}Player Skill Experience", GroupOrder =1)]
         public bool HeroSkillExperienceMultiplierEnabled { get; set; } = false;
 
-        [SettingPropertyFloatingInteger("{=BT_Settings_002320}Player Skill Experience Amount", 1f, 5f,"0%", RequireRestart = false, HintText = "{=BT_Settings_002302_Desc}Applies a modifier to the amount of experience recieved for skills. Affects the player only. 100% = No Bonus."), SettingPropertyGroup("{=BT_Settings_002000}Character Tweaks" + "/" + "{=BT_Settings_002300}Hero Skill Experience" + "*/" + "{=BT_Settings_002301}Player Skill Experience")]
+        [SettingPropertyFloatingInteger("{=BT_Settings_002302}Player Skill Experience Amount", 1f, 5f,"0%", RequireRestart = false, HintText = "{=BT_Settings_002302_Desc}Applies a modifier to the amount of experience recieved for skills. Affects the player only. 100% = No Bonus."), SettingPropertyGroup("{=BT_Settings_002000}Character Tweaks" + "/" + "{=BT_Settings_002300}Hero Skill Experience" + "*/" + "{=BT_Settings_002301}Player Skill Experience")]
         public float HeroSkillExperienceMultiplier { get; set; } = 1f;
 
         [SettingPropertyBool("{=BT_Settings_002303}Companion Skill Experience", Order = 3, RequireRestart = false, IsToggle=true, HintText = "{=BT_Settings_002303_Desc}Applies a modifier to the amount of experience recieved for skills. Affects Compaions only. 100% = No Bonus."), SettingPropertyGroup("{=BT_Settings_002000}Character Tweaks" + "/" + "{=BT_Settings_002300}Hero Skill Experience" + "*/" + "{=BT_Settings_002303}Companion Skill Experience", GroupOrder = 2)]
@@ -512,13 +512,13 @@ namespace BannerlordTweaks
         [SettingPropertyBool("{=BT_Settings_005232}Faster Recruitment Balancing", Order = 7, RequireRestart = false, HintText = "{=BT_Settings_005232_Desc}Flat % bonus chance of new recruits to spawn in settlements (0.75 x Balancing Strength)."), SettingPropertyGroup("{=BT_Settings_005000}Kingdom Tweaks" + "/" + "{=BT_Settings_005200}Faction Balancing" + "*")]
         public bool BalancingTimeRecruitsTweaksEnabled { get; set; } = false;
 
-        [SettingPropertyBool("{=BT_Settings_005233}Taxation Efficiency Balancing", Order = 8, RequireRestart = false, HintText = "{=BT_Settings_005233_Desc}Modifier for tax income from prosperity in towns and castles and trade tax income in villages (1.0 x Balancing Strength)."), SettingPropertyGroup("{=BT_Settings_005000}Kingdom Tweaks" + "/" + "{=BT_Settings_005200}Faction Balancing" + "*")]
+        [SettingPropertyBool("{=BT_Settings_005233}Taxation Efficiency Balancing", Order = 8, RequireRestart = false, HintText = "{=BT_Settings_005233_Desc}Modifier for tax income from prosperity in towns and castles and trade tax income in villages (1.25 x Balancing Strength)."), SettingPropertyGroup("{=BT_Settings_005000}Kingdom Tweaks" + "/" + "{=BT_Settings_005200}Faction Balancing" + "*")]
         public bool BalancingTaxTweaksEnabled { get; set; } = false;
 
         [SettingPropertyBool("{=BT_Settings_005234}Wage costs Balancing", Order = 9, RequireRestart = false, HintText = "{=BT_Settings_005234_Desc}Modifier for troop and garrison wages (1.0 x Balancing Strength)."), SettingPropertyGroup("{=BT_Settings_005000}Kingdom Tweaks" + "/" + "{=BT_Settings_005200}Faction Balancing" + "*")]
         public bool BalancingWagesTweaksEnabled { get; set; } = false;
 
-        [SettingPropertyBool("{=BT_Settings_005235}Quality of Recruitment Balancing", Order = 10, RequireRestart = false, HintText = "{=BT_Settings_005235_Desc}Increases the chance for upgraded recruits (1.0 x Balancing Strength). Basic troops will not be upgraded to noble troops with the extra chance. No effect if balancing strength is lower than 0% (no decrease in chance for upgrades)."), SettingPropertyGroup("{=BT_Settings_005000}Kingdom Tweaks" + "/" + "{=BT_Settings_005200}Faction Balancing" + "*")]
+        [SettingPropertyBool("{=BT_Settings_005235}Quality of Recruitment Balancing", Order = 10, RequireRestart = false, HintText = "{=BT_Settings_005235_Desc}Increases the chance for upgraded recruits (1.0 x Balancing Strength). No effect if balancing strength is lower than 0% (no decrease in chance for upgrades)."), SettingPropertyGroup("{=BT_Settings_005000}Kingdom Tweaks" + "/" + "{=BT_Settings_005200}Faction Balancing" + "*")]
         public bool BalancingUpgradeTroopsTweaksEnabled { get; set; } = false;
 
         #endregion
@@ -648,7 +648,7 @@ namespace BannerlordTweaks
 
         #region Prisoner Confirmity Tweaks
 
-        [SettingPropertyBool("{=BT_Settings_007300}Prisoner Confirmity" + "*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_007300_Desc}Modifies the conformity rate of the base game, speeding/slowing the rate at which prisoners can be recruited."), SettingPropertyGroup("{=BT_Settings_007000}Prisoner Tweaks" + "/" + "{=BT_Settings_007300}Prisoner Confirmity"+"*", GroupOrder =3)]
+        [SettingPropertyBool("{=BT_Settings_007300}Prisoner Confirmity" + "*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_007300_Desc}Modifies the conformity rate of the base game, speeding the rate at which prisoners can be recruited."), SettingPropertyGroup("{=BT_Settings_007000}Prisoner Tweaks" + "/" + "{=BT_Settings_007300}Prisoner Confirmity"+"*", GroupOrder =3)]
         public bool PrisonerConformityTweaksEnabled { get; set; } = false;
 
         [SettingPropertyFloatingInteger("{=BT_Settings_007301}Prisoner Confirmity Bonus", 0f, 10f, "0%", Order = 2, RequireRestart = false, HintText = "{=BT_Settings_007301_Desc}Adds a % bonues to the conformity generated each hour. Native is 0%."), SettingPropertyGroup("{=BT_Settings_007000}Prisoner Tweaks" + "/" + "{=BT_Settings_007300}Prisoner Confirmity"+"*")]
@@ -671,13 +671,14 @@ namespace BannerlordTweaks
         [SettingPropertyBool("{=BT_Settings_008100}Settlement Culture Transformation"+"*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_008100_Desc}Changes the culture of settlement in relation to the owner clan. On deactivation cultures revert back."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks"+"/"+ "{=BT_Settings_008100}Settlement Culture Transformation"+"*", GroupOrder =1)]
         public bool EnableCultureChanger { get; set; } = false;
 
-        [SettingPropertyBool("{=BT_Settings_008101}Change To Culture Of Kingdom Faction Instead"+"*", Order = 1, RequireRestart = true, IsToggle = false, HintText = "{=BT_Settings_008101_Desc}Instead of changing the faction to its owner-clan culture, change to its kingdom culture."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008100}Settlement Culture Transformation" + "*")]
+        [SettingPropertyBool("{=BT_Settings_008101}Change To Culture Of Kingdom Faction Instead"+"*", Order = 1, RequireRestart = true, IsToggle = false, HintText = "{=BT_Settings_008101_Desc}Instead of changing the culture to its owner-clan culture, change to its kingdom culture."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008100}Settlement Culture Transformation" + "*")]
         public bool ChangeToKingdomCulture { get; set; } = false;
 
         [SettingPropertyDropdown("{=BT_Settings_008102}Override Culture For Player Clan"+"*", Order = 3, RequireRestart = true, HintText = "{=BT_Settings_008102_Desc}Overrides the culture to change to for player clan owned settlements."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008100}Settlement Culture Transformation" + "*")]
         public DropdownDefault<string> PlayerCultureOverride { get; } = new(new string[]
         {
             "No Override",
+            "battania",
             "vlandia",
             "empire",
             "sturgia",
@@ -890,7 +891,7 @@ namespace BannerlordTweaks
 
         #region Settlement Tweaks - Normal Militia
 
-        [SettingPropertyBool("{=BT_Settings_008600}Normal Militia" + "*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_008600_Desc}Grants a flat bonus to militia growth in towns and castles."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Normal Militia"+"*", GroupOrder =5)]
+        [SettingPropertyBool("{=BT_Settings_008600}Normal Militia" + "*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_008600_Desc}Grants a flat bonus to militia growth and rate of retirement in towns and castles."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Normal Militia"+"*", GroupOrder =5)]
         public bool SettlementMilitiaBonusEnabled { get; set; } = false;
 
         [SettingPropertyInteger("{=BT_Settings_008601}Castle Militia Growth Bonus", 0, 50, "0 Militia/Day",  RequireRestart = false, Order = 2, HintText = "{=BT_Settings_008601_Desc}Native value is 0. Adds a flat bonus on how many militia gets recruited each day in castles."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Normal Militia" + "*")]
@@ -1011,10 +1012,28 @@ namespace BannerlordTweaks
 
         #region Settlement Tweaks - Workshops - Workshop Effectivness
 
-        [SettingPropertyBool("{=BT_Settings_008906}Workshop Effectivness"+"*", RequireRestart = true, IsToggle=true, Order = 2, HintText = "{=BT_Settings_008906_Desc}Native value is 100%. Sets the base value used to calculate the cost of workshops (+ workshop type base cost + 0.5 x town prosperity). Reduce to reduce cost of workshops."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008900}Workshops" + "/" + "{=BT_Settings_008906}Workshop Effectivness"+"*", GroupOrder =3)]
+        [SettingPropertyBool("{=BT_Settings_008906}Workshop Effectivness"+"*", RequireRestart = true, IsToggle=true, Order = 2, HintText = "{=BT_Settings_008906_Desc}Increases effectivness of workshops by decreasing its daily expenses."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008900}Workshops" + "/" + "{=BT_Settings_008906}Workshop Effectivness"+"*", GroupOrder =3)]
         public bool WorkshopEffectivnessEnabled { get; set; } = false;
-        [SettingPropertyFloatingInteger("{=BT_Settings_008907}Workshop Daily Cost Modifier", 1f, 5f, "0%", RequireRestart = false, Order = 2, HintText = "{=BT_Settings_008907_Desc}Native value is 100%. Increases effectivness of workshops by decreasing its daily expenses."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008900}Workshops" + "/" + "{=BT_Settings_008906}Workshop Effectivness" + "*")]
-        public float WorkshopEffectivnessFactor { get; set; } = 1f;
+        [SettingPropertyFloatingInteger("{=BT_Settings_008907}Workshop Daily Cost Modifier", 0f, 1f, "0%", RequireRestart = false, Order = 2, HintText = "{=BT_Settings_008907_Desc}Native value is 100%. Increases effectivness of workshops by decreasing its daily expenses."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008900}Workshops" + "/" + "{=BT_Settings_008906}Workshop Effectivness" + "*")]
+        public float WorkshopEffectivnessv2Factor { get; set; } = 1f;
+
+        #endregion
+
+        #region Settlement Tweaks - Workshops - Workshop SellPrices
+
+        [SettingPropertyBool("{=BT_Settings_008908}Workshop Products Sell Prices" + "*", RequireRestart = true, IsToggle = true, Order = 2, HintText = "{=BT_Settings_008908_Desc}Alters the selling prices for products of workshops."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008900}Workshops" + "/" + "{=BT_Settings_008908}Workshop Products Sell Prices" + "*", GroupOrder = 4)]
+        public bool EnableWorkshopSellTweak { get; set; } = false;
+        [SettingPropertyFloatingInteger("{=BT_Settings_008909}Workshop Products Sell Prices", 0.01f, 5f, "0%", RequireRestart = false, Order = 2, HintText = "{=BT_Settings_008909_Desc}Native value is 100%. Alters the selling prices for products of workshops. Increase for better profits."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008900}Workshops" + "/" + "{=BT_Settings_008908}Workshop Products Sell Prices" + "*")]
+        public float WorkshopSellTweak { get; set; } = 1f;
+
+        #endregion
+
+        #region Settlement Tweaks - Workshops - Workshop Buy Prices
+
+        [SettingPropertyBool("{=BT_Settings_008910}Workshop Products Buy Prices" + "*", RequireRestart = true, IsToggle = true, Order = 2, HintText = "{=BT_Settings_008910_Desc}Alters the buying prices for input items of workshops."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008900}Workshops" + "/" + "{=BT_Settings_008910}Workshop Products Buy Prices" + "*", GroupOrder = 5)]
+        public bool EnableWorkshopBuyTweak { get; set; } = false;
+        [SettingPropertyFloatingInteger("{=BT_Settings_008911}Workshop Products Buy Prices", 0.01f, 5f, "0%", RequireRestart = false, Order = 2, HintText = "{=BT_Settings_008911_Desc}Native value is 100%. Alters the buying prices for input items of workshops. Decrease for better profits."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008900}Workshops" + "/" + "{=BT_Settings_008910}Workshop Products Buy Prices" + "*")]
+        public float WorkshopBuyTweak { get; set; } = 1f;
 
         #endregion
 
