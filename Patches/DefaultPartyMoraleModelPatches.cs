@@ -35,11 +35,11 @@ namespace BannerlordTweaks.Patches
     [HarmonyPatch(typeof(DefaultPartyMoraleModel), "GetPartySizeMoraleEffect")]
     public class GetPartySizeMoraleEffectPatch
     {
-        static bool Prefix(MobileParty mobileParty, ref ExplainedNumber result, TextObject ____partySizeMoraleText)
+        static bool Prefix(MobileParty party, ref ExplainedNumber result, TextObject ____partySizeMoraleText)
         {
-            if (mobileParty != null && mobileParty.Party != null && mobileParty.Party.LeaderHero != null && !mobileParty.IsMilitia && !mobileParty.IsVillager)
+            if (party != null && party.Party != null && party.Party.LeaderHero != null && !party.IsMilitia && !party.IsVillager)
             {
-                int num = QuestPartySizeHelper.GetPartySize(mobileParty) - mobileParty.Party.PartySizeLimit;
+                int num = QuestPartySizeHelper.GetPartySize(party) - party.Party.PartySizeLimit;
                 if (num > 0)
                 {
                     result.Add(-1f * (float)Math.Sqrt((double)num), ____partySizeMoraleText);
