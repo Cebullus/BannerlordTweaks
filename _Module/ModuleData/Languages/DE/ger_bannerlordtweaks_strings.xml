@@ -374,7 +374,7 @@
 
 		<string id="BT_Settings_008000" text="Siedlungsanpassungen" />
 			<string id="BT_Settings_008100" text="Kulturübernahme" />
-			<string id="BT_Settings_008100_Desc" text="Die Kultur einer Siedlung verändert sich hin zur Klankultur des Besitzers der Siedlung. Nach Deaktivierung werden die Originalkulturen wiederhergestellt." />
+			<string id="BT_Settings_008100_Desc" text="Die Kultur einer Siedlung verändert sich hin zur Klankultur des Besitzers der Siedlung. Nach Deaktivierung werden die Originalkulturen wiederhergestellt. Die letzte Stadt einer Kultur wird nicht verändert!" />
 				<string id="BT_Settings_008101" text="Zur Kultur Königreich wechseln "/>
 				<string id="BT_Settings_008101_Desc" text="Anstatt zur Kultur des Besitzerklans zu wechseln, wird zur Kultur des besitzenden Königreiches gewechselt." />
 				<string id="BT_Settings_008102" text="Überschreibe Kultur"/>

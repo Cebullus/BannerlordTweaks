@@ -668,7 +668,7 @@ namespace BannerlordTweaks
 
         #region Settlement Tweaks - Settlement culture
 
-        [SettingPropertyBool("{=BT_Settings_008100}Settlement Culture Transformation"+"*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_008100_Desc}Changes the culture of settlement in relation to the owner clan. On deactivation cultures revert back."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks"+"/"+ "{=BT_Settings_008100}Settlement Culture Transformation"+"*", GroupOrder =1)]
+        [SettingPropertyBool("{=BT_Settings_008100}Settlement Culture Transformation"+"*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_008100_Desc}Changes the culture of settlement in relation to the owner clan. On deactivation cultures revert back. The last town of a culture will not be changed!"), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks"+"/"+ "{=BT_Settings_008100}Settlement Culture Transformation"+"*", GroupOrder =1)]
         public bool EnableCultureChanger { get; set; } = false;
 
         [SettingPropertyBool("{=BT_Settings_008101}Change To Culture Of Kingdom Faction Instead"+"*", Order = 1, RequireRestart = true, IsToggle = false, HintText = "{=BT_Settings_008101_Desc}Instead of changing the culture to its owner-clan culture, change to its kingdom culture."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008100}Settlement Culture Transformation" + "*")]

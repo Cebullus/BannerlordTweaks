@@ -374,7 +374,7 @@
 	
 		<string id="BT_Settings_008000" text="Settlement Tweaks" />
 			<string id="BT_Settings_008100" text="Settlement Culture Transformation" />
-			<string id="BT_Settings_008100_Desc" text="Changes the culture of settlement in relation to the owner clan. On deactivation cultures revert back." />
+			<string id="BT_Settings_008100_Desc" text="Changes the culture of settlement in relation to the owner clan. On deactivation cultures revert back. The last town of a culture will not be changed!" />
 				<string id="BT_Settings_008101" text="Change To Culture Of Kingdom Faction Instead"/>
 				<string id="BT_Settings_008101_Desc" text="Instead of changing the culture to its owner-clan culture, change to its kingdom culture." />
 				<string id="BT_Settings_008102" text="Override Culture For Player Clan"/>
