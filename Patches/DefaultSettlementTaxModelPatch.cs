@@ -72,7 +72,7 @@ namespace BannerlordTweaks.Patches
                     num2 -= 0.05f;
                 }
                 float num3 = 0.25f;
-                float value = prosperity * num3 * num2 * num;
+                float value = prosperity * num3 * num2 * num * 1.25f;
                 __result.Add(value, new TextObject("BT Balancing Tax Tweak"));
             }
         }
@@ -137,7 +137,7 @@ namespace BannerlordTweaks.Patches
                 if (num == 0f && village.Settlement.OwnerClan.Kingdom.Leader == Hero.MainHero) num = (settings.KingdomBalanceStrengthCEKEnabled) ? settings.Player_CEK_Boost : settings.PlayerBoost;
                 //float oldresult = __result;
                 //float newresult = oldresult * (1 + num);
-                float newresult = __result * (1 + num);
+                float newresult = __result * (1 + (num * 1.25f));
                 //if (num > 0) DebugHelpers.DebugMessage("Tradeincome for " +village.Name+ " got a boost from " + oldresult + " to " + (int)newresult+"!");
                 //if (num > 0) DebugHelpers.DebugMessage("Boost was " + num + "and Kingdom was " + village.Settlement.OwnerClan.Kingdom.StringId +" !");
                 __result = (int)newresult;
