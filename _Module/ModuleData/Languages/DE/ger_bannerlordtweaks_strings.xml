@@ -294,7 +294,7 @@
 				<string id="BT_Settings_005234" text="Truppensold"/>
 				<string id="BT_Settings_005234_Desc" text="Modifiziert die Besoldung von Truppen und Garnissontruppenages (1.0 x Balancing Strength)." />
 				<string id="BT_Settings_005235" text="Qualität der Rekruten"/>
-				<string id="BT_Settings_005235_Desc" text="Erhöht die tägliche Chance auf verbesserte Rekruten (1.0 x Balancing Strength). Basistruppen werden nicht zusätzlich in noble Truppen umgewandelt. Kein Effekt, wenn der jeweilige Stärkenausgleich unter 0% liegt (keine Senkung der Chance auf Verbesserungen)." />
+				<string id="BT_Settings_005235_Desc" text="Erhöht die tägliche Chance auf verbesserte Rekruten (1.0 x Balancing Strength). Kein Effekt, wenn der jeweilige Stärkenausgleich unter 0% liegt (keine Senkung der Chance auf Verbesserungen)." />
 
 		<string id="BT_Settings_006000" text="Truppenverbandsanpassungen" />
 			<string id="BT_Settings_006100" text="Zusammenhalt" />
@@ -323,224 +323,231 @@
 				<string id="BT_Settings_006305_Desc" text="Der für den Spieler ermittelte Bonus für die Truppenverbandsgröße wird mit dem angegebenen prozentsatz auch für KI-Lords angewendet. 0% resultiert in keiner Erhöhung für die KI. Eventuell solltest du eine Erhöhung der Nahrungsproduktion in Dörfern in Erwägung ziehen (mehr Nachfrage)." />
 
 			<string id="BT_Settings_006400" text="Besoldung" />
-			<string id="BT_Settings_006400_Desc" text="Allows you to reduce/increase wages for various groups." />
-				<string id="BT_Settings_006401" text="Party Wage Adjustment"/>
-				<string id="BT_Settings_006401_Desc" text="Adjusts party wages to a % of native value. Native is 100%." />
-				<string id="BT_Settings_006402" text="Garrison Wage Adjustment"/>
-				<string id="BT_Settings_006402_Desc" text="Adjusts garrison wages to a % of native value. Native is 100%." />
-				<string id="BT_Settings_006403" text="Also Apply Wage Tweaks to Your Faction"/>
-				<string id="BT_Settings_006403_Desc" text="Applies the wage modifiers to your clan/faction parties as well." />
-				<string id="BT_Settings_006404" text="Also Apply Wage Tweaks to AI Lords"/>
-				<string id="BT_Settings_006404_Desc" text="Applies the wage modifiers to ai lord parties as well." />
+			<string id="BT_Settings_006400_Desc" text="Erlaubt die Erhöhung/Reduzierung der Besoldung für verschiedene Gruppen." />
+				<string id="BT_Settings_006401" text="Truppenverbände"/>
+				<string id="BT_Settings_006401_Desc" text="Passt die Besoldung der Truppenverbände in % vom Originalwert an. Original ist 100%." />
+				<string id="BT_Settings_006402" text="Garnisonstruppen"/>
+				<string id="BT_Settings_006402_Desc" text="Passt die Besoldung von Garnisonstruppen in % vom Originalwert an. Original ist 100%." />
+				<string id="BT_Settings_006403" text="Auf eigene Fraktion anwenden"/>
+				<string id="BT_Settings_006403_Desc" text="Die eingestellten Anpassungen werden zusätzlich auf die eigene Fraktion (Clan oder soweit vorhanden Königreich) angewendet." />
+				<string id="BT_Settings_006404" text="Auf alle KI-Lords anwenden"/>
+				<string id="BT_Settings_006404_Desc" text="Die eingestellten Anpassungen werden auf alle KI-Lords angewendet." />
 
-			<string id="BT_Settings_006500" text="Daily Troop Experience" />
-			<string id="BT_Settings_006500_Desc" text="Gives each troop roster (stack) in a party an amount of experience each day based upon the leader's Leadership skill. By default only applies to the player." />
-				<string id="BT_Settings_006501" text="Percentage of Leadership"/>
-				<string id="BT_Settings_006501_Desc" text="The percentage of the leader's Leadership skill to be given as experience to each of their troop rosters. With 100 leadership and a setting of 1000% each troop type stack will get 1.000 xp daily." />
-				<string id="BT_Settings_006502" text="Starting from Level Of Leadership"/>
-				<string id="BT_Settings_006502_Desc" text="The Leadership level required to start giving experience to troop rosters. With this setting at 20, daily training of your troop stacks will start from leadership 20 onwards (but be calculated with the full 20 skillpoints)." />
-				<string id="BT_Settings_006503" text="Apply to Player's Clan Members"/>
-				<string id="BT_Settings_006503_Desc" text="Applies the daily troop experience gain to members of the player's clan also." />
-				<string id="BT_Settings_006504" text="Apply to all NPC Lords"/>
-				<string id="BT_Settings_006504_Desc" text="Applies the daily troop experience gain to all NPC lords." />
-				<string id="BT_Settings_006505" text="Display Message"/>
-				<string id="BT_Settings_006505_Desc" text="Displays a message showing the amount of experience granted." />
+			<string id="BT_Settings_006500" text="Tägliche Truppenerfahrung" />
+			<string id="BT_Settings_006500_Desc" text="Gibt jedem Truppentyp (Stack) eines Truppenverbandes täglich eine Menge Erfahrung, welche sich aus dessen Anführers Führungfähigkeit ergibt. Wird standardmäßig nur für den Spieler angewendet." />
+				<string id="BT_Settings_006501" text="Prozentsatz der Führungsfähigkeit"/>
+				<string id="BT_Settings_006501_Desc" text="Der Prozentsatz der Führungsfähigkeit, welcher täglich jedem Truppentyp als Erfahrung gutgeschrieben wird. Bei einer Führungsfähigkeit von 100 und einem Prozentsatz von 1000% würde jeder Truppentyp täglich 1.000 XP erhalten." />
+				<string id="BT_Settings_006502" text="Starthöhe Führungsfähigkeit"/>
+				<string id="BT_Settings_006502_Desc" text="Die Höhe der Führungsfähigkeit, ab welchem täglich Erfahrung generiert wird. Bei einer Einstellung von 20 wird tägliche Erfahrung erst ab einer Führungsfähhigkeit von 20 generiert, die Berechnung erfolgt aber mit der vollen Fäähigkeitsstärke von 20." />
+				<string id="BT_Settings_006503" text="Auf den Spielerclan anwenden"/>
+				<string id="BT_Settings_006503_Desc" text="Tägliche Truppenerfahrung wird für alle Truppenverbände des gesamten Spielerclans generiert." />
+				<string id="BT_Settings_006504" text="Auf alle KI-Lords anwenden"/>
+				<string id="BT_Settings_006504_Desc" text="Tägliche Truppenerfahrung wird für alle Lords generiert." />
+				<string id="BT_Settings_006505" text="Benachrichtigung anzeigen"/>
+				<string id="BT_Settings_006505_Desc" text="Blendet eine Benachrichtigung mit Angabe der Erfahrungsmenge ein, wenn tägliche Erfahrung verteilt wird." />
 
-		<string id="BT_Settings_007000" text="Prisoner Tweaks" />
-			<string id="BT_Settings_007100" text="Imprisonment Time" />
-			<string id="BT_Settings_007100_Desc" text="Adds a minimum amount of time before lords can attempt to escape imprisonment." />
-				<string id="BT_Settings_007101" text="Player Prisoners Only"/>
-				<string id="BT_Settings_007101_Desc" text="Whether the tweak should be applied only to prisoners held by the player." />
-				<string id="BT_Settings_007102" text="Minimum Days of Imprisonment"/>
-				<string id="BT_Settings_007102_Desc" text="The minimum number of days a lord will remain imprisoned before they can attempt to escape." />
-				<string id="BT_Settings_007103" text="Enable Missing Prisoner Hero Fix"/>
-				<string id="BT_Settings_007103_Desc" text="Will attempt to detect and release prisoner Heroes who may be bugged and do not respawn. Will trigger 3 days after the Minimum Days of Imprisonment setting." />
+		<string id="BT_Settings_007000" text="Gefangenschaftsanpassungen" />
+			<string id="BT_Settings_007100" text="Dauer Gefangenschaft" />
+			<string id="BT_Settings_007100_Desc" text="Fügt eine Minimaldauer hinzu, bevor Lords einen Fluchtversuch unternehmen können." />
+				<string id="BT_Settings_007101" text="Nur für Spielergefangene"/>
+				<string id="BT_Settings_007101_Desc" text="Gibt an, ob die Minimaldauer nur für vom Spieler gefangene Lords gelten soll. Deaktiviert = Für alle Lords." />
+				<string id="BT_Settings_007102" text="Minimaldauer Gefangenschaft"/>
+				<string id="BT_Settings_007102_Desc" text="Fügt eine Minimaldauer hinzu, bevor Lords einen Fluchtversuch unternehmen können." />
+				<string id="BT_Settings_007103" text="Aktiviere Missing Hero BugFix"/>
+				<string id="BT_Settings_007103_Desc" text="Versucht fehlerhafte Helden zu finden, welche unendlich lange in Gefangenschaft verbleiben und nicht neu Spawnen. Wird 3 Tage nach der eingestellten Minimaldauer ausgelöst." />
 
-			<string id="BT_Settings_007200" text="Prisoner Size Bonus" />
-			<string id="BT_Settings_007200_Desc" text="Enables a % bonus to your party's maximum prisoner size." />
-				<string id="BT_Settings_007201" text="Prisoner Size Bonus"/>
-				<string id="BT_Settings_007201_Desc" text="Adds a % bonues to your party's maximum prisoner size. Native is 0%." />
-				<string id="BT_Settings_007202" text="Also apply to AI"/>
-				<string id="BT_Settings_007202_Desc" text="Wether the prisoner size bonus should apply to AI Lords." />
+			<string id="BT_Settings_007200" text="Gefangenenanzahl" />
+			<string id="BT_Settings_007200_Desc" text="Modifiziert die Maximalanzahl an Gefangenen, welche dein Truppenverband mitführen kann." />
+				<string id="BT_Settings_007201" text="Gefangenenanzahl"/>
+				<string id="BT_Settings_007201_Desc" text="Modifiziert die Maximalanzahl an Gefangenen, welche dein Truppenverband mitführen kann. Original entspricht 0% (kein Bonus)." />
+				<string id="BT_Settings_007202" text="Auch auf KI anwenden"/>
+				<string id="BT_Settings_007202_Desc" text="Gibt an, ob der Bonus auch für KI-Lords gelten soll." />
 
-			<string id="BT_Settings_007300" text="Prisoner Confirmity" />
-			<string id="BT_Settings_007300_Desc" text="Modifies the conformity rate of the base game, speeding/slowing the rate at which prisoners can be recruited." />
-				<string id="BT_Settings_007301" text="Prisoner Confirmity Bonus"/>
-				<string id="BT_Settings_007301_Desc" text="Adds a % bonues to the conformity generated each hour. Native is 0%." />
-				<string id="BT_Settings_007302" text="Apply Prisoner Confirmity Tweaks to Clan"/>
-				<string id="BT_Settings_007302_Desc" text="Applies Prisoner Conformity Tweaks to all clan parties as well." />
-				<string id="BT_Settings_007303" text="Apply Prisoner Confirmity Tweaks to AI"/>
-				<string id="BT_Settings_007303_Desc" text="Applies Prisoner Conformity Tweaks to all parties, including AI lords as well." />
+			<string id="BT_Settings_007300" text="Gefangenenkonfirmität" />
+			<string id="BT_Settings_007300_Desc" text="Modifiziert die Rate, mit der Gefangene sich an ihren Herren gewöhnen. Ermöglicht eine schnellere Rekrutierung von Gefangenen." />
+				<string id="BT_Settings_007301" text="Gefangenenkonfirmitätsbonus"/>
+				<string id="BT_Settings_007301_Desc" text="Fügt einen % Bonus für die stündlich generierte Konfirmität hinzu. Original entspricht 0%." />
+				<string id="BT_Settings_007302" text="Auf Spielerclan anwenden"/>
+				<string id="BT_Settings_007302_Desc" text="Wendet den Konfirmitätsbonus auf den gesamten Spielerclan an." />
+				<string id="BT_Settings_007303" text="Auf alle KI-Lords anwenden"/>
+				<string id="BT_Settings_007303_Desc" text="Wendet den Konfirmitätsbonus auf alle Lords an." />
 
-		<string id="BT_Settings_008000" text="Settlement Tweaks" />
-			<string id="BT_Settings_008100" text="Settlement Culture Transformation" />
-			<string id="BT_Settings_008100_Desc" text="Changes the culture of settlement in relation to the owner clan. On deactivation cultures revert back." />
-				<string id="BT_Settings_008101" text="Change To Culture Of Kingdom Faction Instead"/>
-				<string id="BT_Settings_008101_Desc" text="Instead of changing the faction to its owner-clan culture, change to its kingdom culture." />
-				<string id="BT_Settings_008102" text="Override Culture For Player Clan"/>
-				<string id="BT_Settings_008102_Desc" text="Overrides the culture to change to for player clan owned settlements." />
-				<string id="BT_Settings_008103" text="Weeks for Settlement Culture Change"/>
-				<string id="BT_Settings_008103_Desc" text="After how many weeks the culture of a settlement changes to its owner's culture (and produces recruits of the new culturegroup)." />
+		<string id="BT_Settings_008000" text="Siedlungsanpassungen" />
+			<string id="BT_Settings_008100" text="Kulturübernahme" />
+			<string id="BT_Settings_008100_Desc" text="Die Kultur einer Siedlung verändert sich hin zur Klankultur des Besitzers der Siedlung. Nach Deaktivierung werden die Originalkulturen wiederhergestellt." />
+				<string id="BT_Settings_008101" text="Zur Kultur Königreich wechseln "/>
+				<string id="BT_Settings_008101_Desc" text="Anstatt zur Kultur des Besitzerklans zu wechseln, wird zur Kultur des besitzenden Königreiches gewechselt." />
+				<string id="BT_Settings_008102" text="Überschreibe Kultur"/>
+				<string id="BT_Settings_008102_Desc" text="Bestimmt eine feste Kultur, zu der gewechselt werden soll." />
+				<string id="BT_Settings_008103" text="Wochen bis zur Kulturübernahme"/>
+				<string id="BT_Settings_008103_Desc" text="Nach wievielen Wochen zur neuen Kultur gewechselt werden soll, und beispielsweiße Rekruten der neuen Kultur produziert." />
 
-			<string id="BT_Settings_008200" text="Disable Troop Donations" />
-			<string id="BT_Settings_008200_Desc" text="Disables your clan parties from donating troops to clan owned settlements." />
-				<string id="BT_Settings_008201" text="Disable Troop Donations - Any Settlement"/>
-				<string id="BT_Settings_008201_Desc" text="Additionally disables your clan parties from donating troops to ANY settlement." />
+			<string id="BT_Settings_008200" text="Deaktivere Truppenspenden" />
+			<string id="BT_Settings_008200_Desc" text="Verhindert, das Truppenverbände des Spielerklans eigene Truppen an Siedlungen des eigenen Klans spenden." />
+				<string id="BT_Settings_008201" text="Auf jede Siedlung anwenden"/>
+				<string id="BT_Settings_008201_Desc" text="Erweitert das Verhindern von Truppenspenden für klaneigene Truppenverbände auf jede Siedlung im Spiel." />
 
-			<string id="BT_Settings_008300" text="Village Productivity" />
-			<string id="BT_Settings_008300_Desc" text="Enables Tweaks for increased productivity in villages." />
-				<string id="BT_Settings_008301" text="Village Production: Food"/>
-				<string id="BT_Settings_008301_Desc" text="Modifies the daily production of food goods in villages." />
-				<string id="BT_Settings_008302" text="Village Production: Other goods"/>
-				<string id="BT_Settings_008302_Desc" text="Modifies the daily production of other goods in villages." />
+			<string id="BT_Settings_008300" text="Dorfproduktivität" />
+			<string id="BT_Settings_008300_Desc" text="Aktiviert Anpassungen für die Produktivität in Dörfern." />
+				<string id="BT_Settings_008301" text="Dorfproduktion: Nahrungsgüter"/>
+				<string id="BT_Settings_008301_Desc" text="Modifiziert die Produktivität von Dörfern für Nahrungsgüter (Items wie Weizen, Fisch, Trauben usw.)." />
+				<string id="BT_Settings_008302" text="Dorfproduktion: Andere Güter"/>
+				<string id="BT_Settings_008302_Desc" text="Modifiziert die Produktivität von Dörfern für alle anderen Güter (Items wie Eisen, Holz, Pferde usw.)." />
 
-			<string id="BT_Settings_008400" text="Buildings" />
-			<string id="BT_Settings_008400_Desc" text="Enables Tweaks for increased productivity in villages." />
-				<string id="BT_Settings_008401" text="Castle"/>
-					<string id="BT_Settings_008402" text="Castle Training Field"/>
-					<string id="BT_Settings_008402_Desc" text="Changes the amount of experience the training fields provides for each level." />
-						<string id="BT_Settings_008403" text="Castle Training Fields Experience Level 1"/>
-						<string id="BT_Settings_008403_Desc" text="Native value is 1. Changes the amount of experience the training fields provides at level 1." />
-						<string id="BT_Settings_008404" text="Castle Training Fields Experience Level 2"/>
-						<string id="BT_Settings_008404_Desc" text="Native value is 2. Changes the amount of experience the training fields provides at level 2." />
-						<string id="BT_Settings_008405" text="Castle Training Fields Experience Level 3"/>
-						<string id="BT_Settings_008405_Desc" text="Native value is 3. Changes the amount of experience the training fields provides at level 3." />
-					<string id="BT_Settings_008406" text="Castle Granary"/>
-					<string id="BT_Settings_008406_Desc" text="Changes the amount of food storage the castle granary provides per level." />
-						<string id="BT_Settings_008407" text="Castle Granary Food Storage Level 1"/>
-						<string id="BT_Settings_008407_Desc" text="Native value is 100. Changes the amount of food storage the castle granary provides at level 1." />
-						<string id="BT_Settings_008408" text="Castle Granary Food Storage Level 2"/>
-						<string id="BT_Settings_008408_Desc" text="Native value is 200. Changes the amount of food storage the castle granary provides at level 2." />
-						<string id="BT_Settings_008409" text="Castle Granary Food Storage Level 3"/>
-						<string id="BT_Settings_008409_Desc" text="Native value is 300. Changes the amount of food storage the castle granary provides at level 3." />
-					<string id="BT_Settings_008410" text="Castle Gardens"/>
-					<string id="BT_Settings_008410_Desc" text="Changes the amount of food the castle gardens produce per level." />
-						<string id="BT_Settings_008411" text="Castle Garden Food Production Level 1"/>
-						<string id="BT_Settings_008411_Desc" text="Native value is 5. Changes the amount of food the castle gardens produce at level 1." />
-						<string id="BT_Settings_008412" text="Castle Garden Food Production Level 2"/>
-						<string id="BT_Settings_008412_Desc" text="Native value is 10. Changes the amount of food the castle gardens produce at level 2." />
-						<string id="BT_Settings_008413" text="Castle Garden Food Production Level 3"/>
-						<string id="BT_Settings_008413_Desc" text="Native value is 15. Changes the amount of food the castle gardens produce at level 3." />
-					<string id="BT_Settings_008414" text="Castle Militia Barracks"/>
-					<string id="BT_Settings_008414_Desc" text="Changes the militia production that the castle militia barracks provides per level." />
-						<string id="BT_Settings_008415" text="Castle Militia Barracks Production Level 1"/>
-						<string id="BT_Settings_008415_Desc" text="Native value is 1. Changes the militia production that the castle militia barracks provides at level 1." />
-						<string id="BT_Settings_008416" text="Castle Militia Barracks Production Level 2"/>
-						<string id="BT_Settings_008416_Desc" text="Native value is 2. Changes the militia production that the castle militia barracks provides at level 2." />
-						<string id="BT_Settings_008417" text="Castle Militia Barracks Production Level 3"/>
-						<string id="BT_Settings_008417_Desc" text="Native value is 3. Changes the militia production that the castle militia barracks provides at level 3." />
-				<string id="BT_Settings_008418" text="Town"/>
-					<string id="BT_Settings_008419" text="Town Training Fields"/>
-					<string id="BT_Settings_008419_Desc" text="Changes the amount of experience the training fields provides for each level." />
-						<string id="BT_Settings_008420" text="Town Training Fields Experience Level 1"/>
-						<string id="BT_Settings_008420_Desc" text="Native value is 30. Changes the amount of experience the training fields provides at level 1." />
-						<string id="BT_Settings_008421" text="Town Training Fields Experience Level 2"/>
-						<string id="BT_Settings_008421_Desc" text="Native value is 60. Changes the amount of experience the training fields provides at level 2." />
-						<string id="BT_Settings_008422" text="Town Training Fields Experience Level 3"/>
-						<string id="BT_Settings_008422_Desc" text="Native value is 100. Changes the amount of experience the training fields provides at level 3." />
-					<string id="BT_Settings_008423" text="Town Granary"/>
-					<string id="BT_Settings_008423_Desc" text="Changes the amount of food storage the town granary provides per level." />
-						<string id="BT_Settings_008424" text="Town Granary Food Storage Level 1"/>
-						<string id="BT_Settings_008424_Desc" text="Native value is 200. Changes the amount of food storage the town granary provides at level 1." />
-						<string id="BT_Settings_008425" text="Town Granary Food Storage Level 2"/>
-						<string id="BT_Settings_008425_Desc" text="Native value is 400. Changes the amount of food storage the town granary provides at level 2." />
-						<string id="BT_Settings_008426" text="Town Granary Food Storage Level 3"/>
-						<string id="BT_Settings_008426_Desc" text="Native value is 600. Changes the amount of food storage the town granary provides at level 3." />
-					<string id="BT_Settings_008427" text="Town Orchards"/>
-					<string id="BT_Settings_008427_Desc" text="Changes the amount of food the town orchards produce per level." />
-						<string id="BT_Settings_008428" text="Town Orchard Food Production Level 1"/>
-						<string id="BT_Settings_008428_Desc" text="Native value is 10. Changes the amount of food the town orchards produce at level 1." />
-						<string id="BT_Settings_008429" text="Town Orchard Food Production Level 2"/>
-						<string id="BT_Settings_008429_Desc" text="Native value is 20. Changes the amount of food the town orchards produce at level 2." />
-						<string id="BT_Settings_008430" text="Town Orchard Food Production Level 3"/>
-						<string id="BT_Settings_008430_Desc" text="Native value is 30. Changes the amount of food the town orchards produce at level 3." />
-					<string id="BT_Settings_008431" text="Town Militia Barracks"/>
-					<string id="BT_Settings_008431_Desc" text="Changes the militia production that the town militia barracks provides per level." />
-						<string id="BT_Settings_008432" text="Town Militia Barracks Production Level 1"/>
-						<string id="BT_Settings_008432_Desc" text="Native value is .5. Changes the militia production that the town militia barracks provides at level 1." />
-						<string id="BT_Settings_008433" text="Town Militia Barracks Production Level 2"/>
-						<string id="BT_Settings_008433_Desc" text="Native value is 1. Changes the militia production that the town militia barracks provides at level 2." />
-						<string id="BT_Settings_008434" text="Town Militia Barracks Production Level 3"/>
-						<string id="BT_Settings_008434_Desc" text="Native value is 1.5. Changes the militia production that the town militia barracks provides at level 3." />
+			<string id="BT_Settings_008400" text="Gebäude" />
+				<string id="BT_Settings_008401" text="Burgen"/>
+					<string id="BT_Settings_008402" text="Burg - Trainingsgelände"/>
+					<string id="BT_Settings_008402_Desc" text="Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände je Level generiert wird." />
+						<string id="BT_Settings_008403" text="Burg -  Trainingsgelände Level 1"/>
+						<string id="BT_Settings_008403_Desc" text="Originalwert ist 1. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 1 generiert wird." />
+						<string id="BT_Settings_008404" text="Burg - Trainingsgelände Level 2"/>
+						<string id="BT_Settings_008404_Desc" text="Originalwert ist 2. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 2 generiert wird." />
+						<string id="BT_Settings_008405" text="Burg - Trainingsgelände Level 3"/>
+						<string id="BT_Settings_008405_Desc" text="Originalwert ist 3. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 3 generiert wird." />
+					<string id="BT_Settings_008406" text="Burg - Kornspeicher"/>
+					<string id="BT_Settings_008406_Desc" text="Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher je Level generiert." />
+						<string id="BT_Settings_008407" text="Burg - Kornspeicher Level 1"/>
+						<string id="BT_Settings_008407_Desc" text="Originalwert ist 100. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 1 generiert." />
+						<string id="BT_Settings_008408" text="Burg - Kornspeicher Level 2"/>
+						<string id="BT_Settings_008408_Desc" text="Originalwert ist 200. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 2 generiert." />
+						<string id="BT_Settings_008409" text="Burg - Kornspeicher Level 3"/>
+						<string id="BT_Settings_008409_Desc" text="Originalwert ist 300. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 3 generiert." />
+					<string id="BT_Settings_008410" text="Burg - Gärten"/>
+					<string id="BT_Settings_008410_Desc" text="Verändert die Nahrungsmenge, welche die Gärten je Level produzieren." />
+						<string id="BT_Settings_008411" text="Burg - Gärten Level 1"/>
+						<string id="BT_Settings_008411_Desc" text="Originalwert ist 5. Verändert die Nahrungsmenge, welche die Gärten auf Level 1 produzieren." />
+						<string id="BT_Settings_008412" text="Burg - Gärten Level 2"/>
+						<string id="BT_Settings_008412_Desc" text="Originalwert ist 10. Verändert die Nahrungsmenge, welche die Gärten auf Level 2 produzieren." />
+						<string id="BT_Settings_008413" text="Burg - Gärten Level 3"/>
+						<string id="BT_Settings_008413_Desc" text="Originalwert ist 15. Verändert die Nahrungsmenge, welche die Gärten auf Level 3 produzieren." />
+					<string id="BT_Settings_008414" text="Burg - Milizbarracken"/>
+					<string id="BT_Settings_008414_Desc" text="Verändert die Menge an Miliztruppen, welche Milizbarracken je Level ausbilden." />
+						<string id="BT_Settings_008415" text="Burg - Milizbarracken Level 1"/>
+						<string id="BT_Settings_008415_Desc" text="Originalwert ist 1. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 1 ausbilden." />
+						<string id="BT_Settings_008416" text="Burg - Milizbarracken Level 2"/>
+						<string id="BT_Settings_008416_Desc" text="Originalwert ist 2. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 2 ausbilden." />
+						<string id="BT_Settings_008417" text="Burg - Milizbarracken Level 3"/>
+						<string id="BT_Settings_008417_Desc" text="Originalwert ist 3. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 3 ausbilden." />
+				<string id="BT_Settings_008418" text="Städte"/>
+					<string id="BT_Settings_008419" text="Stadt - Trainingsgelände"/>
+					<string id="BT_Settings_008419_Desc" text="Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände je Level generiert wird." />
+						<string id="BT_Settings_008420" text="Stadt - Trainingsgelände Level 1"/>
+						<string id="BT_Settings_008420_Desc" text="Originalwert ist 30. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 1 generiert wird." />
+						<string id="BT_Settings_008421" text="Stadt - Trainingsgelände Level 2"/>
+						<string id="BT_Settings_008421_Desc" text="Originalwert ist 60. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 2 generiert wird." />
+						<string id="BT_Settings_008422" text="Stadt - Trainingsgelände Level 3"/>
+						<string id="BT_Settings_008422_Desc" text="Originalwert ist 100. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 2 generiert wird." />
+					<string id="BT_Settings_008423" text="Stadt - Kornspeicher"/>
+					<string id="BT_Settings_008423_Desc" text="Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher je Level generiert." />
+						<string id="BT_Settings_008424" text="Stadt - Kornspeicher Level 1"/>
+						<string id="BT_Settings_008424_Desc" text="Originalwert ist 200. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 1 generiert." />
+						<string id="BT_Settings_008425" text="Stadt - Kornspeicher Level 2"/>
+						<string id="BT_Settings_008425_Desc" text="Originalwert ist 400. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 2 generiert." />
+						<string id="BT_Settings_008426" text="Stadt - Kornspeicher Level 3"/>
+						<string id="BT_Settings_008426_Desc" text="Originalwert ist 600. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 3 generiert.." />
+					<string id="BT_Settings_008427" text="Stadt - Obstgärten"/>
+					<string id="BT_Settings_008427_Desc" text="Verändert die Nahrungsmenge, welche die Gärten je Level produzieren." />
+						<string id="BT_Settings_008428" text="Stadt - Obstgärten Level 1"/>
+						<string id="BT_Settings_008428_Desc" text="Originalwert ist 10. Verändert die Nahrungsmenge, welche die Gärten auf Level 1 produzieren." />
+						<string id="BT_Settings_008429" text="Stadt - Obstgärten Level 2"/>
+						<string id="BT_Settings_008429_Desc" text="Originalwert ist 20. Verändert die Nahrungsmenge, welche die Gärten auf Level 2 produzieren." />
+						<string id="BT_Settings_008430" text="Stadt - Obstgärten Level 3"/>
+						<string id="BT_Settings_008430_Desc" text="Originalwert ist 30. Verändert die Nahrungsmenge, welche die Gärten auf Level 3 produzieren." />
+					<string id="BT_Settings_008431" text="Stadt - Milizbarracken"/>
+					<string id="BT_Settings_008431_Desc" text="Verändert die Menge an Miliztruppen, welche Milizbarracken je Level ausbilden." />
+						<string id="BT_Settings_008432" text="Stadt - Milizbarracken Level 1"/>
+						<string id="BT_Settings_008432_Desc" text="Originalwert ist 0.5. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 1 ausbilden." />
+						<string id="BT_Settings_008433" text="Stadt - Milizbarracken Level 2"/>
+						<string id="BT_Settings_008433_Desc" text="Originalwert ist 1. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 2 ausbilden." />
+						<string id="BT_Settings_008434" text="Stadt - Milizbarracken Level 3"/>
+						<string id="BT_Settings_008434_Desc" text="Originalwert ist 1.5. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 3 ausbilden." />
 
-			<string id="BT_Settings_008500" text="Settlement Food" />
-			<string id="BT_Settings_008500_Desc" text="Enables tweaks which provide bonuses to food production in towns and castles." />
-				<string id="BT_Settings_008501" text="Castle Food Modifier"/>
-				<string id="BT_Settings_008501_Desc" text="Native value is 100%. Adds a modifier to food production in castles."/>
-				<string id="BT_Settings_008502" text="Town Food Modifier"/>
-				<string id="BT_Settings_008502_Desc" text="Native value is 100%. Adds a modifier to food production in towns." />
-				<string id="BT_Settings_008503" text="Food Loss From Prosperity"/>
-				<string id="BT_Settings_008503_Desc" text="Allows you to adjust the loss to food production received from settlement prosperity." />
-					<string id="BT_Settings_008504" text="Prosperity Food Loss Divisor"/>
-					<string id="BT_Settings_008504_Desc" text="Native value is 50. The prosperity of the settlement is divided by this value to calculate the loss. Increasing this value will decrease the amount of food lost." />
+			<string id="BT_Settings_008500" text="Siedlungsnahrung" />
+			<string id="BT_Settings_008500_Desc" text="Aktiviert Anpassungen, welche die Nahrungsproduktion in Siedlungen betreffen (Nahrungswert, keine Items)." />
+				<string id="BT_Settings_008501" text="Burgen Nahrungsmodifikator"/>
+				<string id="BT_Settings_008501_Desc" text="Originalwert entspricht 100%. Fügt einen Modifikator für die Nahrungsproduktion in Burgen hinzu."/>
+				<string id="BT_Settings_008502" text="Städte Nahrungsmodifikator"/>
+				<string id="BT_Settings_008502_Desc" text="Originalwert entspricht 100%. Fügt einen Modifikator für die Nahrungsproduktion in Städten hinzu." />
+				<string id="BT_Settings_008503" text="Nahrungsverlust durch Wohlstand"/>
+				<string id="BT_Settings_008503_Desc" text="Erlaubt, den Verlust in der Nahrungsproduktion durch Wohlstand zu verändern." />
+					<string id="BT_Settings_008504" text="Wohlstandsdivisor"/>
+					<string id="BT_Settings_008504_Desc" text="Originalwert ist 50. Der WOhlstand einer SIedlung wird durch diesen Wert geteilt um die Reduzierung der Nahrungsproduktionb zu ermitteln. Wird der Wert erhöht, wird der negative Effekt des Wohlstandes auf die Produktion gemindert." />
 
-			<string id="BT_Settings_008600" text="Normal Militia" />
-			<string id="BT_Settings_008600_Desc" text="Grants a flat bonus to militia growth in towns and castles." />
-				<string id="BT_Settings_008601" text="Castle Militia Growth Bonus"/>
-				<string id="BT_Settings_008601_Desc" text="Native value is 0. Adds a flat bonus on how many militia gets recruited each day in castles."/>
-				<string id="BT_Settings_008602" text="Town Militia Growth Bonus"/>
-				<string id="BT_Settings_008602_Desc" text="Native value is 0. Adds a flat bonus on how many militia gets recruited each day in towns." />
-				<string id="BT_Settings_008603" text="Castle Militia Retirement Modifier"/>
-				<string id="BT_Settings_008603_Desc" text="Native value is 2.5%. Modifies the percentage of your militia retiring each dayin castles." />
-				<string id="BT_Settings_008604" text="Town Militia Retirement Modifier"/>
-				<string id="BT_Settings_008604_Desc" text="Native value is 2.5%. Modifies the percentage of your militia retiring each dayin town." />
+			<string id="BT_Settings_008600" text="Milizen - Normale Einheiten" />
+			<string id="BT_Settings_008600_Desc" text="Fügt einen Bonus auf die Ausbildungs- und Ruhestandsrate von normalen Milizeinheiten hinzu." />
+				<string id="BT_Settings_008601" text="Burgen - Ausbildungsbonus Milizen"/>
+				<string id="BT_Settings_008601_Desc" text="Originalwert ist 0. Fügt einen zusätzlichen Bonus auf die tägliche Anzahl ausgebildeter Milizen in Burgen hinzu."/>
+				<string id="BT_Settings_008602" text="Städte - Ausbildungsbonus Milizen"/>
+				<string id="BT_Settings_008602_Desc" text="Originalwert ist 0. Fügt einen zusätzlichen Bonus auf die tägliche Anzahl ausgebildeter Milizen in Städten hinzu." />
+				<string id="BT_Settings_008603" text="Burgen - Ruhestandsrate"/>
+				<string id="BT_Settings_008603_Desc" text="Verändert die tägliche Anzahl an Ruhestandseintritten. Original: 2,5% der Gesamtanzahl Milizen wird täglich den Ruhestand antreten." />
+				<string id="BT_Settings_008604" text="Städte - Ruhestandsrate"/>
+				<string id="BT_Settings_008604_Desc" text="Verändert die tägliche Anzahl an Ruhestandseintritten. Original: 2,5% der Gesamtanzahl Milizen wird täglich den Ruhestand antreten." />
 
-			<string id="BT_Settings_008700" text="Elite Militia" />
-			<string id="BT_Settings_008700_Desc" text="Adds a bonus to the chance that militia spawning in towns and castles are elite." />
-				<string id="BT_Settings_008701" text="Elite Melee Militia Spawn Chance"/>
-				<string id="BT_Settings_008701_Desc" text="Native value is 10%. Sets the chance that the militia spawning in towns and castles are elite melee troops."/>
-				<string id="BT_Settings_008702" text="Elite Ranged Militia Spawn Chance"/>
-				<string id="BT_Settings_008702_Desc" text="Native value is 10%. Sets the chance that the militia spawning in towns and castles are elite ranged troops." />
+			<string id="BT_Settings_008700" text="Milizen - Eliteeinheiten" />
+			<string id="BT_Settings_008700_Desc" text="Verändert die Chance, dass neue Milizeinheiten als Eliteeinheit ausgebildet werden." />
+				<string id="BT_Settings_008701" text="Elite Nahkampfmiliz Chance"/>
+				<string id="BT_Settings_008701_Desc" text="Originalchance ist 10%. Bestimmt die Chance, dass neue Milizeinheiten als Eliteeinheit im Nahkampf ausgebildet werden."/>
+				<string id="BT_Settings_008702" text="Elite Fernkampfmiliz Chance"/>
+				<string id="BT_Settings_008702_Desc" text="Originalchance ist 10%. Bestimmt die Chance, dass neue Milizeinheiten als Eliteeinheit im Nahkampf ausgebildet werden." />
 
-			<string id="BT_Settings_008800" text="Tournaments" />
-				<string id="BT_Settings_008801" text="Renown Reward"/>
-				<string id="BT_Settings_008801_Desc" text="Sets the amount of renown awarded when you win a tournament."/>
-					<string id="BT_Settings_008802" text="Tournament Renown Reward"/>
-					<string id="BT_Settings_008802_Desc" text="Native value is 3. Increases the amount of renown awarded when you win a tournament." />
-				<string id="BT_Settings_008803" text="Gold Reward"/>
-				<string id="BT_Settings_008803_Desc" text="Adds the set amount of gold to the rewards when you win a tournament."/>
-					<string id="BT_Settings_008804" text="Tournament Gold Reward"/>
-					<string id="BT_Settings_008804_Desc" text="Native value is 0. Adds the set amount of gold to the rewards when you win a tournament." />
-				<string id="BT_Settings_008805" text="Maximum Bet"/>
-				<string id="BT_Settings_008805_Desc" text="Sets the maximum amount of gold that you can bet per round in tournaments."/>
-					<string id="BT_Settings_008806" text="Maximum Bet Amount"/>
-					<string id="BT_Settings_008806_Desc" text="Native value is 150. Sets the maximum amount of gold that you can bet per round in tournaments." />
-				<string id="BT_Settings_008807" text="Hero Experience Modifier"/>
-				<string id="BT_Settings_008807_Desc" text="Overrides the native multiplier value for experience gain in tournaments for hero characters."/>
-					<string id="BT_Settings_008808" text="Tournament Hero Experience Modifier"/>
-					<string id="BT_Settings_008808_Desc" text="Native value is 33%. Sets the modifier applied to experience gained in tournaments by hero characters. 100% = full real-world experience." />
-				<string id="BT_Settings_008809" text="Arena Hero Experience Modifier"/>
-				<string id="BT_Settings_008809_Desc" text="Overrides the native multiplier value for experience gain in arena fights for hero characters."/>
-					<string id="BT_Settings_008810" text="Arena Hero Experience Modifier"/>
-					<string id="BT_Settings_008810_Desc" text="Native value is 6%. Sets the modifier applied to experience gain in arena fights for hero characters. 100% = full real-world experience." />
-				<string id="BT_Settings_008811" text="Minimum Betting Odds"/>
-				<string id="BT_Settings_008811_Desc" text="Allows you to set the minimum betting odds in tournaments."/>
-					<string id="BT_Settings_008812" text="Minimum Betting Odds"/>
-					<string id="BT_Settings_008812_Desc" text="Native: 1.1. The minimum odds for tournament bets, higher means more yield for your bets, if won." />
+			<string id="BT_Settings_008800" text="Turniere" />
+				<string id="BT_Settings_008801" text="Rufbelohnung"/>
+				<string id="BT_Settings_008801_Desc" text="Bestimmt die Menge an Ruf, welche du bei einem Turniersieg erhälst."/>
+					<string id="BT_Settings_008802" text="Rufbelohnung"/>
+					<string id="BT_Settings_008802_Desc" text="Originalmenge ist 3. Erhöht die Menge an Ruf, welche du bei einem Turniersieg erhälst." />
+				<string id="BT_Settings_008803" text="Goldbelohnung"/>
+				<string id="BT_Settings_008803_Desc" text="Fügt der Belohnung bei einem Turniersieg die angegebene Menge Denare hinzu."/>
+					<string id="BT_Settings_008804" text="Goldbelohnung"/>
+					<string id="BT_Settings_008804_Desc" text="Originalmenge ist 0. Fügt der Belohnung bei einem Turniersieg die angegebene Menge Denare hinzu." />
+				<string id="BT_Settings_008805" text="Maximaler Wetteinsatz"/>
+				<string id="BT_Settings_008805_Desc" text="Bestimmt die Maximalhöhe des Wetteinsatzes, den du je Runde setzen kannst."/>
+					<string id="BT_Settings_008806" text="Maximaler Wetteinsatz"/>
+					<string id="BT_Settings_008806_Desc" text="Originalhöhe ist 150. Bestimmt die Maximalhöhe des Wetteinsatzes, den du je Runde setzen kannst." />
+				<string id="BT_Settings_008807" text="Heldenerfahrung"/>
+				<string id="BT_Settings_008807_Desc" text="Überschreibt den Originalmultiplikator für Erfahrungsgewinn in Turnieren für alle Charackter."/>
+					<string id="BT_Settings_008808" text="Turniererfahrung"/>
+					<string id="BT_Settings_008808_Desc" text="Originalwert ist 33%. Bestimmt den Modifikator für den Erfahrungsgewinn in Turnieren. 100% = gleicher Erfahrungsgewinn, wie in echten Schlachten." />
+				<string id="BT_Settings_008809" text="Übungserfahrung"/>
+				<string id="BT_Settings_008809_Desc" text="Überschreibt den Originalmultiplikator für Erfahrungsgewinn in Arena-/Übungskämpfen für alle Charackter."/>
+					<string id="BT_Settings_008810" text="Übungserfahrung"/>
+					<string id="BT_Settings_008810_Desc" text="Originalwert ist 6%. Bestimmt den Modifikator für den Erfahrungsgewinn in Arena-/Übungskämpfen. 100% = gleicher Erfahrungsgewinn, wie in echten Schlachten." />
+				<string id="BT_Settings_008811" text="Mindestwettquoten"/>
+				<string id="BT_Settings_008811_Desc" text="Erlaubt, die Mindestwettquoten in Turnieren einzustellen."/>
+					<string id="BT_Settings_008812" text="Mindestwettquoten"/>
+					<string id="BT_Settings_008812_Desc" text="Originalwert ist 1.1. Die Mindestquote für Wetteinsätze. Höhere Quoten resultieren in mehr Gewinn, wenn gewonnen." />
 
-			<string id="BT_Settings_008900" text="Workshops" />
-				<string id="BT_Settings_008901" text="Workshop Count Limit"/>
-				<string id="BT_Settings_008901_Desc" text="Sets the base maximum number of workshops you can have and the limit increase gained per clan tier."/>
-					<string id="BT_Settings_008902" text="Base Workshop Count Limit"/>
-					<string id="BT_Settings_008902_Desc" text="Native value is 1. Sets the base maximum number of workshops you can have." />
-					<string id="BT_Settings_008903" text="Bonus Workshops Per Clan Tier"/>
-					<string id="BT_Settings_008903_Desc" text="Native value is 1. Sets the base maximum number of workshops you can have and the limit increase gained per clan tier."/>
-				<string id="BT_Settings_008904" text="Workshop Buy Cost"/>
-				<string id="BT_Settings_008904_Desc" text="Sets the base value used to calculate the cost of workshops. Reduce to reduce cost of workshops."/>
-					<string id="BT_Settings_008905" text="Workshop Base Cost"/>
-					<string id="BT_Settings_008905_Desc" text="Native value is 10,000. Sets the base value used to calculate the cost of workshops (+ workshop type base cost + 0.5 x town prosperity). Reduce to reduce cost of workshops." />
-				<string id="BT_Settings_008906" text="Workshop Effectivness"/>
-				<string id="BT_Settings_008906_Desc" text="Native value is 100%. Sets the base value used to calculate the cost of workshops (+ workshop type base cost + 0.5 x town prosperity). Reduce to reduce cost of workshops."/>
-					<string id="BT_Settings_008907" text="Workshop Daily Cost Modifier"/>
-					<string id="BT_Settings_008907_Desc" text="Native value is 100%. Increases effectivness of workshops by decreasing its daily expenses." />
+			<string id="BT_Settings_008900" text="Werkstätten" />
+				<string id="BT_Settings_008901" text="Werkstättenlimit"/>
+				<string id="BT_Settings_008901_Desc" text="Bestimmt die Basismenge an Werkstätten, die du haben kannst und die Menge, welche du je Klanstufe hinzubekommst."/>
+					<string id="BT_Settings_008902" text="Basislimit Werkstätten"/>
+					<string id="BT_Settings_008902_Desc" text="Originallimit ist 1. Bestimmt die Basismenge Werkstätten, die du von SPielbeginn an haben kannst." />
+					<string id="BT_Settings_008903" text="Bonuslimit je Klanstufe"/>
+					<string id="BT_Settings_008903_Desc" text="Originalwert ist 1. Bestimmt das zusätzliche Limit an Werkstätten, die du je Klanstufe erhälst."/>
+				<string id="BT_Settings_008904" text="Werkstattkosten"/>
+				<string id="BT_Settings_008904_Desc" text="Bestimmt den Grundwert, der zur Ermittlung der Kosten einer Werkstatt genutzt wird. Reduziere dies, damit Werkstätten preiswerter werden."/>
+					<string id="BT_Settings_008905" text="Basiskosten Werkstätten"/>
+					<string id="BT_Settings_008905_Desc" text="Originalwert ist 10.000. Bestimmt den Grundwert, der zur Ermittlung der Kosten einer Werkstatt genutzt wird. (+ Kostenindex Werkstatttyp  + 0.5 x Wohlstand). Reduziere dies, damit Werkstätten preiswerter werden." />
+				<string id="BT_Settings_008906" text="Werkstätteneffektivität"/>
+				<string id="BT_Settings_008906_Desc" text="Increases effectivness of workshops by decreasing its daily expenses."/>
+					<string id="BT_Settings_008907" text="Täglicher Kostenfaktor"/>
+					<string id="BT_Settings_008907_Desc" text="Original entspricht 100%. Erhöht die Effektivität von Werkstätten, indem die täglichen Kosten reduziert werden. Erhöhe dies um die Effektivität und damit mehr Gewinne zu erhalten." />
+				<string id="BT_Settings_008908" text="Verkaufspreise"/>
+				<string id="BT_Settings_008908_Desc" text="Verändert die Verkaufspreise für Werkstättenprodukte."/>
+					<string id="BT_Settings_008909" text="Verkaufspreise"/>
+					<string id="BT_Settings_008909_Desc" text="Original entspricht 100%. Verändert die Verkaufspreise für Werkstättenprodukte. Erhöhen für größere Profite." />
+				<string id="BT_Settings_008910" text="Einkaufspreise"/>
+				<string id="BT_Settings_008910_Desc" text="Verändert die Einkaufspreise für Werkstättengüter."/>
+					<string id="BT_Settings_008911" text="Einkaufspreise"/>
+					<string id="BT_Settings_008911_Desc" text="Original entspricht 100%. Verändert die VEinkaufspreise für Werkstättengüter. Senken für größere Profite." />
 
-		<string id="BT_Settings_009000" text="Misc" />
-			<string id="BT_Settings_009001" text="Disable Quest Troops Affecting Morale" />
-			<string id="BT_Settings_009001_Desc" text="When enabled, quest troops such as Borrowed Troop in your party are ignored when party morale is calculated." />
-			<string id="BT_Settings_009002" text="Show Number of Days of Food"/>
-			<string id="BT_Settings_009002_Desc" text="Changes the number showing how much food you have to instead show how many days' worth of food you have. (Bottom right of campaign map UI)." />
-			<string id="BT_Settings_009003" text="Campaign Speed Fast Forward"/>
-			<string id="BT_Settings_009003_Desc" text="Sets the campaign speed in fast forward mode. Vanilla is 4." />
+		<string id="BT_Settings_009000" text="Verschiedenes" />
+			<string id="BT_Settings_009001" text="Questtruppen haben keinen Moraleinfluss" />
+			<string id="BT_Settings_009001_Desc" text="Wenn dies aktiviert wird, haben Questtruppen wie 'Ausgeliehene Truppen' keinen EInfluss auf die Truppmoral." />
+			<string id="BT_Settings_009002" text="Zeige verbleibende Tage Nahrungsversorgung"/>
+			<string id="BT_Settings_009002_Desc" text="Anstelle der Nahrungsmenge, die dein Trupp mit sich führt, wird die Anzahl Tage, die deine Nahrung zur Truppenversorgung noch ausreicht, angezeigt (Anzeige unten rechts auf der Kampagnenkarte)." />
+			<string id="BT_Settings_009003" text="Spielgeschwindigkeit bei Schnellvorlauf"/>
+			<string id="BT_Settings_009003_Desc" text="Bestimmt die Spielgeschwindigkeit bei Schnellvorlauf. Originalgeschwindigkeit entspricht 4x." />
 
 	</strings>
 </base>

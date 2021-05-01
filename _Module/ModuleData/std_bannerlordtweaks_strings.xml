@@ -294,7 +294,7 @@
 				<string id="BT_Settings_005234" text="Wage costs Balancing"/>
 				<string id="BT_Settings_005234_Desc" text="Modifier for troop and garrison wages (1.0 x Balancing Strength)." />
 				<string id="BT_Settings_005235" text="Quality of Recruitment Balancing"/>
-				<string id="BT_Settings_005235_Desc" text="Increases the chance for upgraded recruits (1.0 x Balancing Strength). Basic troops will not be upgraded to noble troops with the extra chance. No effect if balancing strength is lower than 0% (no decrease in chance for upgrades)." />
+				<string id="BT_Settings_005235_Desc" text="Increases the chance for upgraded recruits (1.0 x Balancing Strength). No effect if balancing strength is lower than 0% (no decrease in chance for upgrades)." />
 	
 		<string id="BT_Settings_006000" text="Party Tweaks" />
 			<string id="BT_Settings_006100" text="Cohesion Tweaks" />
@@ -364,7 +364,7 @@
 				<string id="BT_Settings_007202_Desc" text="Wether the prisoner size bonus should apply to AI Lords." />
 		
 			<string id="BT_Settings_007300" text="Prisoner Confirmity" />
-			<string id="BT_Settings_007300_Desc" text="Modifies the conformity rate of the base game, speeding/slowing the rate at which prisoners can be recruited." />
+			<string id="BT_Settings_007300_Desc" text="Modifies the conformity rate of the base game, speeding the rate at which prisoners can be recruited." />
 				<string id="BT_Settings_007301" text="Prisoner Confirmity Bonus"/>
 				<string id="BT_Settings_007301_Desc" text="Adds a % bonues to the conformity generated each hour. Native is 0%." />
 				<string id="BT_Settings_007302" text="Apply Prisoner Confirmity Tweaks to Clan"/>
@@ -376,7 +376,7 @@
 			<string id="BT_Settings_008100" text="Settlement Culture Transformation" />
 			<string id="BT_Settings_008100_Desc" text="Changes the culture of settlement in relation to the owner clan. On deactivation cultures revert back." />
 				<string id="BT_Settings_008101" text="Change To Culture Of Kingdom Faction Instead"/>
-				<string id="BT_Settings_008101_Desc" text="Instead of changing the faction to its owner-clan culture, change to its kingdom culture." />
+				<string id="BT_Settings_008101_Desc" text="Instead of changing the culture to its owner-clan culture, change to its kingdom culture." />
 				<string id="BT_Settings_008102" text="Override Culture For Player Clan"/>
 				<string id="BT_Settings_008102_Desc" text="Overrides the culture to change to for player clan owned settlements." />
 				<string id="BT_Settings_008103" text="Weeks for Settlement Culture Change"/>
@@ -395,7 +395,6 @@
 				<string id="BT_Settings_008302_Desc" text="Modifies the daily production of other goods in villages." />
 		
 			<string id="BT_Settings_008400" text="Buildings" />
-			<string id="BT_Settings_008400_Desc" text="Enables Tweaks for increased productivity in villages." />
 				<string id="BT_Settings_008401" text="Castle"/>
 					<string id="BT_Settings_008402" text="Castle Training Field"/>
 					<string id="BT_Settings_008402_Desc" text="Changes the amount of experience the training fields provides for each level." />
@@ -475,7 +474,7 @@
 					<string id="BT_Settings_008504_Desc" text="Native value is 50. The prosperity of the settlement is divided by this value to calculate the loss. Increasing this value will decrease the amount of food lost." />
 		
 			<string id="BT_Settings_008600" text="Normal Militia" />
-			<string id="BT_Settings_008600_Desc" text="Grants a flat bonus to militia growth in towns and castles." />
+			<string id="BT_Settings_008600_Desc" text="Grants a flat bonus to militia growth and rate of retirement in towns and castles." />
 				<string id="BT_Settings_008601" text="Castle Militia Growth Bonus"/>
 				<string id="BT_Settings_008601_Desc" text="Native value is 0. Adds a flat bonus on how many militia gets recruited each day in castles."/>
 				<string id="BT_Settings_008602" text="Town Militia Growth Bonus"/>
@@ -530,9 +529,17 @@
 					<string id="BT_Settings_008905" text="Workshop Base Cost"/>
 					<string id="BT_Settings_008905_Desc" text="Native value is 10,000. Sets the base value used to calculate the cost of workshops (+ workshop type base cost + 0.5 x town prosperity). Reduce to reduce cost of workshops." />
 				<string id="BT_Settings_008906" text="Workshop Effectivness"/>
-				<string id="BT_Settings_008906_Desc" text="Native value is 100%. Sets the base value used to calculate the cost of workshops (+ workshop type base cost + 0.5 x town prosperity). Reduce to reduce cost of workshops."/>
+				<string id="BT_Settings_008906_Desc" text="Increases effectivness of workshops by decreasing its daily expenses."/>
 					<string id="BT_Settings_008907" text="Workshop Daily Cost Modifier"/>
 					<string id="BT_Settings_008907_Desc" text="Native value is 100%. Increases effectivness of workshops by decreasing its daily expenses." />
+				<string id="BT_Settings_008908" text="Workshop Products Sell Prices"/>
+				<string id="BT_Settings_008908_Desc" text="Alters the selling prices for products of workshops."/>
+					<string id="BT_Settings_008909" text="Workshop Products Sell Prices"/>
+					<string id="BT_Settings_008909_Desc" text="Native value is 100%. Alters the selling prices for products of workshops. Increase for better profits." />
+				<string id="BT_Settings_008910" text="Workshop Products Buy Prices"/>
+				<string id="BT_Settings_008910_Desc" text="Alters the buying prices for input items of workshops."/>
+					<string id="BT_Settings_008911" text="Workshop Products Buy Prices"/>
+					<string id="BT_Settings_008911_Desc" text="Native value is 100%. Alters the buying prices for input items of workshops. Decrease for better profits." />
 	
 		<string id="BT_Settings_009000" text="Misc" />
 			<string id="BT_Settings_009001" text="Disable Quest Troops Affecting Morale" />
