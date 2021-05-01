@@ -157,20 +157,39 @@ namespace BannerlordTweaks
 
 					if (PlayerOverride || KingdomOverride || ClanCulture)
 					{
-						settlement.Culture = (settlement.OwnerClan == Clan.PlayerClan) ? OverrideCulture : (settings2.ChangeToKingdomCulture && settlement.OwnerClan.Kingdom != null) ? settlement.OwnerClan.Kingdom.Culture : settlement.OwnerClan.Culture;
-						if (removeTroops)
+						CultureObject? newculture = (settlement.OwnerClan == Clan.PlayerClan) ? OverrideCulture : (settings2.ChangeToKingdomCulture && settlement.OwnerClan.Kingdom != null) ? settlement.OwnerClan.Kingdom.Culture : settlement.OwnerClan.Culture;
+						if (newculture != null)
 						{
-							ChangeSettlementCulture.RemoveTroopsfromNotable(settlement);
-						}
-						foreach (Village boundVillage in settlement.BoundVillages)
-						{
-							if (removeTroops)
+							//dont switch last town of a culture to prevent bugs in vanilla
+							int count = 0;
+							if (settlement.IsTown)
 							{
-								Transform(boundVillage.Settlement, true);
+								foreach (Settlement Town in Campaign.Current.Settlements )
+								{
+									if (Town.IsTown && Town.Culture == settlement.Culture)
+									{
+										count++;
+									}
+								}
 							}
-							else
+							if (count != 1)
 							{
-								Transform(boundVillage.Settlement, false);
+								settlement.Culture = newculture;
+								if (removeTroops)
+								{
+									ChangeSettlementCulture.RemoveTroopsfromNotable(settlement);
+								}
+								foreach (Village boundVillage in settlement.BoundVillages)
+								{
+									if (removeTroops)
+									{
+										Transform(boundVillage.Settlement, true);
+									}
+									else
+									{
+										Transform(boundVillage.Settlement, false);
+									}
+								}
 							}
 						}
 					}
