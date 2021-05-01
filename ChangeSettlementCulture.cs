@@ -116,8 +116,7 @@ namespace BannerlordTweaks
 						}
 					}
 				}
-
-				if (clan != Clan.PlayerClan && clan.Kingdom == null || clan.Kingdom.Culture != clan.Culture)
+				else if (clan.Kingdom == null || clan.Kingdom.Culture != clan.Culture)
 				{
 					foreach (Settlement settlement in from settlement in clan.Settlements where settlement.IsTown || settlement.IsCastle || settlement.IsVillage select settlement)
 					{
