@@ -4,6 +4,9 @@ using System.Linq;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Actions;
 using TaleWorlds.CampaignSystem.SandBox.CampaignBehaviors;
+using TaleWorlds.CampaignSystem.GameMenus;
+using TaleWorlds.Core;
+using TaleWorlds.Localization;
 
 namespace BannerlordTweaks
 {
@@ -21,20 +24,50 @@ namespace BannerlordTweaks
 
 		private void OnGameLoaded(CampaignGameStarter obj)
 		{
-			Dictionary<Settlement, CultureObject> startingCultures = new Dictionary<Settlement, CultureObject>();
+			Dictionary<Settlement, CultureObject> startingCultures = new();
+
+			if (BannerlordTweaksSettings.Instance is { } settings)
+			{
+				OverrideCulture = null;
+				foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId || (settings.PlayerCultureOverride.SelectedValue == "khergit" && kingdom.Culture.StringId == "rebkhu") select kingdom.Culture)
+				{
+					OverrideCulture = Culture;
+					break;
+				}
+				if (OverrideCulture == null && settings.ChangeToKingdomCulture && Clan.PlayerClan.Kingdom != null)
+				{
+					OverrideCulture = Clan.PlayerClan.Kingdom.Culture;
+				}
+				else if (OverrideCulture == null)
+				{
+					OverrideCulture = Clan.PlayerClan.Culture;
+				}
+			}
+
 			foreach (Settlement settlement in from settlement in Campaign.Current.Settlements where settlement.IsTown || settlement.IsCastle || settlement.IsVillage select settlement)
 			{
 				startingCultures.Add(settlement, settlement.Culture);
-				if (BannerlordTweaksSettings.Instance is { } settings && (((!settings.ChangeToKingdomCulture || settlement.OwnerClan.Kingdom == null ) && settlement.OwnerClan.Culture != settlement.Culture) || (settlement.OwnerClan.Kingdom != null && settings.ChangeToKingdomCulture && settlement.OwnerClan.Kingdom.Culture != settlement.Culture)) && !this.WeekCounter.ContainsKey(settlement))
+				if (BannerlordTweaksSettings.Instance is { } settings2)
 				{
-					this.AddCounter(settlement);
-				}
-				else if (BannerlordTweaksSettings.Instance is { } settings2 && (((!settings2.ChangeToKingdomCulture || settlement.OwnerClan.Kingdom == null) && settlement.OwnerClan.Culture != settlement.Culture) || (settlement.OwnerClan.Kingdom != null && settings2.ChangeToKingdomCulture && settlement.OwnerClan.Kingdom.Culture != settlement.Culture)) && this.IsSettlementDue(settlement))
-				{
-						ChangeSettlementCulture.Transform(settlement, false);
+					bool PlayerOverride = settlement.OwnerClan == Clan.PlayerClan && OverrideCulture != settlement.Culture;
+					bool KingdomOverride = settlement.OwnerClan != Clan.PlayerClan && settings2.ChangeToKingdomCulture && settlement.OwnerClan.Kingdom != null && settlement.OwnerClan.Kingdom.Culture != settlement.Culture;
+					bool ClanCulture = settlement.OwnerClan != Clan.PlayerClan && (!settings2.ChangeToKingdomCulture || settlement.OwnerClan.Kingdom == null) && settlement.OwnerClan.Culture != settlement.Culture;
+
+					if ((PlayerOverride || KingdomOverride || ClanCulture) && !WeekCounter.ContainsKey(settlement))
+					{
+						this.AddCounter(settlement);
+					}
+					else if ((PlayerOverride || KingdomOverride || ClanCulture) && this.IsSettlementDue(settlement))
+					{
+						this.Transform(settlement, false);
+					}
 				}
 			}
 			ChangeSettlementCulture.initialCultureDictionary = startingCultures;
+
+				obj.AddGameMenuOption("village", "village_culture_changer", "Culture Transformation", new GameMenuOption.OnConditionDelegate(ChangeSettlementCulture.Game_menu_village_change_culture_on_condition), new GameMenuOption.OnConsequenceDelegate(ChangeSettlementCulture.Game_menu_change_culture_on_consequence), false, 5, false);
+				obj.AddGameMenuOption("town", "town_culture_changer", "Culture Transformation", new GameMenuOption.OnConditionDelegate(ChangeSettlementCulture.Game_menu_town_change_culture_on_condition), new GameMenuOption.OnConsequenceDelegate(ChangeSettlementCulture.Game_menu_change_culture_on_consequence), false, 5, false);
+				obj.AddGameMenuOption("castle", "castle_culture_changer", "Culture Transformation", new GameMenuOption.OnConditionDelegate(ChangeSettlementCulture.Game_menu_castle_change_culture_on_condition), new GameMenuOption.OnConsequenceDelegate(ChangeSettlementCulture.Game_menu_change_culture_on_consequence), false, 5, false);
 		}
 
 		private void OnSiegeAftermathApplied(MobileParty arg1, Settlement settlement, SiegeAftermathCampaignBehavior.SiegeAftermath arg3, Clan arg4, Dictionary<MobileParty, float> arg5)
@@ -59,7 +92,32 @@ namespace BannerlordTweaks
 		{
 			if (BannerlordTweaksSettings.Instance is { } settings && settings.ChangeToKingdomCulture)
 			{
-				if (clan.Kingdom == null || clan.Kingdom.Culture != clan.Culture)
+				if (clan == Clan.PlayerClan)
+				{
+					OverrideCulture = null;
+					foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId || (settings.PlayerCultureOverride.SelectedValue == "khergit" && kingdom.Culture.StringId == "rebkhu") select kingdom.Culture)
+					{
+						OverrideCulture = Culture;
+						break;
+					}
+					if (OverrideCulture == null && settings.ChangeToKingdomCulture && Clan.PlayerClan.Kingdom != null)
+					{
+						OverrideCulture = Clan.PlayerClan.Kingdom.Culture;
+					}
+					else if (OverrideCulture == null)
+					{
+						OverrideCulture = Clan.PlayerClan.Culture;
+					}
+					foreach (Settlement settlement in from settlement in clan.Settlements where settlement.IsTown || settlement.IsCastle || settlement.IsVillage select settlement)
+					{
+						if (settlement.Culture != OverrideCulture)
+						{
+							this.AddCounter(settlement);
+						}
+					}
+				}
+
+				if (clan != Clan.PlayerClan && clan.Kingdom == null || clan.Kingdom.Culture != clan.Culture)
 				{
 					foreach (Settlement settlement in from settlement in clan.Settlements where settlement.IsTown || settlement.IsCastle || settlement.IsVillage select settlement)
 					{
@@ -69,28 +127,51 @@ namespace BannerlordTweaks
 			}
 		}
 
-		public static void Transform(Settlement settlement, bool removeTroops)
+		public void Transform(Settlement settlement, bool removeTroops)
 		{
+
+			if (BannerlordTweaksSettings.Instance is { } settings && settlement.OwnerClan == Clan.PlayerClan)
+			{
+				OverrideCulture = null;
+				foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId || (settings.PlayerCultureOverride.SelectedValue == "khergit" && kingdom.Culture.StringId == "rebkhu") select kingdom.Culture)
+				{
+					OverrideCulture = Culture;
+					break;
+				}
+				if (OverrideCulture == null && settings.ChangeToKingdomCulture && Clan.PlayerClan.Kingdom != null)
+				{
+					OverrideCulture = Clan.PlayerClan.Kingdom.Culture;
+				}
+				else if (OverrideCulture == null)
+				{
+					OverrideCulture = Clan.PlayerClan.Culture;
+				}
+			}
 			if (settlement.IsVillage || settlement.IsCastle || settlement.IsTown)
 			{
-				bool ChangeToKingdom = (BannerlordTweaksSettings.Instance is { } settings && settings.ChangeToKingdomCulture);
-				if (((!ChangeToKingdom || settlement.OwnerClan.Kingdom == null) && settlement.OwnerClan.Culture != settlement.Culture) || (settlement.OwnerClan.Kingdom != null && ChangeToKingdom && settlement.OwnerClan.Kingdom.Culture != settlement.Culture))
+				if (BannerlordTweaksSettings.Instance is { } settings2)
 				{
-					settlement.Culture = (ChangeToKingdom && settlement.OwnerClan.Kingdom != null) ? settlement.OwnerClan.Kingdom.Culture : settlement.OwnerClan.Culture;
+					bool PlayerOverride = settlement.OwnerClan == Clan.PlayerClan && OverrideCulture != settlement.Culture;
+					bool KingdomOverride = settlement.OwnerClan != Clan.PlayerClan && settings2.ChangeToKingdomCulture && settlement.OwnerClan.Kingdom != null && settlement.OwnerClan.Kingdom.Culture != settlement.Culture;
+					bool ClanCulture = settlement.OwnerClan != Clan.PlayerClan && (!settings2.ChangeToKingdomCulture || settlement.OwnerClan.Kingdom == null) && settlement.OwnerClan.Culture != settlement.Culture;
 
-					if (removeTroops)
+					if (PlayerOverride || KingdomOverride || ClanCulture)
 					{
-						ChangeSettlementCulture.RemoveTroopsfromNotable(settlement);
-					}
-					foreach (Village boundVillage in settlement.BoundVillages)
-					{
+						settlement.Culture = (settlement.OwnerClan == Clan.PlayerClan) ? OverrideCulture : (settings2.ChangeToKingdomCulture && settlement.OwnerClan.Kingdom != null) ? settlement.OwnerClan.Kingdom.Culture : settlement.OwnerClan.Culture;
 						if (removeTroops)
 						{
-							ChangeSettlementCulture.Transform(boundVillage.Settlement, true);
+							ChangeSettlementCulture.RemoveTroopsfromNotable(settlement);
 						}
-						else
+						foreach (Village boundVillage in settlement.BoundVillages)
 						{
-							ChangeSettlementCulture.Transform(boundVillage.Settlement, false);
+							if (removeTroops)
+							{
+								Transform(boundVillage.Settlement, true);
+							}
+							else
+							{
+								Transform(boundVillage.Settlement, false);
+							}
 						}
 					}
 				}
@@ -116,14 +197,14 @@ namespace BannerlordTweaks
 
 		public void OnWeeklyTickSettlement(Settlement settlement)
 		{
-			if (this.WeekCounter.ContainsKey(settlement))
+			if (WeekCounter.ContainsKey(settlement))
 			{
-				Dictionary<Settlement, int> dictionary = this.WeekCounter;
+				Dictionary<Settlement, int> dictionary = WeekCounter;
 				dictionary[settlement]++;
 
 				if (this.IsSettlementDue(settlement))
 				{
-					ChangeSettlementCulture.Transform(settlement, true);
+					Transform(settlement, true);
 				}
 			}
 		}
@@ -132,7 +213,7 @@ namespace BannerlordTweaks
 		{
 			if (BannerlordTweaksSettings.Instance is { } settings && settings.TimeToChanceCulture > 0)
 			{
-				return this.WeekCounter[settlement] >= settings.TimeToChanceCulture;
+				return WeekCounter[settlement] >= settings.TimeToChanceCulture;
 			}
 			else
 			{
@@ -144,25 +225,66 @@ namespace BannerlordTweaks
 		{
 			if (settlement.IsVillage || settlement.IsCastle || settlement.IsTown)
 			{
-				if (this.WeekCounter.ContainsKey(settlement))
+				if (WeekCounter.ContainsKey(settlement))
 				{
-					this.WeekCounter[settlement] = 0;
+					WeekCounter[settlement] = 0;
 				}
 				else
 				{
-					this.WeekCounter.Add(settlement, 0);
+					WeekCounter.Add(settlement, 0);
 				}
 			}
 		}
 
 		public override void SyncData(IDataStore dataStore)
 		{
-				dataStore.SyncData<Dictionary<Settlement, int>>("SettlementCultureTransformation", ref this.WeekCounter);
+				dataStore.SyncData<Dictionary<Settlement, int>>("SettlementCultureTransformation", ref WeekCounter);
+		}
+
+		public static bool Game_menu_castle_change_culture_on_condition(MenuCallbackArgs args)
+		{
+			args.optionLeaveType = GameMenuOption.LeaveType.Manage;
+			return Settlement.CurrentSettlement.IsCastle;
+		}
+		public static bool Game_menu_town_change_culture_on_condition(MenuCallbackArgs args)
+		{
+			args.optionLeaveType = GameMenuOption.LeaveType.Manage;
+			return Settlement.CurrentSettlement.IsTown;
+		}
+		public static bool Game_menu_village_change_culture_on_condition(MenuCallbackArgs args)
+		{
+			args.optionLeaveType = GameMenuOption.LeaveType.Manage;
+			return Settlement.CurrentSettlement.IsVillage;
+		}
+
+		public static void Game_menu_change_culture_on_consequence(MenuCallbackArgs args)
+		{
+			if (BannerlordTweaksSettings.Instance is { } settings)
+			{
+				bool PlayerOverride = Settlement.CurrentSettlement.OwnerClan == Clan.PlayerClan && OverrideCulture != Settlement.CurrentSettlement.Culture;
+				bool KingdomOverride = Settlement.CurrentSettlement.OwnerClan != Clan.PlayerClan && settings.ChangeToKingdomCulture && Settlement.CurrentSettlement.OwnerClan.Kingdom != null && Settlement.CurrentSettlement.OwnerClan.Kingdom.Culture != Settlement.CurrentSettlement.Culture;
+				bool ClanCulture = Settlement.CurrentSettlement.OwnerClan != Clan.PlayerClan && (!settings.ChangeToKingdomCulture || Settlement.CurrentSettlement.OwnerClan.Kingdom == null) && Settlement.CurrentSettlement.OwnerClan.Culture != Settlement.CurrentSettlement.Culture;
+
+				if (!WeekCounter.ContainsKey(Settlement.CurrentSettlement))
+				{
+					InformationManager.DisplayMessage(new InformationMessage("The people in " + Settlement.CurrentSettlement.Name + " already appraise their owners culture."));
+				}
+				else if (PlayerOverride || KingdomOverride || ClanCulture)
+				{
+					InformationManager.DisplayMessage(new InformationMessage("The people in " + Settlement.CurrentSettlement.Name + " seem to adopt their owners culture in " + (settings.TimeToChanceCulture - (WeekCounter.ContainsKey(Settlement.CurrentSettlement) ? WeekCounter[Settlement.CurrentSettlement] : 0)) + " weeks."));
+				}
+				else
+				{
+					InformationManager.DisplayMessage(new InformationMessage("The people in " + Settlement.CurrentSettlement.Name + " already appraise their owners culture."));
+				}
+			}
 		}
 
 
 		private static Dictionary<Settlement, CultureObject> initialCultureDictionary = new ();
-		private Dictionary<Settlement, int> WeekCounter = new ();
+		public static Dictionary<Settlement, int> WeekCounter = new ();
+		private static CultureObject? OverrideCulture = new();
+
 	}
 }
 

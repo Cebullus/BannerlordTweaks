@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Deutsch" />
+	</tags>
+	<strings>
+		<string id="BT_Settings_000000" text="Schlachtanpassungen" />
+			<string id="BT_Settings_000100" text="Schlacht Ruf, Einfluss, Moral Anpassungen" />
+			<string id="BT_Settings_000100_Desc" text="Wendet den eingestellten Multiplikator auf Ruf-, Einfluss- und Moralgewinn in Schlachten an (nur für den Spieler)." />
+				<string id="BT_Settings_000101" text="Rufmenge aus Schlachten"/>
+				<string id="BT_Settings_000101_Desc" text="Originalwert ist 100%. Die Menge an Ruf, welche du von Schlachten erhälst wird mit diesem Wert multipliziert." />
+				<string id="BT_Settings_000102" text="Einflussmenge aus Schlachten" />
+				<string id="BT_Settings_000102_Desc" text="Originalwert ist 100%. Die Menge an Einfluss, welche du von Schlachten erhälst wird mit diesem Wert multipliziert." />
+				<string id="BT_Settings_000103" text="Moralmenge aus Schlachten" />
+				<string id="BT_Settings_000103_Desc" text="Originalwert ist 100%. Die Menge an Moral, welche du von Schlachten erhälst wird mit diesem Wert multipliziert." />
+				<string id="BT_Settings_000104" text="Auch auf KI anwenden" />
+				<string id="BT_Settings_000104_Desc" text="Wendet die Ruf-, Einfluss- und Moralanpassungen auf KI-Truppenverbände an." />
+				<string id="BT_Settings_000105" text="Zeige Berechnungsnachricht" />
+				<string id="BT_Settings_000105_Desc" text="Blendet eine detailierte Berechnungsnachricht für Ruf-, Einfluss- und Moralanpassungen im Nachtenfenster ein." />
+
+			<string id="BT_Settings_000200" text="Versteckanpassungen" />
+			<string id="BT_Settings_000200_Desc" text="Verändert das Spielverhalten in Versteckschlachten." />
+				<string id="BT_Settings_000201" text="Truppenlimit in Verstecken"/>
+				<string id="BT_Settings_000201_Desc" text="Originalwert liegt zwischen 9 und 10. Verändert die maximale Truppenmenge, welche due in Verstecke mitnehmen kannst auf den eingestellten Wert. Kann nicht höher als 90 sein, da sonst Fehler auftreten." />
+				<string id="BT_Settings_000202" text="Schlacht bei Spielertod in Verstecken fortsetzen" />
+				<string id="BT_Settings_000202_Desc" text="Originalwert ist deaktiviert. Wenn aktiviert werden Schlachten nicht automatisch verloren, wenn du stirbst. Deine Truppen werden stattdessen stürmen und der Bosskampf übersprungen." />
+				<string id="BT_Settings_000203" text="Schlacht nach verlorenem Duel fortsetzen" />
+				<string id="BT_Settings_000203_Desc" text="Originalwert ist deaktiviert. Wenn aktiviert wird die Schlacht nach verlorenem Duell fortgesetzt, deine Truppen werden den Gegner stürmen und dich rächen." />
+
+			<string id="BT_Settings_000300" text="Belagerungsanpassungen" />
+			<string id="BT_Settings_000300_Desc" text="Anpassung der Konstruktionsgeschwindigkeit von Belagerungsgeräten und Einheitenverlusten während Belagerungen." />
+				<string id="BT_Settings_000301" text="Konstruktionsfortschritt von Belagerungsgeräten pro Tag"/>
+				<string id="BT_Settings_000301_Desc" text="Originalwert ist 100%. Diese Anpassung modifiziert den Konstruktionsfortschritt pro Tag bei Belagerungen. Ein kleinerer Wert resultiert in längeren Belagerungsphasen." />
+				<string id="BT_Settings_000302" text="Kollateralverluste bei Belagerungen" />
+				<string id="BT_Settings_000302_Desc" text="Originalwert ist 100%. Diese Anpassung verändert den Basiswert (1 oder 2 mit Armbrust Terror Vorteil) mit welchem die Einheitenverluste während der Kartenbelagerungsphase berechnet werden." />
+				<string id="BT_Settings_000303" text="Zerstörungsverluste bei Belagerungen" />
+				<string id="BT_Settings_000303_Desc" text="Originalwert ist 0. Diese Anpassung erhöht den Basiswert (2), mit welchem die Einheitenverluste bei Zerstörung von Belagerungsgerät während der Kartenbelagerungsphase berechnet werden." />
+
+			<string id="BT_Settings_000400" text="Truppenerfahrung" />
+			<string id="BT_Settings_000400_Desc" text="Anpassung des Erfahrungsgewinns der Truppen in Schlachten und Simulationen." />
+				<string id="BT_Settings_000401" text="Truppenschlachterfahrung"/>
+				<string id="BT_Settings_000401_Desc" text="Modifiziert die Erfahrungsmenge, welche ALLE Truppen in Schlachten erhalten (Hinweis: Nur Truppen, keine Helden)." />
+				<string id="BT_Settings_000402" text="Menge Truppenerfahrung in Schlachten" />
+				<string id="BT_Settings_000402_Desc" text="Originalwert ist 100%. Modifiziert die Erfahrungsmenge, welche ALLE Truppen in Schlachten erhalten (Hinweis: Nur Truppen, keine Helden. Wird nicht in Simulationen angewendet)." />
+				<string id="BT_Settings_000403" text="Truppenerfahrung in Simulationen" />
+				<string id="BT_Settings_000403_Desc" text="Modifiziert die Erfahrungsmenge in Simulationen. Dies wird auf alle Schlachten auf der Kampagnenkarte angewendet (einschließlich NPC-Kämpfe)." />
+				<string id="BT_Settings_000404" text="Menge Truppenerfahrung in Simulationen" />
+				<string id="BT_Settings_000404_Desc" text="Originalwert ist 100%. Modifiziert die Erfahrungsmenge in simulierten Schlachten. Dies gilt für alle simulierten Schlachten auf der Kampagnenkarte." />
+
+			<string id="BT_Settings_000500" text="Durchzuganpassung von Waffen" />
+			<string id="BT_Settings_000500_Desc" text="Erlaubt allen Waffen durchzuziehen und mehrere Gegner zu treffen." />
+				<string id="BT_Settings_000501" text="Zweihandwaffen ziehen durch"/>
+				<string id="BT_Settings_000501_Desc" text="Erlaubt allen Zweihandwaffen durchzuziehen und mehrere Gegner zu treffen." />
+				<string id="BT_Settings_000502" text="Einhandwaffen ziehen durch" />
+				<string id="BT_Settings_000502_Desc" text="Erlaubt allen Einhandwaffen durchzuziehen und mehrere Gegner zu treffen." />
+
+		<string id="BT_Settings_001000" text="Kampagnenanpassungen" />
+			<string id="BT_Settings_001100" text="Schlachtgrößenanpassung" />
+			<string id="BT_Settings_001100_Desc" text="Erlaubt dir, die Schlachtgröße über den Originalwert hinaus zu erhöhen. WARNUNG: Ein Wert über 1000 kann zu Performanceeinbrüchen und Abstürzen führen." />
+				<string id="BT_Settings_001101" text="Schlachtgröße"/>
+				<string id="BT_Settings_001101_Desc" text="Stellt die maximale Schlachtgröße ein. Die Einstellung in den Spieleinstellungen wird dabei ignoriert. WARNUNG: Das Spiel wird abstürzen, wenn alle Truppen und ihre Pferde zusammen über 2000 Einheiten ergeben." />
+
+			<string id="BT_Settings_001200" text="Schwierigkeitsanpassungen" />
+			<string id="BT_Settings_001200_Desc" text="Erlaubt dir den Multiplikator für verschiedene Schwiertigkeitseinstellungen zu verändern." />
+				<string id="BT_Settings_001201" text="Spielerschaden"/>
+				<string id="BT_Settings_001201_Desc" text="Erlaubt dir den Multiplikator für Schaden, den der Spielercharakter erhält, zu verändern." />
+				<string id="BT_Settings_001202" text="Spielerschadenmenge"/>
+				<string id="BT_Settings_001202_Desc" text="Originalwerte: Sehr leicht: 30%, Leicht: 67%, Realistisch: 100%. Dieser Wert bestimmt wieviel Schaden der Spielercharackter erhält." />
+				<string id="BT_Settings_001203" text="Verbündeter Schaden"/>
+				<string id="BT_Settings_001203_Desc" text="Erlaubt dir den Multiplikator für Schaden, den verbündete Truppen erhalten, zu verändern." />
+				<string id="BT_Settings_001204" text="Verbündete Schadenmenge"/>
+				<string id="BT_Settings_001204_Desc" text="Originalwerte: Sehr leicht: 30%, Leicht: 67%, Realistisch: 100%. Dieser Wert bestimmt wieviel Schaden verbündete Truppen erhalten." />
+				<string id="BT_Settings_001205" text="Spielertruppenschaden"/>
+				<string id="BT_Settings_001205_Desc" text="Erlaubt dir den Multiplikator für Schaden, den deine Truppen erhalten, zu verändern." />
+				<string id="BT_Settings_001206" text="Spielertruppenschadenmenge"/>
+				<string id="BT_Settings_001206_Desc" text="Originalwerte: Sehr leicht: 30%, Leicht: 67%, Realistisch: 100%. Dieser Wert bestimmt wieviel Schaden deine Truppen erhalten." />
+				<string id="BT_Settings_001207" text="Kampf-KI-Schwierigkeit"/>
+				<string id="BT_Settings_001207_Desc" text="Erlaubt dir, die Kampf-KI-Schwierigkeit zu verändern." />
+				<string id="BT_Settings_001208" text="Kampf-KI-Schwierigkeitsmenge"/>
+				<string id="BT_Settings_001208_Desc" text="Originalwerte: Sehr leicht: 10%, Leicht: 32%, Realistisch: 96%. Dieser Wert bestimmt die Fähigkeiten und Verhalten der Kampf-KI." />
+				<string id="BT_Settings_001209" text="Spielerkartengeschwindigkeit"/>
+				<string id="BT_Settings_001209_Desc" text="Erlaubt dir, die Bonusgeschwindigkeit auf der Karte, welcher der SPieler erhält, zu verändern." />
+				<string id="BT_Settings_001210" text="Spielerkartengeschwindigkeitsbonusmenge"/>
+				<string id="BT_Settings_001210_Desc" text="Originalwerte: Sehr leicht: 10%, Leicht: 5%, Realistisch: 0%. Dieser Wert bestimmt die Bonusgeschwindigkeit auf der Karte für den Spieler." />
+
+		<string id="BT_Settings_002000" text="Charakteranpassungen" />
+			<string id="BT_Settings_002100" text="Alteranpassungen" />
+			<string id="BT_Settings_002100_Desc" text="Aktiviert Anpassungen bezüglich Charakteralter." />
+				<string id="BT_Settings_002101" text="Beginn Säuglingsalter"/>
+				<string id="BT_Settings_002101_Desc" text="Original: 3. Muss unter Kindesalter liegen." />
+				<string id="BT_Settings_002102" text="Beginn Kindesalter"/>
+				<string id="BT_Settings_002102_Desc" text="Original: 6. Muss unter dem jugendlichen Alter liegen." />
+				<string id="BT_Settings_002103" text="Beginn jugendliches Alter"/>
+				<string id="BT_Settings_002103_Desc" text="Original: 14. Muss unter dem erwachsenen Alter liegen." />
+				<string id="BT_Settings_002104" text="Held wird erwachsen"/>
+				<string id="BT_Settings_002104_Desc" text="Original: 18. Muss unter dem Beginn des Altseins liegen." />
+				<string id="BT_Settings_002105" text="Beginn des Altseins"/>
+				<string id="BT_Settings_002105_Desc" text="Native: 47. Muss unter dem maximalen Alter liegen." />
+				<string id="BT_Settings_002106" text="Maximales Alter"/>
+				<string id="BT_Settings_002106_Desc" text="Native: 125." />
+
+			<string id="BT_Settings_002200" text="Attributfokus Punkteanpassungen" />
+			<string id="BT_Settings_002200_Desc" text="Verändert die Punkte mit denen berechnet wird, wieviele Attribut und Fokuspunkte Charaktere bekommen." />
+				<string id="BT_Settings_002201" text="Charakterlevel pro Attributpunkt."/>
+				<string id="BT_Settings_002201_Desc" text="Originalwert ist 4. Wieviele Level benötigt werden, um einen Attributpunkt zu erhalten." />
+				<string id="BT_Settings_002202" text="Fokuspunkte pro Level"/>
+				<string id="BT_Settings_002202_Desc" text="Originalwert ist 1. Dies ist die Menge an Fokuspunkten, die man je Level erhält." />
+
+			<string id="BT_Settings_002300" text="Heldenfähigkeitserfahrung" />
+			<string id="BT_Settings_002300_Desc" text="Aktiviert Boni für die Fähigkeitserfahrung, welche dder Spieler und seine Begleiter erhalten." />
+				<string id="BT_Settings_002301" text="Spielerfähigkeitserfahrung"/>
+				<string id="BT_Settings_002301_Desc" text="Wendet einen Modifikator auf die Menge an Fähigkeitserfahrung an, die der Spieler erhält. 100% = Kein Bonus." />
+				<string id="BT_Settings_002302" text="Menge Spielerfähigkeitserfahrung"/>
+				<string id="BT_Settings_002302_Desc" text="Wendet einen Modifikator auf die Menge an Fähigkeitserfahrung an, die der Spieler erhält. 100% = Kein Bonus." />
+				<string id="BT_Settings_002303" text="Begleiterfähigkeitserfahrung"/>
+				<string id="BT_Settings_002303_Desc" text="Wendet einen Modifikator auf die Menge an Fähigkeitserfahrung an, die Begleiter erhalten. 100% = Kein Bonus." />
+				<string id="BT_Settings_002304" text="Menge Begleiterfähigkeitserfahrung"/>
+				<string id="BT_Settings_002304_Desc" text="Wendet einen Modifikator auf die Menge an Fähigkeitserfahrung an, die Begleiter erhalten. 100% = Kein Bonus." />
+				<string id="BT_Settings_002305" text="Extra Boni pro Fähigkeit"/>
+				<string id="BT_Settings_002305_Desc" text="Verändert die Menge für spezifische Fähigkeiten, bevor die globalen Modifikatoren angewendet werden. Betrifft nur den Spieler und seine Begleiter. 100% = Kein Bonus. 110% = +10% usw." />
+					<string id="BT_Settings_002306" text="Menge für Fähigkeit: Technik"/>
+					<string id="BT_Settings_002306_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Technikfähigkeit." />
+					<string id="BT_Settings_002307" text="Menge für Fähigkeit: Führung"/>
+					<string id="BT_Settings_002307_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Führungsfähigkeit." />
+					<string id="BT_Settings_002308" text="Menge für Fähigkeit: Medizin"/>
+					<string id="BT_Settings_002308_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Medizinfähigkeit." />
+					<string id="BT_Settings_002309" text="Menge für Fähigkeit: Reiten"/>
+					<string id="BT_Settings_002309_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Reitenfähigkeit." />
+					<string id="BT_Settings_002310" text="Menge für Fähigkeit: Schurkerei"/>
+					<string id="BT_Settings_002310_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Schurkereifähigkeit." />
+					<string id="BT_Settings_002311" text="Menge für Fähigkeit: Kundschaften"/>
+					<string id="BT_Settings_002311_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Kundschaftenfhäigkeit." />
+					<string id="BT_Settings_002312" text="Menge für Fähigkeit: Handel"/>
+					<string id="BT_Settings_002312_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Handelsfähigkeit." />
+					<string id="BT_Settings_002313" text="Menge für Fähigkeit: Schmieden"/>
+					<string id="BT_Settings_002313_Desc" text="Verändert zusätzlich die Menge an Erfahrung für die Schmiedefähigkeit." />
+
+			<string id="BT_Settings_002400" text="Schwangerschaftsanpassungen" />
+			<string id="BT_Settings_002400_Desc" text="Aktiviert verschiedene Anpassungen bezüglich dem Schwangerschaftsablauf." />
+				<string id="BT_Settings_002401" text="Deaktiviere Totgeburten"/>
+				<string id="BT_Settings_002401_Desc" text="Deaktiviert die Chance, dass Kinder als Totgeburt zur Welt kommen." />
+				<string id="BT_Settings_002402" text="Deaktiviere mütterliche Sterblichkeit"/>
+				<string id="BT_Settings_002402_Desc" text="Deaktiviert die Chance, dass Mütter bei der Geburt sterben." />
+				<string id="BT_Settings_002403" text="Schwangerschaftsdauer"/>
+				<string id="BT_Settings_002403_Desc" text="Erlaubt die Anpassung der Schwangerschaftsdauer." />
+				<string id="BT_Settings_002404" text="Schwangerschaftsdauer"/>
+				<string id="BT_Settings_002404_Desc" text="Originaldauer ist 36 Tage." />
+				<string id="BT_Settings_002405" text="Geschlechtsverhältnis"/>
+				<string id="BT_Settings_002405_Desc" text="Erlaubt die Anpassung der Wahrscheinlichkeit für weibliche Kinder." />
+				<string id="BT_Settings_002406" text="Wahrscheinlichkeit für weibliche Kinder"/>
+				<string id="BT_Settings_002406_Desc" text="Originalwahrscheinlichkeit ist 51%. 100% deaktiviert männliche Kinder." />
+				<string id="BT_Settings_002407" text="Zwillingwahrscheinlichkeit"/>
+				<string id="BT_Settings_002407_Desc" text="Erlaubt die Anpassung der Chance auf Zwillinge." />
+				<string id="BT_Settings_002408" text="Zwillingwahrscheinlichkeit"/>
+				<string id="BT_Settings_002408_Desc" text="Originalwahrscheinlichkeit ist 3%. Ergibt die Wahrscheinlichhkeit, bei der Geburt Zwillinge zu bekommen." />
+				<string id="BT_Settings_002409" text="Schwangerschaftswahrscheinlichkeit"/>
+				<string id="BT_Settings_002409_Desc" text="Wenn dies aktiviert ist, wird die gesamte tägliche Schwangerschaftsroutine überschrieben. Alle nachfolgenden Anpassungen werden aktiviert!" />
+				<string id="BT_Settings_002410" text="Spieler ist unfruchtbar"/>
+				<string id="BT_Settings_002410_Desc" text="Original: deaktiviert. Wenn aktiviert wird der Spieler keine Kinder zeugen können." />
+				<string id="BT_Settings_002411" text="Mindestalter Schwangerschaft"/>
+				<string id="BT_Settings_002411_Desc" text="Original: 18. Mindestalter, um schwanger werden zu können." />
+				<string id="BT_Settings_002412" text="Maximalalter Schwangerschaft"/>
+				<string id="BT_Settings_002412_Desc" text="Original: 45. Maximalalter, um schwanger werden zu können." />
+				<string id="BT_Settings_002413" text="Clanfruchtbarkeitsbonus"/>
+				<string id="BT_Settings_002413_Desc" text="Aktiviert einen Modifikator für die Chance, dass Mitglieder in deinem Clan schwanger werden können. 100% = Kein Bonus, 200% = 2x Chance. Hinweis: Nach 6-8 Kindern wird dies keine großen Auswirkungen mehr haben." />
+				<string id="BT_Settings_002414" text="Maximalanzahl Kinder"/>
+				<string id="BT_Settings_002414_Desc" text="Original: 5. Wieviele Kinder maximal zeugbar sind." />
+
+		<string id="BT_Settings_003000" text="Clananpassungen" />
+			<string id="BT_Settings_003100" text="Begleiterlimit" />
+			<string id="BT_Settings_003100_Desc" text="Bestimmt den Grundwert sowie Bonus je Clanstufe für die Maximalmenge an Begleitern." />
+				<string id="BT_Settings_003101" text="Grundwert Begleiter"/>
+				<string id="BT_Settings_003101_Desc" text="Originalwert ist 3. Bestimmt den Grundmenge an Begleitern, die man haben kann." />
+				<string id="BT_Settings_003102" text="Bonusbegleiter je Clanstufe"/>
+				<string id="BT_Settings_003102_Desc" text="Originalwert ist 1. Bestimmt die Menge an Begleitern, welche man zusätzlich zum Grundwert je Clanstufe führen kann. Dieser Wert wird mit der Clanstufe multipliziert. Hinweis: Die Führungsfähigkeit 'Wir schwören auf unsere Schwerter' wird diesen Wert auch um 1 erhöhen." />
+				<string id="BT_Settings_003103" text="Aktiviere unbegrenzte Wanderer"/>
+				<string id="BT_Settings_003103_Desc" text="Entfernt das Softlimit, welches bestimmt, wieviele Wanderer im Spiel erscheinen können. Im Originalspiel ist dieses Limit bei etwa 25 Wanderern. Hiermit wird dieses Limit entfernt. Hinweis: Nur wirksam für eine neue Kampagne. Danke an Bleinz für seine UnlimitedWanderers Mod." />
+
+			<string id="BT_Settings_003200" text="Truppenverbandsbegrenzung" />
+			<string id="BT_Settings_003200_Desc" text="Verändert die Menge an Truppenverbänden, welche du und KI-Lords befehligen können sowie den Bonus pro Clanstufe." />
+				<string id="BT_Settings_003201" text="Spielertruppenverbandsbegrenzung"/>
+				<string id="BT_Settings_003201_Desc" text="Verändert die Grundmenge an Truppenverbänden, welche der Spieler anführen kann sowie den Bonus pro CLanstufe." />
+					<string id="BT_Settings_003202" text="Grundmenge Truppenverbände"/>
+					<string id="BT_Settings_003202_Desc" text="Originalmenge ist 1. Dies bestimmt die Grundmenge an Truppenverbänden, die der Spieler von Spielbeginn an führen kann." />
+					<string id="BT_Settings_003203" text="Bonusanzahl je Clanstufe"/>
+					<string id="BT_Settings_003203_Desc" text="Im Originalspiel wird die Menge wie folgt berechnet: 1 Truppenverband bis Clanstufe 3, 2 Truppenverbände bis Clanstufe 5, 3 Truppenverbände über Clanstufe 5. Dieser Wert wird mit der Clanstufe multipliziert. Ein Wert von 0,5 resultiert in 1 zusätzlichem Truppenverband alle 2 Clanstufen, was dem Original entspricht." />
+				<string id="BT_Settings_003204" text="KI-Lord Truppenverbandsbegrenzung"/>
+				<string id="BT_Settings_003204_Desc" text="Verändert die Grundmenge an Truppenverbänden, welche KI-Lords anführen können." />
+					<string id="BT_Settings_003205" text="Zusätzliche Truppenverbände für KI-Lords"/>
+					<string id="BT_Settings_003205_Desc" text="Dieser Wert wird auf die maximale Anzahl an Truppenverbände, welche KI-Lords führen können, hinzugerechnet (Originalwert ist 1 bis Clanstufe 3, 2 ab Stufe 4, 3 über Stufe 5). Nebenfraktionen bleiben unverändert." />
+					<string id="BT_Settings_003206" text="Auch auf Nebenfraktionen anwenden"/>
+					<string id="BT_Settings_003206_Desc" text="Verändert die Grundmenge an Truppenverbänden, welche KI-Lords von Nebenfraktionen anführen können. Originalmenge ist 1-4, abhängig von der Clanstufe." />
+				<string id="BT_Settings_003207" text="CS Truppenverbandsbegrenzung"/>
+				<string id="BT_Settings_003207_Desc" text="Verändert die Grundmenge an Truppenverbänden, welche KI-Lords aus der Custom Spawns Mod anführen können." />
+					<string id="BT_Settings_003208" text="Zusätzliche Truppenverbandsmenge CS"/>
+					<string id="BT_Settings_003208_Desc" text="Der Wert wird zur Grundmenge an Truppenverbänden addiert, welche KI-Lords aus der Custom Spawns Mod anführen können. [Originalmenge ist 1 bis Clanstufe 3, 2 ab Stufe 4, 3 ab Clanstufe 5.]." />
+
+		<string id="BT_Settings_004000" text="Handwerksanpassung" />
+			<string id="BT_Settings_004100" text="Handwerksausdauer" />
+			<string id="BT_Settings_004100_Desc" text="Aktiviert Anpassungen bezüglich Handwerksausdauer." />
+				<string id="BT_Settings_004101" text="Maximale Handwerksausdauer"/>
+				<string id="BT_Settings_004101_Desc" text="Originalgrenze ist 400. Bestimmt das Maximum der Handwerksausdauer." />
+				<string id="BT_Settings_004102" text="Regenerationsrate Handwerksausdauer"/>
+				<string id="BT_Settings_004102_Desc" text="Originalwert ist 5. Du erhälst die angegebene Menge an Ausdauer je Stunde." />
+				<string id="BT_Settings_004103" text="Regeneration außerhalb Siedlung"/>
+				<string id="BT_Settings_004103_Desc" text="Originalwert ist 0%. In % der normalen Regenerationsrate. Im Originalspiel erhält man keine Handwerksausdauer außerhalb von Siedlungen." />
+				<string id="BT_Settings_004104" text="Ignoriere Ausdauer"/>
+				<string id="BT_Settings_004104_Desc" text="Originalwert is deaktiviert. Durch diese Einstellung wird Ausdauer vollständig ignoriert. Du verlierst zwar trotzdem Ausdauer, kannst aber auch bei 0 Ausdauer weiter Handwerk betreiben." />
+
+			<string id="BT_Settings_004200" text="Einschmelzen" />
+			<string id="BT_Settings_004200_Desc" text="Aktiviert Anpassungen, welche das Einschmelzen von Waffen betreffen." />
+				<string id="BT_Settings_004201" text="Verstecke gesperrte Waffen"/>
+				<string id="BT_Settings_004201_Desc" text="Originalwert ist deaktiviert. Blendet im Inventar gesperrte Waffen aus dem Einschmelmenü aus um versehentliches Einschmelzen zu verhindern." />
+				<string id="BT_Settings_004202" text="Einschmelzen schaltet Teile frei"/>
+				<string id="BT_Settings_004202_Desc" text="Originalwert ist deaktiviert. Schaltet die Waffenteile der eingeschmolzenen Waffen frei." />
+
+		<string id="BT_Settings_005000" text="Königreichsanpassungen" />
+			<string id="BT_Settings_005100" text="Verhandlungen" />
+			<string id="BT_Settings_005100_Desc" text="Aktiviert Anpassungen, welche Verhandlungen mit Lords betreffen (Heirat, Fraktionsbeitritte usw.)" />
+				<string id="BT_Settings_005101" text="Fraktionsbeitrittskosten"/>
+				<string id="BT_Settings_005101_Desc" text="Passt die Kosten für Überredungen zum Fraktionsbeitritt in % zum Originalwert an. Originalwert ist 100%." />
+				<string id="BT_Settings_005102" text="Stärkere Beachtung von Beziehungen"/>
+				<string id="BT_Settings_005102_Desc" text="Eine alternative Formel zur Berechnung von Verhandlungskosten, welche die Beziehung zwischen den Verhandlungspartnern stärker beachtet. Je besser die Beziehung ist, desto preiswerter wird die Verhandlung." />
+
+			<string id="BT_Settings_005200" text="Fraktionstärkenausgleich" />
+			<string id="BT_Settings_005200_Desc" text="Aktiviert Anpassungen bezüglich Stärkenausgleich zwischen Fraktionen." />
+				<string id="BT_Settings_005201" text="Ausgleichsstärke für Originalkönigreiche"/>
+				<string id="BT_Settings_005201_Desc" text="Aktiviert den Ausgleich von Fraktionsstärken für Königreiche im Originalspiel. Jedes Königreich wird je nach eingestelltem Wert gestärkt oder gehindert." />
+					<string id="BT_Settings_005202" text="Vlandia Ausgleichsstärke"/>
+					<string id="BT_Settings_005202_Desc" text="Stärkenausgleich für Vlandia. Verstärkt oder behindert Vlandia in den aktivierten Bereichen." />
+					<string id="BT_Settings_005203" text="Sturgia Ausgleichsstärke"/>
+					<string id="BT_Settings_005203_Desc" text="Stärkenausgleich für Sturgia. Verstärkt oder behindert Sturgia in den aktivierten Bereichen." />
+					<string id="BT_Settings_005204" text="Battania Ausgleichsstärke"/>
+					<string id="BT_Settings_005204_Desc" text="Stärkenausgleich für Battania. Verstärkt oder behindert Battania in den aktivierten Bereichen." />
+					<string id="BT_Settings_005205" text="Nördliches Imperium Ausgleichsstärke"/>
+					<string id="BT_Settings_005205_Desc" text="Stärkenausgleich für das nördliche Imperium. Verstärkt oder behindert das nördliche Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005206" text="Südliches Imperium Ausgleichsstärke"/>
+					<string id="BT_Settings_005206_Desc" text="Stärkenausgleich für das südliche Imperium. Verstärkt oder behindert das südliche Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005207" text="Westliches Imperium Ausgleichsstärke"/>
+					<string id="BT_Settings_005207_Desc" text="Stärkenausgleich für das westliche Imperium. Verstärkt oder behindert das westliche Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005208" text="Aserai Ausgleichsstärke"/>
+					<string id="BT_Settings_005208_Desc" text="Stärkenausgleich für die Aserai. Verstärkt oder behindert die Aserai in den aktivierten Bereichen." />
+					<string id="BT_Settings_005209" text="Khuzait Ausgleichsstärke"/>
+					<string id="BT_Settings_005209_Desc" text="Stärkenausgleich für die Khuzait. Verstärkt oder behindert die Khuzait in den aktivierten Bereichen." />
+					<string id="BT_Settings_005210" text="Spielerkönigreich Ausgleichsstärke"/>
+					<string id="BT_Settings_005210_Desc" text="Stärkenausgleich für das Spielerkönigreich. Verstärkt oder behindert das Königreich des Spielers in den aktivierten Bereichen." />
+				<string id="BT_Settings_005211" text="Ausgleichsstärke für Calradia Expanded Königreiche"/>
+				<string id="BT_Settings_005211_Desc" text="Aktiviert den Ausgleich von Fraktionsstärken für Köänigreiche im Mod Calradia Expanded Kingdoms. Jedes Königreich wird je nach eingestelltem Wert gestärkt oder gehindert." />
+					<string id="BT_Settings_005212" text="Nordlings Ausgleichsstärke"/>
+					<string id="BT_Settings_005212_Desc" text="Stärkenausgleich für die Nordlinge. Verstärkt oder behindert die Nordlinge in den aktivierten Bereichen." />
+					<string id="BT_Settings_005213" text="Vagir Ausgleichsstärke"/>
+					<string id="BT_Settings_005213_Desc" text="Stärkenausgleich für die Vaegir. Verstärkt oder behindert die Vaegir in den aktivierten Bereichen." />
+					<string id="BT_Settings_005214" text="Royales Vlandia Ausgleichsstärke"/>
+					<string id="BT_Settings_005214_Desc" text="Stärkenausgleich für die royalen Vlandia. Verstärkt oder behindert die royalen Vlandia in den aktivierten Bereichen." />
+					<string id="BT_Settings_005215" text="Apolssaly Ausgleichsstärke"/>
+					<string id="BT_Settings_005215_Desc" text="Stärkenausgleich für die Apolssaly. Verstärkt oder behindert die Apolssaly in den aktivierten Bereichen." />
+					<string id="BT_Settings_005216" text="Lyrion Ausgleichsstärke"/>
+					<string id="BT_Settings_005216_Desc" text="Stärkenausgleich für Lyrion. Verstärkt oder behindert Lyrion in den aktivierten Bereichen." />
+					<string id="BT_Settings_005217" text="Khergit Ausgleichsstärke"/>
+					<string id="BT_Settings_005217_Desc" text="Stärkenausgleich für die Khergit. Verstärkt oder behindert die Khergit in den aktivierten Bereichen." />
+					<string id="BT_Settings_005218" text="Paleician Ausgleichsstärke"/>
+					<string id="BT_Settings_005218_Desc" text="Stärkenausgleich für Paleician. Verstärkt oder behindert die Paleician in den aktivierten Bereichen." />
+					<string id="BT_Settings_005219" text="Ariorum Ausgleichsstärke"/>
+					<string id="BT_Settings_005219_Desc" text="Stärkenausgleich für Ariorum. Verstärkt oder behindert Ariorum in den aktivierten Bereichen." />
+					<string id="BT_Settings_005220" text="Calradisches Imperium Ausgleichsstärke"/>
+					<string id="BT_Settings_005220_Desc" text="Stärkenausgleich für das calradische Imperium. Verstärkt oder behindert das calradische Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005221" text="Dryaticanische Republik Ausgleichsstärke"/>
+					<string id="BT_Settings_005221_Desc" text="Stärkenausgleich für das dryaticanische Imperium. Verstärkt oder behindert das dryaticanische Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005222" text="Battania Ausgleichsstärke"/>
+					<string id="BT_Settings_005222_Desc" text="Stärkenausgleich für Battania. Verstärkt oder behindert Battania in den aktivierten Bereichen." />
+					<string id="BT_Settings_005223" text="Cortanische Vlandia Ausgleichsstärke"/>
+					<string id="BT_Settings_005223_Desc" text="Stärkenausgleich für das cortanische Vlandia. Verstärkt oder behindert das cortanische Vlandia in den aktivierten Bereichen." />
+					<string id="BT_Settings_005224" text="Sturgia Ausgleichsstärke"/>
+					<string id="BT_Settings_005224_Desc" text="Stärkenausgleich für Sturgia. Verstärkt oder behindert Sturgia in den aktivierten Bereichen." />
+					<string id="BT_Settings_005225" text="Khuzait Ausgleichsstärke"/>
+					<string id="BT_Settings_005225_Desc" text="Stärkenausgleich für die Khuzait. Verstärkt oder behindert die Khuzait in den aktivierten Bereichen." />
+					<string id="BT_Settings_005226" text="Aserai Ausgleichsstärke"/>
+					<string id="BT_Settings_005226_Desc" text="Stärkenausgleich für die Aserai. Verstärkt oder behindert die Aserai in den aktivierten Bereichen." />
+					<string id="BT_Settings_005227" text="Westliches Imperium Ausgleichsstärke"/>
+					<string id="BT_Settings_005227_Desc" text="Stärkenausgleich für das westliche Imperium. Verstärkt oder behindert das westliche Imperium in den aktivierten Bereichen." />
+					<string id="BT_Settings_005228" text="Spielerkönigreich Ausgleichsstärke"/>
+					<string id="BT_Settings_005228_Desc" text="Stärkenausgleich für das Spielerkönigreich. Verstärkt oder behindert das Königreich des Spielers in den aktivierten Bereichen." />
+				<string id="BT_Settings_005229" text="Truppenverbandsgrößen"/>
+				<string id="BT_Settings_005229_Desc" text="Modifiziert die maximale Größe der Truppenverbände (1.0 x Ausgleichsstärke)." />
+				<string id="BT_Settings_005230" text="Truppenverbandsbegrenzung"/>
+				<string id="BT_Settings_005230_Desc" text="Modifiziert die maximale Anzahl von Truppenverbänden (1.0 x Ausgleichsstärke)." />
+				<string id="BT_Settings_005231" text="Nahrungsgüterproduktion in Dörfern"/>
+				<string id="BT_Settings_005231_Desc" text="Modifiziert die Anzahl der täglich in Dörfern produzierten Nahrungsgüter (1.0 x Balancing Strength)." />
+				<string id="BT_Settings_005232" text="Schnellere Rekrutierung"/>
+				<string id="BT_Settings_005232_Desc" text="Extrachance, täglich neue Rekruten zu erschaffen (0.75 x Balancing Strength)." />
+				<string id="BT_Settings_005233" text="Effiziente Steuereintreibung"/>
+				<string id="BT_Settings_005233_Desc" text="Modifiziert die Steuereinnahmen durch Wohlstand in Städten und Burgen sowie Handelssteuereinnahmen in Dörfern (1.0 x Balancing Strength)." />
+				<string id="BT_Settings_005234" text="Truppensold"/>
+				<string id="BT_Settings_005234_Desc" text="Modifiziert die Besoldung von Truppen und Garnissontruppenages (1.0 x Balancing Strength)." />
+				<string id="BT_Settings_005235" text="Qualität der Rekruten"/>
+				<string id="BT_Settings_005235_Desc" text="Erhöht die tägliche Chance auf verbesserte Rekruten (1.0 x Balancing Strength). Kein Effekt, wenn der jeweilige Stärkenausgleich unter 0% liegt (keine Senkung der Chance auf Verbesserungen)." />
+
+		<string id="BT_Settings_006000" text="Truppenverbandsanpassungen" />
+			<string id="BT_Settings_006100" text="Zusammenhalt" />
+			<string id="BT_Settings_006100_Desc" text="Aktiviert Anpassungen, welche den Armeezusammenhalt betreffen." />
+				<string id="BT_Settings_006101" text="Zusammenhaltsverfall"/>
+				<string id="BT_Settings_006101_Desc" text="Modifiziert wie schnell der Zusammenhalt in Armeen zerfällt. Originalwert ist 100%, 0% bedeutet gar keinen Zerfall des Zusammenhaltes." />
+				<string id="BT_Settings_006102" text="Claninterne Armeen zerfallen nicht"/>
+				<string id="BT_Settings_006102_Desc" text="Armeen, welche nur aus Clan-eigenen Truppenverbänden bestehen, zerfallen nicht wegen fehlendem Zusammenhalt." />
+
+			<string id="BT_Settings_006200" text="Spielerkarawanengröße" />
+			<string id="BT_Settings_006200_Desc" text="Bestimmt die Größ0e von SPieler-eigenen Karawanen" />
+				<string id="BT_Settings_006201" text="Größe von Spielerkarawanen"/>
+				<string id="BT_Settings_006201_Desc" text="Original: 30. Beachte, dass größere Truppenverbände auch langsamer sind." />
+
+			<string id="BT_Settings_006300" text="Truppenverbandsgröße" />
+			<string id="BT_Settings_006300_Desc" text="Wendet einen Bonus auf die maximale Truppenverbandsgröße basierend auf der Führungs- und Verwaltungsfähigkeit für dich und KI-Lords an." />
+				<string id="BT_Settings_006301" text="Führungsbonus"/>
+				<string id="BT_Settings_006301_Desc" text="Wendet einen Bonus auf die maximale Truppenverbandsgröße an, welcher dem eingestellten Prozentsatz deiner Führungsfähigkeit entspricht." />
+				<string id="BT_Settings_006302" text="führungsfähigkeit Spieler"/>
+				<string id="BT_Settings_006302_Desc" text="Wendet einen Bonus auf die maximale Truppenverbandsgröße an, welcher dem eingestellten Prozentsatz deiner Führungsfähigkeit entspricht." />
+				<string id="BT_Settings_006303" text="Verwaltungsbonus"/>
+				<string id="BT_Settings_006303_Desc" text="Wendet einen Bonus auf die maximale Truppenverbandsgröße an, welcher dem eingestellten Prozentsatz deiner Verwaltungsfähigkeit entspricht." />
+				<string id="BT_Settings_006304" text="Verwaltungsfähigkeit Spieler"/>
+				<string id="BT_Settings_006304_Desc" text="Wendet einen Bonus auf die maximale Truppenverbandsgröße an, welcher dem eingestellten Prozentsatz deiner Verwaltungsfähigkeit entspricht." />
+				<string id="BT_Settings_006305" text="Verhältnis Bonusgröße KI - SPieler"/>
+				<string id="BT_Settings_006305_Desc" text="Der für den Spieler ermittelte Bonus für die Truppenverbandsgröße wird mit dem angegebenen prozentsatz auch für KI-Lords angewendet. 0% resultiert in keiner Erhöhung für die KI. Eventuell solltest du eine Erhöhung der Nahrungsproduktion in Dörfern in Erwägung ziehen (mehr Nachfrage)." />
+
+			<string id="BT_Settings_006400" text="Besoldung" />
+			<string id="BT_Settings_006400_Desc" text="Erlaubt die Erhöhung/Reduzierung der Besoldung für verschiedene Gruppen." />
+				<string id="BT_Settings_006401" text="Truppenverbände"/>
+				<string id="BT_Settings_006401_Desc" text="Passt die Besoldung der Truppenverbände in % vom Originalwert an. Original ist 100%." />
+				<string id="BT_Settings_006402" text="Garnisonstruppen"/>
+				<string id="BT_Settings_006402_Desc" text="Passt die Besoldung von Garnisonstruppen in % vom Originalwert an. Original ist 100%." />
+				<string id="BT_Settings_006403" text="Auf eigene Fraktion anwenden"/>
+				<string id="BT_Settings_006403_Desc" text="Die eingestellten Anpassungen werden zusätzlich auf die eigene Fraktion (Clan oder soweit vorhanden Königreich) angewendet." />
+				<string id="BT_Settings_006404" text="Auf alle KI-Lords anwenden"/>
+				<string id="BT_Settings_006404_Desc" text="Die eingestellten Anpassungen werden auf alle KI-Lords angewendet." />
+
+			<string id="BT_Settings_006500" text="Tägliche Truppenerfahrung" />
+			<string id="BT_Settings_006500_Desc" text="Gibt jedem Truppentyp (Stack) eines Truppenverbandes täglich eine Menge Erfahrung, welche sich aus dessen Anführers Führungfähigkeit ergibt. Wird standardmäßig nur für den Spieler angewendet." />
+				<string id="BT_Settings_006501" text="Prozentsatz der Führungsfähigkeit"/>
+				<string id="BT_Settings_006501_Desc" text="Der Prozentsatz der Führungsfähigkeit, welcher täglich jedem Truppentyp als Erfahrung gutgeschrieben wird. Bei einer Führungsfähigkeit von 100 und einem Prozentsatz von 1000% würde jeder Truppentyp täglich 1.000 XP erhalten." />
+				<string id="BT_Settings_006502" text="Starthöhe Führungsfähigkeit"/>
+				<string id="BT_Settings_006502_Desc" text="Die Höhe der Führungsfähigkeit, ab welchem täglich Erfahrung generiert wird. Bei einer Einstellung von 20 wird tägliche Erfahrung erst ab einer Führungsfähhigkeit von 20 generiert, die Berechnung erfolgt aber mit der vollen Fäähigkeitsstärke von 20." />
+				<string id="BT_Settings_006503" text="Auf den Spielerclan anwenden"/>
+				<string id="BT_Settings_006503_Desc" text="Tägliche Truppenerfahrung wird für alle Truppenverbände des gesamten Spielerclans generiert." />
+				<string id="BT_Settings_006504" text="Auf alle KI-Lords anwenden"/>
+				<string id="BT_Settings_006504_Desc" text="Tägliche Truppenerfahrung wird für alle Lords generiert." />
+				<string id="BT_Settings_006505" text="Benachrichtigung anzeigen"/>
+				<string id="BT_Settings_006505_Desc" text="Blendet eine Benachrichtigung mit Angabe der Erfahrungsmenge ein, wenn tägliche Erfahrung verteilt wird." />
+
+		<string id="BT_Settings_007000" text="Gefangenschaftsanpassungen" />
+			<string id="BT_Settings_007100" text="Dauer Gefangenschaft" />
+			<string id="BT_Settings_007100_Desc" text="Fügt eine Minimaldauer hinzu, bevor Lords einen Fluchtversuch unternehmen können." />
+				<string id="BT_Settings_007101" text="Nur für Spielergefangene"/>
+				<string id="BT_Settings_007101_Desc" text="Gibt an, ob die Minimaldauer nur für vom Spieler gefangene Lords gelten soll. Deaktiviert = Für alle Lords." />
+				<string id="BT_Settings_007102" text="Minimaldauer Gefangenschaft"/>
+				<string id="BT_Settings_007102_Desc" text="Fügt eine Minimaldauer hinzu, bevor Lords einen Fluchtversuch unternehmen können." />
+				<string id="BT_Settings_007103" text="Aktiviere Missing Hero BugFix"/>
+				<string id="BT_Settings_007103_Desc" text="Versucht fehlerhafte Helden zu finden, welche unendlich lange in Gefangenschaft verbleiben und nicht neu Spawnen. Wird 3 Tage nach der eingestellten Minimaldauer ausgelöst." />
+
+			<string id="BT_Settings_007200" text="Gefangenenanzahl" />
+			<string id="BT_Settings_007200_Desc" text="Modifiziert die Maximalanzahl an Gefangenen, welche dein Truppenverband mitführen kann." />
+				<string id="BT_Settings_007201" text="Gefangenenanzahl"/>
+				<string id="BT_Settings_007201_Desc" text="Modifiziert die Maximalanzahl an Gefangenen, welche dein Truppenverband mitführen kann. Original entspricht 0% (kein Bonus)." />
+				<string id="BT_Settings_007202" text="Auch auf KI anwenden"/>
+				<string id="BT_Settings_007202_Desc" text="Gibt an, ob der Bonus auch für KI-Lords gelten soll." />
+
+			<string id="BT_Settings_007300" text="Gefangenenkonfirmität" />
+			<string id="BT_Settings_007300_Desc" text="Modifiziert die Rate, mit der Gefangene sich an ihren Herren gewöhnen. Ermöglicht eine schnellere Rekrutierung von Gefangenen." />
+				<string id="BT_Settings_007301" text="Gefangenenkonfirmitätsbonus"/>
+				<string id="BT_Settings_007301_Desc" text="Fügt einen % Bonus für die stündlich generierte Konfirmität hinzu. Original entspricht 0%." />
+				<string id="BT_Settings_007302" text="Auf Spielerclan anwenden"/>
+				<string id="BT_Settings_007302_Desc" text="Wendet den Konfirmitätsbonus auf den gesamten Spielerclan an." />
+				<string id="BT_Settings_007303" text="Auf alle KI-Lords anwenden"/>
+				<string id="BT_Settings_007303_Desc" text="Wendet den Konfirmitätsbonus auf alle Lords an." />
+
+		<string id="BT_Settings_008000" text="Siedlungsanpassungen" />
+			<string id="BT_Settings_008100" text="Kulturübernahme" />
+			<string id="BT_Settings_008100_Desc" text="Die Kultur einer Siedlung verändert sich hin zur Klankultur des Besitzers der Siedlung. Nach Deaktivierung werden die Originalkulturen wiederhergestellt." />
+				<string id="BT_Settings_008101" text="Zur Kultur Königreich wechseln "/>
+				<string id="BT_Settings_008101_Desc" text="Anstatt zur Kultur des Besitzerklans zu wechseln, wird zur Kultur des besitzenden Königreiches gewechselt." />
+				<string id="BT_Settings_008102" text="Überschreibe Kultur"/>
+				<string id="BT_Settings_008102_Desc" text="Bestimmt eine feste Kultur, zu der gewechselt werden soll." />
+				<string id="BT_Settings_008103" text="Wochen bis zur Kulturübernahme"/>
+				<string id="BT_Settings_008103_Desc" text="Nach wievielen Wochen zur neuen Kultur gewechselt werden soll, und beispielsweiße Rekruten der neuen Kultur produziert." />
+
+			<string id="BT_Settings_008200" text="Deaktivere Truppenspenden" />
+			<string id="BT_Settings_008200_Desc" text="Verhindert, das Truppenverbände des Spielerklans eigene Truppen an Siedlungen des eigenen Klans spenden." />
+				<string id="BT_Settings_008201" text="Auf jede Siedlung anwenden"/>
+				<string id="BT_Settings_008201_Desc" text="Erweitert das Verhindern von Truppenspenden für klaneigene Truppenverbände auf jede Siedlung im Spiel." />
+
+			<string id="BT_Settings_008300" text="Dorfproduktivität" />
+			<string id="BT_Settings_008300_Desc" text="Aktiviert Anpassungen für die Produktivität in Dörfern." />
+				<string id="BT_Settings_008301" text="Dorfproduktion: Nahrungsgüter"/>
+				<string id="BT_Settings_008301_Desc" text="Modifiziert die Produktivität von Dörfern für Nahrungsgüter (Items wie Weizen, Fisch, Trauben usw.)." />
+				<string id="BT_Settings_008302" text="Dorfproduktion: Andere Güter"/>
+				<string id="BT_Settings_008302_Desc" text="Modifiziert die Produktivität von Dörfern für alle anderen Güter (Items wie Eisen, Holz, Pferde usw.)." />
+
+			<string id="BT_Settings_008400" text="Gebäude" />
+				<string id="BT_Settings_008401" text="Burgen"/>
+					<string id="BT_Settings_008402" text="Burg - Trainingsgelände"/>
+					<string id="BT_Settings_008402_Desc" text="Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände je Level generiert wird." />
+						<string id="BT_Settings_008403" text="Burg -  Trainingsgelände Level 1"/>
+						<string id="BT_Settings_008403_Desc" text="Originalwert ist 1. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 1 generiert wird." />
+						<string id="BT_Settings_008404" text="Burg - Trainingsgelände Level 2"/>
+						<string id="BT_Settings_008404_Desc" text="Originalwert ist 2. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 2 generiert wird." />
+						<string id="BT_Settings_008405" text="Burg - Trainingsgelände Level 3"/>
+						<string id="BT_Settings_008405_Desc" text="Originalwert ist 3. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 3 generiert wird." />
+					<string id="BT_Settings_008406" text="Burg - Kornspeicher"/>
+					<string id="BT_Settings_008406_Desc" text="Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher je Level generiert." />
+						<string id="BT_Settings_008407" text="Burg - Kornspeicher Level 1"/>
+						<string id="BT_Settings_008407_Desc" text="Originalwert ist 100. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 1 generiert." />
+						<string id="BT_Settings_008408" text="Burg - Kornspeicher Level 2"/>
+						<string id="BT_Settings_008408_Desc" text="Originalwert ist 200. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 2 generiert." />
+						<string id="BT_Settings_008409" text="Burg - Kornspeicher Level 3"/>
+						<string id="BT_Settings_008409_Desc" text="Originalwert ist 300. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 3 generiert." />
+					<string id="BT_Settings_008410" text="Burg - Gärten"/>
+					<string id="BT_Settings_008410_Desc" text="Verändert die Nahrungsmenge, welche die Gärten je Level produzieren." />
+						<string id="BT_Settings_008411" text="Burg - Gärten Level 1"/>
+						<string id="BT_Settings_008411_Desc" text="Originalwert ist 5. Verändert die Nahrungsmenge, welche die Gärten auf Level 1 produzieren." />
+						<string id="BT_Settings_008412" text="Burg - Gärten Level 2"/>
+						<string id="BT_Settings_008412_Desc" text="Originalwert ist 10. Verändert die Nahrungsmenge, welche die Gärten auf Level 2 produzieren." />
+						<string id="BT_Settings_008413" text="Burg - Gärten Level 3"/>
+						<string id="BT_Settings_008413_Desc" text="Originalwert ist 15. Verändert die Nahrungsmenge, welche die Gärten auf Level 3 produzieren." />
+					<string id="BT_Settings_008414" text="Burg - Milizbarracken"/>
+					<string id="BT_Settings_008414_Desc" text="Verändert die Menge an Miliztruppen, welche Milizbarracken je Level ausbilden." />
+						<string id="BT_Settings_008415" text="Burg - Milizbarracken Level 1"/>
+						<string id="BT_Settings_008415_Desc" text="Originalwert ist 1. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 1 ausbilden." />
+						<string id="BT_Settings_008416" text="Burg - Milizbarracken Level 2"/>
+						<string id="BT_Settings_008416_Desc" text="Originalwert ist 2. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 2 ausbilden." />
+						<string id="BT_Settings_008417" text="Burg - Milizbarracken Level 3"/>
+						<string id="BT_Settings_008417_Desc" text="Originalwert ist 3. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 3 ausbilden." />
+				<string id="BT_Settings_008418" text="Städte"/>
+					<string id="BT_Settings_008419" text="Stadt - Trainingsgelände"/>
+					<string id="BT_Settings_008419_Desc" text="Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände je Level generiert wird." />
+						<string id="BT_Settings_008420" text="Stadt - Trainingsgelände Level 1"/>
+						<string id="BT_Settings_008420_Desc" text="Originalwert ist 30. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 1 generiert wird." />
+						<string id="BT_Settings_008421" text="Stadt - Trainingsgelände Level 2"/>
+						<string id="BT_Settings_008421_Desc" text="Originalwert ist 60. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 2 generiert wird." />
+						<string id="BT_Settings_008422" text="Stadt - Trainingsgelände Level 3"/>
+						<string id="BT_Settings_008422_Desc" text="Originalwert ist 100. Verändert die Menge an Erfahrung, welche auf dem Trainingsgelände auf Level 2 generiert wird." />
+					<string id="BT_Settings_008423" text="Stadt - Kornspeicher"/>
+					<string id="BT_Settings_008423_Desc" text="Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher je Level generiert." />
+						<string id="BT_Settings_008424" text="Stadt - Kornspeicher Level 1"/>
+						<string id="BT_Settings_008424_Desc" text="Originalwert ist 200. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 1 generiert." />
+						<string id="BT_Settings_008425" text="Stadt - Kornspeicher Level 2"/>
+						<string id="BT_Settings_008425_Desc" text="Originalwert ist 400. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 2 generiert." />
+						<string id="BT_Settings_008426" text="Stadt - Kornspeicher Level 3"/>
+						<string id="BT_Settings_008426_Desc" text="Originalwert ist 600. Verändert die Größe des Nahrungsspeichers, welche der Kornspeicher auf Level 3 generiert.." />
+					<string id="BT_Settings_008427" text="Stadt - Obstgärten"/>
+					<string id="BT_Settings_008427_Desc" text="Verändert die Nahrungsmenge, welche die Gärten je Level produzieren." />
+						<string id="BT_Settings_008428" text="Stadt - Obstgärten Level 1"/>
+						<string id="BT_Settings_008428_Desc" text="Originalwert ist 10. Verändert die Nahrungsmenge, welche die Gärten auf Level 1 produzieren." />
+						<string id="BT_Settings_008429" text="Stadt - Obstgärten Level 2"/>
+						<string id="BT_Settings_008429_Desc" text="Originalwert ist 20. Verändert die Nahrungsmenge, welche die Gärten auf Level 2 produzieren." />
+						<string id="BT_Settings_008430" text="Stadt - Obstgärten Level 3"/>
+						<string id="BT_Settings_008430_Desc" text="Originalwert ist 30. Verändert die Nahrungsmenge, welche die Gärten auf Level 3 produzieren." />
+					<string id="BT_Settings_008431" text="Stadt - Milizbarracken"/>
+					<string id="BT_Settings_008431_Desc" text="Verändert die Menge an Miliztruppen, welche Milizbarracken je Level ausbilden." />
+						<string id="BT_Settings_008432" text="Stadt - Milizbarracken Level 1"/>
+						<string id="BT_Settings_008432_Desc" text="Originalwert ist 0.5. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 1 ausbilden." />
+						<string id="BT_Settings_008433" text="Stadt - Milizbarracken Level 2"/>
+						<string id="BT_Settings_008433_Desc" text="Originalwert ist 1. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 2 ausbilden." />
+						<string id="BT_Settings_008434" text="Stadt - Milizbarracken Level 3"/>
+						<string id="BT_Settings_008434_Desc" text="Originalwert ist 1.5. Verändert die Menge an Miliztruppen, welche Milizbarracken auf Level 3 ausbilden." />
+
+			<string id="BT_Settings_008500" text="Siedlungsnahrung" />
+			<string id="BT_Settings_008500_Desc" text="Aktiviert Anpassungen, welche die Nahrungsproduktion in Siedlungen betreffen (Nahrungswert, keine Items)." />
+				<string id="BT_Settings_008501" text="Burgen Nahrungsmodifikator"/>
+				<string id="BT_Settings_008501_Desc" text="Originalwert entspricht 100%. Fügt einen Modifikator für die Nahrungsproduktion in Burgen hinzu."/>
+				<string id="BT_Settings_008502" text="Städte Nahrungsmodifikator"/>
+				<string id="BT_Settings_008502_Desc" text="Originalwert entspricht 100%. Fügt einen Modifikator für die Nahrungsproduktion in Städten hinzu." />
+				<string id="BT_Settings_008503" text="Nahrungsverlust durch Wohlstand"/>
+				<string id="BT_Settings_008503_Desc" text="Erlaubt, den Verlust in der Nahrungsproduktion durch Wohlstand zu verändern." />
+					<string id="BT_Settings_008504" text="Wohlstandsdivisor"/>
+					<string id="BT_Settings_008504_Desc" text="Originalwert ist 50. Der WOhlstand einer SIedlung wird durch diesen Wert geteilt um die Reduzierung der Nahrungsproduktionb zu ermitteln. Wird der Wert erhöht, wird der negative Effekt des Wohlstandes auf die Produktion gemindert." />
+
+			<string id="BT_Settings_008600" text="Milizen - Normale Einheiten" />
+			<string id="BT_Settings_008600_Desc" text="Fügt einen Bonus auf die Ausbildungs- und Ruhestandsrate von normalen Milizeinheiten hinzu." />
+				<string id="BT_Settings_008601" text="Burgen - Ausbildungsbonus Milizen"/>
+				<string id="BT_Settings_008601_Desc" text="Originalwert ist 0. Fügt einen zusätzlichen Bonus auf die tägliche Anzahl ausgebildeter Milizen in Burgen hinzu."/>
+				<string id="BT_Settings_008602" text="Städte - Ausbildungsbonus Milizen"/>
+				<string id="BT_Settings_008602_Desc" text="Originalwert ist 0. Fügt einen zusätzlichen Bonus auf die tägliche Anzahl ausgebildeter Milizen in Städten hinzu." />
+				<string id="BT_Settings_008603" text="Burgen - Ruhestandsrate"/>
+				<string id="BT_Settings_008603_Desc" text="Verändert die tägliche Anzahl an Ruhestandseintritten. Original: 2,5% der Gesamtanzahl Milizen wird täglich den Ruhestand antreten." />
+				<string id="BT_Settings_008604" text="Städte - Ruhestandsrate"/>
+				<string id="BT_Settings_008604_Desc" text="Verändert die tägliche Anzahl an Ruhestandseintritten. Original: 2,5% der Gesamtanzahl Milizen wird täglich den Ruhestand antreten." />
+
+			<string id="BT_Settings_008700" text="Milizen - Eliteeinheiten" />
+			<string id="BT_Settings_008700_Desc" text="Verändert die Chance, dass neue Milizeinheiten als Eliteeinheit ausgebildet werden." />
+				<string id="BT_Settings_008701" text="Elite Nahkampfmiliz Chance"/>
+				<string id="BT_Settings_008701_Desc" text="Originalchance ist 10%. Bestimmt die Chance, dass neue Milizeinheiten als Eliteeinheit im Nahkampf ausgebildet werden."/>
+				<string id="BT_Settings_008702" text="Elite Fernkampfmiliz Chance"/>
+				<string id="BT_Settings_008702_Desc" text="Originalchance ist 10%. Bestimmt die Chance, dass neue Milizeinheiten als Eliteeinheit im Nahkampf ausgebildet werden." />
+
+			<string id="BT_Settings_008800" text="Turniere" />
+				<string id="BT_Settings_008801" text="Rufbelohnung"/>
+				<string id="BT_Settings_008801_Desc" text="Bestimmt die Menge an Ruf, welche du bei einem Turniersieg erhälst."/>
+					<string id="BT_Settings_008802" text="Rufbelohnung"/>
+					<string id="BT_Settings_008802_Desc" text="Originalmenge ist 3. Erhöht die Menge an Ruf, welche du bei einem Turniersieg erhälst." />
+				<string id="BT_Settings_008803" text="Goldbelohnung"/>
+				<string id="BT_Settings_008803_Desc" text="Fügt der Belohnung bei einem Turniersieg die angegebene Menge Denare hinzu."/>
+					<string id="BT_Settings_008804" text="Goldbelohnung"/>
+					<string id="BT_Settings_008804_Desc" text="Originalmenge ist 0. Fügt der Belohnung bei einem Turniersieg die angegebene Menge Denare hinzu." />
+				<string id="BT_Settings_008805" text="Maximaler Wetteinsatz"/>
+				<string id="BT_Settings_008805_Desc" text="Bestimmt die Maximalhöhe des Wetteinsatzes, den du je Runde setzen kannst."/>
+					<string id="BT_Settings_008806" text="Maximaler Wetteinsatz"/>
+					<string id="BT_Settings_008806_Desc" text="Originalhöhe ist 150. Bestimmt die Maximalhöhe des Wetteinsatzes, den du je Runde setzen kannst." />
+				<string id="BT_Settings_008807" text="Heldenerfahrung"/>
+				<string id="BT_Settings_008807_Desc" text="Überschreibt den Originalmultiplikator für Erfahrungsgewinn in Turnieren für alle Charackter."/>
+					<string id="BT_Settings_008808" text="Turniererfahrung"/>
+					<string id="BT_Settings_008808_Desc" text="Originalwert ist 33%. Bestimmt den Modifikator für den Erfahrungsgewinn in Turnieren. 100% = gleicher Erfahrungsgewinn, wie in echten Schlachten." />
+				<string id="BT_Settings_008809" text="Übungserfahrung"/>
+				<string id="BT_Settings_008809_Desc" text="Überschreibt den Originalmultiplikator für Erfahrungsgewinn in Arena-/Übungskämpfen für alle Charackter."/>
+					<string id="BT_Settings_008810" text="Übungserfahrung"/>
+					<string id="BT_Settings_008810_Desc" text="Originalwert ist 6%. Bestimmt den Modifikator für den Erfahrungsgewinn in Arena-/Übungskämpfen. 100% = gleicher Erfahrungsgewinn, wie in echten Schlachten." />
+				<string id="BT_Settings_008811" text="Mindestwettquoten"/>
+				<string id="BT_Settings_008811_Desc" text="Erlaubt, die Mindestwettquoten in Turnieren einzustellen."/>
+					<string id="BT_Settings_008812" text="Mindestwettquoten"/>
+					<string id="BT_Settings_008812_Desc" text="Originalwert ist 1.1. Die Mindestquote für Wetteinsätze. Höhere Quoten resultieren in mehr Gewinn, wenn gewonnen." />
+
+			<string id="BT_Settings_008900" text="Werkstätten" />
+				<string id="BT_Settings_008901" text="Werkstättenlimit"/>
+				<string id="BT_Settings_008901_Desc" text="Bestimmt die Basismenge an Werkstätten, die du haben kannst und die Menge, welche du je Klanstufe hinzubekommst."/>
+					<string id="BT_Settings_008902" text="Basislimit Werkstätten"/>
+					<string id="BT_Settings_008902_Desc" text="Originallimit ist 1. Bestimmt die Basismenge Werkstätten, die du von SPielbeginn an haben kannst." />
+					<string id="BT_Settings_008903" text="Bonuslimit je Klanstufe"/>
+					<string id="BT_Settings_008903_Desc" text="Originalwert ist 1. Bestimmt das zusätzliche Limit an Werkstätten, die du je Klanstufe erhälst."/>
+				<string id="BT_Settings_008904" text="Werkstattkosten"/>
+				<string id="BT_Settings_008904_Desc" text="Bestimmt den Grundwert, der zur Ermittlung der Kosten einer Werkstatt genutzt wird. Reduziere dies, damit Werkstätten preiswerter werden."/>
+					<string id="BT_Settings_008905" text="Basiskosten Werkstätten"/>
+					<string id="BT_Settings_008905_Desc" text="Originalwert ist 10.000. Bestimmt den Grundwert, der zur Ermittlung der Kosten einer Werkstatt genutzt wird. (+ Kostenindex Werkstatttyp  + 0.5 x Wohlstand). Reduziere dies, damit Werkstätten preiswerter werden." />
+				<string id="BT_Settings_008906" text="Werkstätteneffektivität"/>
+				<string id="BT_Settings_008906_Desc" text="Increases effectivness of workshops by decreasing its daily expenses."/>
+					<string id="BT_Settings_008907" text="Täglicher Kostenfaktor"/>
+					<string id="BT_Settings_008907_Desc" text="Original entspricht 100%. Erhöht die Effektivität von Werkstätten, indem die täglichen Kosten reduziert werden. Erhöhe dies um die Effektivität und damit mehr Gewinne zu erhalten." />
+				<string id="BT_Settings_008908" text="Verkaufspreise"/>
+				<string id="BT_Settings_008908_Desc" text="Verändert die Verkaufspreise für Werkstättenprodukte."/>
+					<string id="BT_Settings_008909" text="Verkaufspreise"/>
+					<string id="BT_Settings_008909_Desc" text="Original entspricht 100%. Verändert die Verkaufspreise für Werkstättenprodukte. Erhöhen für größere Profite." />
+				<string id="BT_Settings_008910" text="Einkaufspreise"/>
+				<string id="BT_Settings_008910_Desc" text="Verändert die Einkaufspreise für Werkstättengüter."/>
+					<string id="BT_Settings_008911" text="Einkaufspreise"/>
+					<string id="BT_Settings_008911_Desc" text="Original entspricht 100%. Verändert die VEinkaufspreise für Werkstättengüter. Senken für größere Profite." />
+
+		<string id="BT_Settings_009000" text="Verschiedenes" />
+			<string id="BT_Settings_009001" text="Questtruppen haben keinen Moraleinfluss" />
+			<string id="BT_Settings_009001_Desc" text="Wenn dies aktiviert wird, haben Questtruppen wie 'Ausgeliehene Truppen' keinen EInfluss auf die Truppmoral." />
+			<string id="BT_Settings_009002" text="Zeige verbleibende Tage Nahrungsversorgung"/>
+			<string id="BT_Settings_009002_Desc" text="Anstelle der Nahrungsmenge, die dein Trupp mit sich führt, wird die Anzahl Tage, die deine Nahrung zur Truppenversorgung noch ausreicht, angezeigt (Anzeige unten rechts auf der Kampagnenkarte)." />
+			<string id="BT_Settings_009003" text="Spielgeschwindigkeit bei Schnellvorlauf"/>
+			<string id="BT_Settings_009003_Desc" text="Bestimmt die Spielgeschwindigkeit bei Schnellvorlauf. Originalgeschwindigkeit entspricht 4x." />
+
+	</strings>
+</base>

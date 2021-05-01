@@ -7,6 +7,9 @@ using System.Windows.Forms;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.CampaignSystem.GameMenus;
+using TaleWorlds.Localization;
+using TaleWorlds.CampaignSystem.Overlay;
 
 namespace BannerlordTweaks
 {
@@ -63,7 +66,7 @@ namespace BannerlordTweaks
                     gameStarter.AddModel(new TweakedCombatXpModel());
                 if (settings.MaxWorkshopCountTweakEnabled || settings.WorkshopBuyingCostTweakEnabled || settings.WorkshopEffectivnessEnabled)
                     gameStarter.AddModel(new TweakedWorkshopModel());
-                if (settings.PartiesLimitTweakEnabled || settings.CompanionLimitTweakEnabled)
+                if (settings.PartiesLimitTweakEnabled || settings.CompanionLimitTweakEnabled || settings.BalancingPartyLimitTweaksEnabled)
                     gameStarter.AddModel(new TweakedClanTierModel());
                 if (settings.SettlementMilitiaEliteSpawnRateBonusEnabled)
                     gameStarter.AddModel(new TweakedSettlementMilitiaModel());
