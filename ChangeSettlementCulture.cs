@@ -26,11 +26,13 @@ namespace BannerlordTweaks
 		{
 			Dictionary<Settlement, CultureObject> startingCultures = new();
 
-			if (BannerlordTweaksSettings.Instance is { } settings && settings.PlayerCultureOverride.SelectedValue != "No Override")
+			if (BannerlordTweaksSettings.Instance is { } settings)
 			{
-				foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId select kingdom.Culture)
+				OverrideCulture = null;
+				foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId || (settings.PlayerCultureOverride.SelectedValue == "khergit" && kingdom.Culture.StringId == "rebkhu") select kingdom.Culture)
 				{
 					OverrideCulture = Culture;
+					break;
 				}
 				if (OverrideCulture == null && settings.ChangeToKingdomCulture && Clan.PlayerClan.Kingdom != null)
 				{
@@ -38,7 +40,7 @@ namespace BannerlordTweaks
 				}
 				else if (OverrideCulture == null)
 				{
-					OverrideCulture = Hero.MainHero.Culture;
+					OverrideCulture = Clan.PlayerClan.Culture;
 				}
 			}
 
@@ -92,9 +94,11 @@ namespace BannerlordTweaks
 			{
 				if (clan == Clan.PlayerClan)
 				{
-					foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId select kingdom.Culture)
+					OverrideCulture = null;
+					foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId || (settings.PlayerCultureOverride.SelectedValue == "khergit" && kingdom.Culture.StringId == "rebkhu") select kingdom.Culture)
 					{
 						OverrideCulture = Culture;
+						break;
 					}
 					if (OverrideCulture == null && settings.ChangeToKingdomCulture && Clan.PlayerClan.Kingdom != null)
 					{
@@ -102,7 +106,7 @@ namespace BannerlordTweaks
 					}
 					else if (OverrideCulture == null)
 					{
-						OverrideCulture = Hero.MainHero.Culture;
+						OverrideCulture = Clan.PlayerClan.Culture;
 					}
 					foreach (Settlement settlement in from settlement in clan.Settlements where settlement.IsTown || settlement.IsCastle || settlement.IsVillage select settlement)
 					{
@@ -112,8 +116,7 @@ namespace BannerlordTweaks
 						}
 					}
 				}
-
-				if (clan != Clan.PlayerClan && clan.Kingdom == null || clan.Kingdom.Culture != clan.Culture)
+				else if (clan.Kingdom == null || clan.Kingdom.Culture != clan.Culture)
 				{
 					foreach (Settlement settlement in from settlement in clan.Settlements where settlement.IsTown || settlement.IsCastle || settlement.IsVillage select settlement)
 					{
@@ -128,9 +131,11 @@ namespace BannerlordTweaks
 
 			if (BannerlordTweaksSettings.Instance is { } settings && settlement.OwnerClan == Clan.PlayerClan)
 			{
-				foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId select kingdom.Culture)
+				OverrideCulture = null;
+				foreach (CultureObject Culture in from kingdom in Campaign.Current.Kingdoms where settings.PlayerCultureOverride.SelectedValue == kingdom.Culture.StringId || (settings.PlayerCultureOverride.SelectedValue == "khergit" && kingdom.Culture.StringId == "rebkhu") select kingdom.Culture)
 				{
 					OverrideCulture = Culture;
+					break;
 				}
 				if (OverrideCulture == null && settings.ChangeToKingdomCulture && Clan.PlayerClan.Kingdom != null)
 				{
@@ -138,7 +143,7 @@ namespace BannerlordTweaks
 				}
 				else if (OverrideCulture == null)
 				{
-					OverrideCulture = Hero.MainHero.Culture;
+					OverrideCulture = Clan.PlayerClan.Culture;
 				}
 			}
 			if (settlement.IsVillage || settlement.IsCastle || settlement.IsTown)
@@ -151,20 +156,39 @@ namespace BannerlordTweaks
 
 					if (PlayerOverride || KingdomOverride || ClanCulture)
 					{
-						settlement.Culture = (settlement.OwnerClan == Clan.PlayerClan) ? OverrideCulture : (settings2.ChangeToKingdomCulture && settlement.OwnerClan.Kingdom != null) ? settlement.OwnerClan.Kingdom.Culture : settlement.OwnerClan.Culture;
-						if (removeTroops)
+						CultureObject? newculture = (settlement.OwnerClan == Clan.PlayerClan) ? OverrideCulture : (settings2.ChangeToKingdomCulture && settlement.OwnerClan.Kingdom != null) ? settlement.OwnerClan.Kingdom.Culture : settlement.OwnerClan.Culture;
+						if (newculture != null)
 						{
-							ChangeSettlementCulture.RemoveTroopsfromNotable(settlement);
-						}
-						foreach (Village boundVillage in settlement.BoundVillages)
-						{
-							if (removeTroops)
+							//dont switch last town of a culture to prevent bugs in vanilla
+							int count = 0;
+							if (settlement.IsTown)
 							{
-								Transform(boundVillage.Settlement, true);
+								foreach (Settlement Town in Campaign.Current.Settlements )
+								{
+									if (Town.IsTown && Town.Culture == settlement.Culture)
+									{
+										count++;
+									}
+								}
 							}
-							else
+							if (count != 1)
 							{
-								Transform(boundVillage.Settlement, false);
+								settlement.Culture = newculture;
+								if (removeTroops)
+								{
+									ChangeSettlementCulture.RemoveTroopsfromNotable(settlement);
+								}
+								foreach (Village boundVillage in settlement.BoundVillages)
+								{
+									if (removeTroops)
+									{
+										Transform(boundVillage.Settlement, true);
+									}
+									else
+									{
+										Transform(boundVillage.Settlement, false);
+									}
+								}
 							}
 						}
 					}
@@ -277,7 +301,7 @@ namespace BannerlordTweaks
 
 		private static Dictionary<Settlement, CultureObject> initialCultureDictionary = new ();
 		public static Dictionary<Settlement, int> WeekCounter = new ();
-		private static CultureObject OverrideCulture = new();
+		private static CultureObject? OverrideCulture = new();
 
 	}
 }

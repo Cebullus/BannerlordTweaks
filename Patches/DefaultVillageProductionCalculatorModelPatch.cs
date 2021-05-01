@@ -15,20 +15,48 @@ namespace BannerlordTweaks.Patches
             {
                 __result = (__result * settings.ProductionFoodTweakEnabled);
             }
-            if (village != null && BannerlordTweaksSettings.Instance is { } settings2 && settings2.BalancingFoodTweakEnabled && village.TradeBound.OwnerClan.Kingdom != null)
+            if (village != null && BannerlordTweaksSettings.Instance is { } settings2 && settings2.BalancingFoodTweakEnabled && settings2.KingdomBalanceStrengthEnabled && village.Settlement.OwnerClan.Kingdom != null)
             {
-                float num = village.TradeBound.OwnerClan.Kingdom.StringId switch
+                float num = 0f;
+                if (settings2.KingdomBalanceStrengthVanEnabled)
                 {
-                    "vlandia" => settings2.VlandiaBoost,
-                    "battania" => settings2.BattaniaBoost,
-                    "empire" => settings2.Empire_N_Boost,
-                    "empire_s" => settings2.Empire_S_Boost,
-                    "empire_w" => settings2.Empire_W_Boost,
-                    "sturgia" => settings2.SturgiaBoost,
-                    "khuzait" => settings2.KhuzaitBoost,
-                    "aserai" => settings2.Aseraiboost,
-                    _ => 0f
-                };
+                    num = village.Settlement.OwnerClan.Kingdom.StringId switch
+                    {
+                        "vlandia" => settings2.VlandiaBoost,
+                        "battania" => settings2.BattaniaBoost,
+                        "empire" => settings2.Empire_N_Boost,
+                        "empire_s" => settings2.Empire_S_Boost,
+                        "empire_w" => settings2.Empire_W_Boost,
+                        "sturgia" => settings2.SturgiaBoost,
+                        "khuzait" => settings2.KhuzaitBoost,
+                        "aserai" => settings2.AseraiBoost,
+                        _ => 0f
+                    };
+                }
+                if (settings2.KingdomBalanceStrengthCEKEnabled)
+                {
+                    num = village.Settlement.OwnerClan.Kingdom.StringId switch
+                    {
+                        "nordlings" => settings2.NordlingsBoost,
+                        "vagir" => settings2.VagirBoost,
+                        "royalist_vlandia" => settings2.RoyalistVlandiaBoost,
+                        "apolssaly" => settings2.ApolssalyBoost,
+                        "lyrion" => settings2.LyrionBoost,
+                        "rebel_khuzait" => settings2.RebelKhuzaitBoost,
+                        "paleician" => settings2.PaleicianBoost,
+                        "ariorum" => settings2.AriorumBoost,
+                        "vlandia" => settings2.Vlandia_CEK_Boost,
+                        "battania" => settings2.Battania_CEK_Boost,
+                        "empire" => settings2.Empire_CEK_Boost,
+                        "empire_s" => settings2.Empire_S_CEK_Boost,
+                        "empire_w" => settings2.Empire_W_CEK_Boost,
+                        "sturgia" => settings2.Sturgia_CEK_Boost,
+                        "khuzait" => settings2.Khuzait_CEK_Boost,
+                        "aserai" => settings2.Aserai_CEK_Boost,
+                        _ => 0f
+                    };
+                }
+                if (num == 0f && village.Settlement.OwnerClan.Kingdom.Leader == Hero.MainHero) num = (settings2.KingdomBalanceStrengthCEKEnabled) ? settings2.Player_CEK_Boost : settings2.PlayerBoost;
                 __result += (__result * num);
             }
         }
