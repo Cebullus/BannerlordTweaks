@@ -3,7 +3,7 @@ using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.SandBox.CampaignBehaviors;
 using System.Linq;
 using TaleWorlds.Core;
-using System;
+using Helpers;
 
 namespace BannerlordTweaks.Patches
 {
@@ -16,7 +16,6 @@ namespace BannerlordTweaks.Patches
             {
                 foreach (Settlement settlement in from settlement in Campaign.Current.Settlements where settlement.OwnerClan != null && settlement.OwnerClan.Kingdom != null && ((settlement.IsTown && !settlement.Town.InRebelliousState) || (settlement.IsVillage && !settlement.Village.Bound.Town.InRebelliousState)) select settlement)
                 {
-                    int count = 0;
                     float num = 0f;
                     if (settings.KingdomBalanceStrengthVanEnabled)
                     {
@@ -66,14 +65,21 @@ namespace BannerlordTweaks.Patches
                             {
                                 if (hero.VolunteerTypes[i] != null && MBRandom.RandomFloat < (num * 0.5) && hero.VolunteerTypes[i].UpgradeTargets != null && hero.VolunteerTypes[i].Level < 20)
                                 {
-                                    hero.VolunteerTypes[i] = hero.VolunteerTypes[i].UpgradeTargets[MBRandom.RandomInt(hero.VolunteerTypes[i].UpgradeTargets.Length)];
-                                    count++;
+                                    CultureObject cultureObject = (hero.CurrentSettlement != null) ? hero.CurrentSettlement.Culture : hero.Clan.Culture;
+                                    CharacterObject basicTroop = cultureObject.BasicTroop;
+                                    if (hero.VolunteerTypes[i] == basicTroop && HeroHelper.HeroShouldGiveEliteTroop(hero))
+                                    {
+                                        hero.VolunteerTypes[i] = cultureObject.EliteBasicTroop;
+                                    }
+                                    else
+                                    {
+                                        hero.VolunteerTypes[i] = hero.VolunteerTypes[i].UpgradeTargets[MBRandom.RandomInt(hero.VolunteerTypes[i].UpgradeTargets.Length)];
+                                    }
                                 }
                             }
 
                         }
                     }
-                    //if(count > 0) DebugHelpers.ColorRedMessage(count + " additional upgrades in " + settlement.Name + " for kingdom " + settlement.OwnerClan.Kingdom.Name +"!");
                 }
             }
         }
