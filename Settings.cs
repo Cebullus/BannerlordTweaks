@@ -128,12 +128,12 @@ namespace BannerlordTweaks
  
         [SettingPropertyFloatingInteger("{=BT_Settings_001202}Damage to Player Tweak Amount", 0.1f, 5.0f,"0%", RequireRestart = false, Order = 3, HintText = "{=BT_Settings_001202_Desc}Native values: Very Easy: 30%, Easy: 67%, Realistic: 100%. This value is used to calculate the damage player receives."), SettingPropertyGroup("{=BT_Settings_001000}Campaign Tweaks" + "/" + "{=BT_Settings_001200}Difficulty Tweaks" + "*/" + "{=BT_Settings_001201}Damage to Player Tweak")]
         public float DamageToPlayerMultiplier { get; set; } = 1.0f;
-
-        [SettingPropertyBool("{=BT_Settings_001203}Damage to Friends Tweak", Order = 4, RequireRestart = false, IsToggle = true, HintText = "{=BT_Settings_001203_Desc}Allows you to change the damage the player's friends receive."), SettingPropertyGroup("{=BT_Settings_001000}Campaign Tweaks" + "/" + "{=BT_Settings_001200}Difficulty Tweaks" + "*/" + "{=BT_Settings_001203}Damage to Friends Tweak", GroupOrder =2)]
-        public bool DamageToFriendsTweakEnabled { get; set; } = false;
-
-        [SettingPropertyFloatingInteger("{=BT_Settings_001204}Damage to Friends Tweak Amount", 0.1f, 5.0f, "0%", RequireRestart = false, Order = 5, HintText = "{=BT_Settings_001204_Desc}Native values: Very Easy: 30%, Easy: 67%, Realistic: 100%. This value is used to calculate the damage the player's friends receive."), SettingPropertyGroup("{=BT_Settings_001000}Campaign Tweaks" + "/" + "{=BT_Settings_001200}Difficulty Tweaks" + "*/" + "{=BT_Settings_001203}Damage to Friends Tweak")]
-        public float DamageToFriendsMultiplier { get; set; } = 1.0f;
+// removed in 1.5.10
+//        [SettingPropertyBool("{=BT_Settings_001203}Damage to Friends Tweak", Order = 4, RequireRestart = false, IsToggle = true, HintText = "{=BT_Settings_001203_Desc}Allows you to change the damage the player's friends receive."), SettingPropertyGroup("{=BT_Settings_001000}Campaign Tweaks" + "/" + "{=BT_Settings_001200}Difficulty Tweaks" + "*/" + "{=BT_Settings_001203}Damage to Friends Tweak", GroupOrder =2)]
+//        public bool DamageToFriendsTweakEnabled { get; set; } = false;
+//
+//        [SettingPropertyFloatingInteger("{=BT_Settings_001204}Damage to Friends Tweak Amount", 0.1f, 5.0f, "0%", RequireRestart = false, Order = 5, HintText = "{=BT_Settings_001204_Desc}Native values: Very Easy: 30%, Easy: 67%, Realistic: 100%. This value is used to calculate the damage the player's friends receive."), SettingPropertyGroup("{=BT_Settings_001000}Campaign Tweaks" + "/" + "{=BT_Settings_001200}Difficulty Tweaks" + "*/" + "{=BT_Settings_001203}Damage to Friends Tweak")]
+//        public float DamageToFriendsMultiplier { get; set; } = 1.0f;
 
         [SettingPropertyBool("{=BT_Settings_001205}Damage to Player's Troops Tweak", Order = 6, RequireRestart = false, IsToggle = true, HintText = "{=BT_Settings_001205_Desc}Allows you to change the multiplier for damage the player's troops receive."), SettingPropertyGroup("{=BT_Settings_001000}Campaign Tweaks" + "/" + "{=BT_Settings_001200}Difficulty Tweaks" + "*/" + "{=BT_Settings_001205}Damage to Player's Troops Tweak", GroupOrder =3)]
         public bool DamageToTroopsTweakEnabled { get; set; } = false;
@@ -700,8 +700,8 @@ namespace BannerlordTweaks
 
         }, 0);
 
-        [SettingPropertyInteger("{=BT_Settings_008103}Weeks for Settlement Culture Change", 1,52, "0 Weeks", Order = 2, RequireRestart = false, HintText = "{=BT_Settings_008103_Desc}After how many weeks the culture of a settlement changes to its owner's culture (and produces recruits of the new culturegroup)."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008100}Settlement Culture Transformation" + "*")]
-        public int TimeToChanceCulture { get; set; } = 10;
+        [SettingPropertyInteger("{=BT_Settings_008103}Days for Settlement Culture Change", 1,365, "0 Days", Order = 2, RequireRestart = false, HintText = "{=BT_Settings_008103_Desc}After how many days the culture of a settlement changes to its owner's culture (and produces recruits of the new culturegroup)."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008100}Settlement Culture Transformation" + "*")]
+        public int TimeToChanceCulture { get; set; } = 30;
 
         #endregion
 
@@ -892,35 +892,28 @@ namespace BannerlordTweaks
 
         #endregion
 
-        #region Settlement Tweaks - Normal Militia
+        #region Settlement Tweaks - Militia
 
-        [SettingPropertyBool("{=BT_Settings_008600}Normal Militia" + "*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_008600_Desc}Grants a flat bonus to militia growth and rate of retirement in towns and castles."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Normal Militia"+"*", GroupOrder =5)]
+        [SettingPropertyBool("{=BT_Settings_008600}Militia" + "*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_008600_Desc}Grants a flat bonus to militia growth and rate of retirement in towns and castles."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Militia"+"*", GroupOrder =5)]
         public bool SettlementMilitiaBonusEnabled { get; set; } = false;
 
-        [SettingPropertyFloatingInteger("{=BT_Settings_008601}Castle Militia Growth Bonus", 0f, 50f, "0.0 Militia/Day",  RequireRestart = false, Order = 2, HintText = "{=BT_Settings_008601_Desc}Native value is 0. Adds a flat bonus on how many militia gets recruited each day in castles."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Normal Militia" + "*")]
+        [SettingPropertyFloatingInteger("{=BT_Settings_008601}Castle Militia Growth Bonus", 0f, 50f, "0.0 Militia/Day",  RequireRestart = false, Order = 2, HintText = "{=BT_Settings_008601_Desc}Native value is 0. Adds a flat bonus on how many militia gets recruited each day in castles."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Militia" + "*")]
         public float CastleMilitiaBonusFlat { get; set; } = 0f;
 
-        [SettingPropertyFloatingInteger("{=BT_Settings_008602}Town Militia Growth Bonus", 0f, 50f, "0.0 Militia/Day",  RequireRestart = false, Order = 3, HintText = "{=BT_Settings_008602_Desc}Native value is 0. Adds a flat bonus on how many militia gets recruited each day in towns."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Normal Militia" + "*")]
+        [SettingPropertyFloatingInteger("{=BT_Settings_008602}Town Militia Growth Bonus", 0f, 50f, "0.0 Militia/Day",  RequireRestart = false, Order = 3, HintText = "{=BT_Settings_008602_Desc}Native value is 0. Adds a flat bonus on how many militia gets recruited each day in towns."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Militia" + "*")]
         public float TownMilitiaBonusFlat { get; set; } = 0f;
 
-        [SettingPropertyFloatingInteger("{=BT_Settings_008603}Castle Militia Retirement Modifier", 0f, 0.25f, "0.0%/Day", RequireRestart = false, Order = 3, HintText = "{=BT_Settings_008603_Desc}Native value is 2.5%. Modifies the percentage of your militia retiring each dayin castles."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Normal Militia" + "*")]
+        [SettingPropertyFloatingInteger("{=BT_Settings_008603}Castle Militia Retirement Modifier", 0f, 0.25f, "0.0%/Day", RequireRestart = false, Order = 3, HintText = "{=BT_Settings_008603_Desc}Native value is 2.5%. Modifies the percentage of your militia retiring each dayin castles."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Militia" + "*")]
         public float CastleMilitiaRetirementModifier { get; set; } = 0.025f;
 
-        [SettingPropertyFloatingInteger("{=BT_Settings_008604}Town Militia Retirement Modifier", 0f, 0.25f, "0.0%/Day", RequireRestart = false, Order = 3, HintText = "{=BT_Settings_008604_Desc}Native value is 2.5%. Modifies the percentage of your militia retiring each dayin town."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Normal Militia" + "*")]
+        [SettingPropertyFloatingInteger("{=BT_Settings_008604}Town Militia Retirement Modifier", 0f, 0.25f, "0.0%/Day", RequireRestart = false, Order = 3, HintText = "{=BT_Settings_008604_Desc}Native value is 2.5%. Modifies the percentage of your militia retiring each dayin town."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Militia" + "*")]
         public float TownMilitiaRetirementModifier { get; set; } = 0.025f;
 
-        #endregion
+        [SettingPropertyFloatingInteger("{=BT_Settings_008605}Melee Militia Spawn Ratio", 0.01f, 1f, "0%", RequireRestart = false, Order = 2, HintText = "{=BT_Settings_008605_Desc}Native value is 50%. Sets the chance that the militia spawning in towns and castles are of melee type. Remaining difference to 100% determines ranged spawn ratio."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Militia" + "*")]
+        public float SettlementMeleeSpawnRate { get; set; } = 0.5f;
 
-        #region Settlement Tweaks - Militia Bonus Tweaks - Elite Militia
-
-        [SettingPropertyBool("{=BT_Settings_008700}Elite Militia"+"*", Order = 1, RequireRestart = true, IsToggle = true, HintText = "{=BT_Settings_008700_Desc}Adds a bonus to the chance that militia spawning in towns and castles are elite."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008700}Elite Militia"+"*", GroupOrder =6)]
-        public bool SettlementMilitiaEliteSpawnRateBonusEnabled { get; set; } = false;
-
-        [SettingPropertyFloatingInteger("{=BT_Settings_008701}Elite Melee Militia Spawn Chance", 0.01f, 1f, "0%", RequireRestart = false, Order = 2, HintText = "{=BT_Settings_008701_Desc}Native value is 10%. Sets the chance that the militia spawning in towns and castles are elite melee troops."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008700}Elite Militia" + "*")]
-        public float SettlementEliteMeleeSpawnRateBonus { get; set; } = 0.1f;
-
-        [SettingPropertyFloatingInteger("{=BT_Settings_008702}Elite Ranged Militia Spawn Chance", 0.01f, 1f, "0%",  RequireRestart = false, Order = 3, HintText = "{=BT_Settings_008702_Desc}Native value is 10%. Sets the chance that the militia spawning in towns and castles are elite ranged troops."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008700}Elite Militia" + "*")]
-        public float SettlementEliteRangedSpawnRateBonus { get; set; } = 0.1f;
+        [SettingPropertyFloatingInteger("{=BT_Settings_008606}Bonus Elite Militia Chance", 0.01f, 1f, "0%", RequireRestart = false, Order = 2, HintText = "{=BT_Settings_008606_Desc}Native value is 0%. Sets the bonus chance that the militia spawning in towns and castles are of elite type."), SettingPropertyGroup("{=BT_Settings_008000}Settlement Tweaks" + "/" + "{=BT_Settings_008600}Militia" + "*")]
+        public float SettlementEliteSpawnChanceBonus { get; set; } = 0.0f;
 
         #endregion
 
@@ -1082,9 +1075,6 @@ namespace BannerlordTweaks
                 CastleMilitiaBonusFlat= 1.25f,
                 TownMilitiaBonusFlat= 2.5f,
                 SettlementMilitiaBonusEnabled= false,
-                SettlementEliteMeleeSpawnRateBonus= 0.15f,
-                SettlementEliteRangedSpawnRateBonus= 0.1f,
-                SettlementMilitiaEliteSpawnRateBonusEnabled= true,
                 CastleFoodBonus= 2.0f,
                 TownFoodBonus= 4.0f,
                 SettlementFoodBonusEnabled= true,
@@ -1225,8 +1215,6 @@ namespace BannerlordTweaks
                 DamageToTroopsTweakEnabled= false,
                 DamageToPlayerMultiplier= 1.0f,
                 DamageToPlayerTweakEnabled= false,
-                DamageToFriendsMultiplier= 1.0f,
-                DamageToFriendsTweakEnabled= false,
                 CombatAIDifficultyMultiplier= 0.96f,
                 CombatAIDifficultyTweakEnabled= false,
                 BattleSize= 1000,
@@ -1257,9 +1245,8 @@ namespace BannerlordTweaks
                   QuestCharactersIgnorePartySize= true,
                   ShowFoodDaysRemaining= true,
                   CampaignSpeed= 4,
-                  SettlementMilitiaEliteSpawnRateBonusEnabled= true,
-                  SettlementEliteMeleeSpawnRateBonus= 0.1f,
-                  SettlementEliteRangedSpawnRateBonus= 0.1f,
+                  SettlementMeleeSpawnRate= 0.5f,
+                  SettlementEliteSpawnChanceBonus= 0.0f,
                   SettlementMilitiaBonusEnabled= true,
                   CastleMilitiaBonusFlat= 0.0f,
                   CastleMilitiaRetirementModifier= 0.025f,
@@ -1277,7 +1264,7 @@ namespace BannerlordTweaks
                   DisableTroopDonationPatchEnabled= true,
                   ChangeToKingdomCulture= true,
                   EnableCultureChanger= true,
-                  TimeToChanceCulture= 10,
+                  TimeToChanceCulture= 30,
                   PlayerCultureOverride = {"No Override"},
                   WorkshopBuyTweak= 1.0f,
                   EnableWorkshopBuyTweak= true,
@@ -1473,8 +1460,6 @@ namespace BannerlordTweaks
                   CombatAIDifficultyMultiplier= 0.96f,
                   DamageToTroopsTweakEnabled= true,
                   DamageToTroopsMultiplier= 1.0f,
-                  DamageToFriendsTweakEnabled= true,
-                  DamageToFriendsMultiplier= 1.0f,
                   DamageToPlayerTweakEnabled= true,
                   DamageToPlayerMultiplier= 1.0f,
                   BattleSizeTweakEnabled= true,

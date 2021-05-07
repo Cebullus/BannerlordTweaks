@@ -4,10 +4,13 @@ namespace BannerlordTweaks
 {
     public class TweakedDifficultyModel : DefaultDifficultyModel
     {
+
+/*removed in 1.5.10
         public override float GetDamageToFriendsMultiplier()
         {
             return BannerlordTweaksSettings.Instance is { } settings && settings.DamageToFriendsTweakEnabled ? settings.DamageToFriendsMultiplier : base.GetDamageToFriendsMultiplier();
         }
+*/
 
         public override float GetDamageToPlayerMultiplier()
         {

@@ -52,6 +52,7 @@ namespace BannerlordTweaks.Patches
         static bool Prepare() => BannerlordTweaksSettings.Instance is { } settings && settings.QuestCharactersIgnorePartySize;
     }
 
+
     [HarmonyPatch(typeof(DefaultPartyMoraleModel), "NumberOfDesertersDueToPaymentRatio")]
     public class NumberOfDesertersDueToPaymentRatioPatch
     {
@@ -59,8 +60,17 @@ namespace BannerlordTweaks.Patches
         {
             if (mobileParty != null && mobileParty.Party != null && mobileParty.Party.LeaderHero != null && mobileParty.Party.LeaderHero == Hero.MainHero)
             {
-                int partySizeLimit = mobileParty.Party.PartySizeLimit;
-                __result = MBRandom.RoundRandomized(((float)QuestPartySizeHelper.GetPartySize(mobileParty) - mobileParty.PaymentRatio * (float)partySizeLimit) * 0.2f);
+                if (!mobileParty.IsGarrison)
+                {
+                    __result = MBRandom.RoundRandomized(((float)QuestPartySizeHelper.GetPartySize(mobileParty) - mobileParty.LimitedPartySize * 0.2f));
+                    return false;
+                }
+                if ((float)QuestPartySizeHelper.GetPartySize(mobileParty) <= mobileParty.LimitedPartySize)
+                {
+                    __result = 0;
+                    return false;
+                }
+                __result = Math.Max(1, (int)((float)((float)QuestPartySizeHelper.GetPartySize(mobileParty) - mobileParty.LimitedPartySize) * 0.1f));
                 return false;
             }
             else

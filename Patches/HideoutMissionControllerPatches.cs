@@ -108,8 +108,9 @@ namespace BannerlordTweaks.Patches
                 {
                     foreach (var formation in team.Formations)
                     {
-                        if (formation.MovementOrder.OrderType != OrderType.Charge)
-                            formation.MovementOrder = MovementOrder.MovementOrderCharge;
+                        MovementOrder movementorder = formation.GetReadonlyMovementOrderReference();
+                        if (movementorder.OrderType != OrderType.Charge) 
+                            formation.SetMovementOrder(MovementOrder.MovementOrderCharge);
                     }
                 }
             }
@@ -119,9 +120,9 @@ namespace BannerlordTweaks.Patches
         {
             foreach (var agent in controller.Mission.Agents)
             {
-                if (agent.IsAIControlled && !agent.IsAlarmed())
+                if (agent.IsAIControlled && agent.CurrentWatchState != Agent.WatchState.Alarmed)
                 {
-                    agent.SetWatchState(AgentAIStateFlagComponent.WatchState.Alarmed);
+                    agent.SetWatchState(Agent.WatchState.Alarmed);
                 }
             }
         }

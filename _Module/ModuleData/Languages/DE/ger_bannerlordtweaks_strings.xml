@@ -67,10 +67,6 @@
 				<string id="BT_Settings_001201_Desc" text="Erlaubt dir den Multiplikator für Schaden, den der Spielercharakter erhält, zu verändern." />
 				<string id="BT_Settings_001202" text="Spielerschadenmenge"/>
 				<string id="BT_Settings_001202_Desc" text="Originalwerte: Sehr leicht: 30%, Leicht: 67%, Realistisch: 100%. Dieser Wert bestimmt wieviel Schaden der Spielercharackter erhält." />
-				<string id="BT_Settings_001203" text="Verbündeter Schaden"/>
-				<string id="BT_Settings_001203_Desc" text="Erlaubt dir den Multiplikator für Schaden, den verbündete Truppen erhalten, zu verändern." />
-				<string id="BT_Settings_001204" text="Verbündete Schadenmenge"/>
-				<string id="BT_Settings_001204_Desc" text="Originalwerte: Sehr leicht: 30%, Leicht: 67%, Realistisch: 100%. Dieser Wert bestimmt wieviel Schaden verbündete Truppen erhalten." />
 				<string id="BT_Settings_001205" text="Spielertruppenschaden"/>
 				<string id="BT_Settings_001205_Desc" text="Erlaubt dir den Multiplikator für Schaden, den deine Truppen erhalten, zu verändern." />
 				<string id="BT_Settings_001206" text="Spielertruppenschadenmenge"/>
@@ -379,8 +375,8 @@
 				<string id="BT_Settings_008101_Desc" text="Anstatt zur Kultur des Besitzerklans zu wechseln, wird zur Kultur des besitzenden Königreiches gewechselt." />
 				<string id="BT_Settings_008102" text="Überschreibe Kultur"/>
 				<string id="BT_Settings_008102_Desc" text="Bestimmt eine feste Kultur, zu der gewechselt werden soll." />
-				<string id="BT_Settings_008103" text="Wochen bis zur Kulturübernahme"/>
-				<string id="BT_Settings_008103_Desc" text="Nach wievielen Wochen zur neuen Kultur gewechselt werden soll, und beispielsweiße Rekruten der neuen Kultur produziert." />
+				<string id="BT_Settings_008103" text="Tage bis zur Kulturübernahme"/>
+				<string id="BT_Settings_008103_Desc" text="Nach wievielen Tagen zur neuen Kultur gewechselt werden soll, und beispielsweiße Rekruten der neuen Kultur produziert." />
 
 			<string id="BT_Settings_008200" text="Deaktivere Truppenspenden" />
 			<string id="BT_Settings_008200_Desc" text="Verhindert, das Truppenverbände des Spielerklans eigene Truppen an Siedlungen des eigenen Klans spenden." />
@@ -473,7 +469,7 @@
 					<string id="BT_Settings_008504" text="Wohlstandsdivisor"/>
 					<string id="BT_Settings_008504_Desc" text="Originalwert ist 50. Der WOhlstand einer SIedlung wird durch diesen Wert geteilt um die Reduzierung der Nahrungsproduktionb zu ermitteln. Wird der Wert erhöht, wird der negative Effekt des Wohlstandes auf die Produktion gemindert." />
 
-			<string id="BT_Settings_008600" text="Milizen - Normale Einheiten" />
+			<string id="BT_Settings_008600" text="Milizen" />
 			<string id="BT_Settings_008600_Desc" text="Fügt einen Bonus auf die Ausbildungs- und Ruhestandsrate von normalen Milizeinheiten hinzu." />
 				<string id="BT_Settings_008601" text="Burgen - Ausbildungsbonus Milizen"/>
 				<string id="BT_Settings_008601_Desc" text="Originalwert ist 0. Fügt einen zusätzlichen Bonus auf die tägliche Anzahl ausgebildeter Milizen in Burgen hinzu."/>
@@ -483,13 +479,10 @@
 				<string id="BT_Settings_008603_Desc" text="Verändert die tägliche Anzahl an Ruhestandseintritten. Original: 2,5% der Gesamtanzahl Milizen wird täglich den Ruhestand antreten." />
 				<string id="BT_Settings_008604" text="Städte - Ruhestandsrate"/>
 				<string id="BT_Settings_008604_Desc" text="Verändert die tägliche Anzahl an Ruhestandseintritten. Original: 2,5% der Gesamtanzahl Milizen wird täglich den Ruhestand antreten." />
-
-			<string id="BT_Settings_008700" text="Milizen - Eliteeinheiten" />
-			<string id="BT_Settings_008700_Desc" text="Verändert die Chance, dass neue Milizeinheiten als Eliteeinheit ausgebildet werden." />
-				<string id="BT_Settings_008701" text="Elite Nahkampfmiliz Chance"/>
-				<string id="BT_Settings_008701_Desc" text="Originalchance ist 10%. Bestimmt die Chance, dass neue Milizeinheiten als Eliteeinheit im Nahkampf ausgebildet werden."/>
-				<string id="BT_Settings_008702" text="Elite Fernkampfmiliz Chance"/>
-				<string id="BT_Settings_008702_Desc" text="Originalchance ist 10%. Bestimmt die Chance, dass neue Milizeinheiten als Eliteeinheit im Nahkampf ausgebildet werden." />
+				<string id="BT_Settings_008605" text="Nahkampfmiliz Chance"/>
+				<string id="BT_Settings_008605_Desc" text="Originalchance ist 50%. Bestimmt die Chance, dass neue Milizeinheiten als Eliteeinheit im Nahkampf ausgebildet werden. Die verbleibende Difgferenz zu 100% bestimmt die Fernkämpferchance."/>
+				<string id="BT_Settings_008606" text="Eliteeinheiten Bonus-Chance"/>
+				<string id="BT_Settings_008606_Desc" text="Originalchance ist 0%. Bestimmt die Bonus-Chance, dass neue Milizeinheiten als Eliteeinheit ausgebildet werden."/>
 
 			<string id="BT_Settings_008800" text="Turniere" />
 				<string id="BT_Settings_008801" text="Rufbelohnung"/>

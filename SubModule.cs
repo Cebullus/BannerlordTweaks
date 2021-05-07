@@ -68,7 +68,7 @@ namespace BannerlordTweaks
                     gameStarter.AddModel(new TweakedWorkshopModel());
                 if (settings.PartiesLimitTweakEnabled || settings.CompanionLimitTweakEnabled || settings.BalancingPartyLimitTweaksEnabled)
                     gameStarter.AddModel(new TweakedClanTierModel());
-                if (settings.SettlementMilitiaEliteSpawnRateBonusEnabled)
+                if (settings.SettlementMilitiaBonusEnabled)
                     gameStarter.AddModel(new TweakedSettlementMilitiaModel());
                 if (settings.SiegeTweaksEnabled)
                     gameStarter.AddModel(new TweakedSiegeEventModel());

@@ -67,10 +67,6 @@
 				<string id="BT_Settings_001201_Desc" text="Allows you to change the multiplier for damage the player receives." />
 				<string id="BT_Settings_001202" text="Damage to Player Tweak Amount"/>
 				<string id="BT_Settings_001202_Desc" text="Native values: Very Easy: 30%, Easy: 67%, Realistic: 100%. This value is used to calculate the damage player receives." />
-				<string id="BT_Settings_001203" text="Damage to Friends Tweak"/>
-				<string id="BT_Settings_001203_Desc" text="Allows you to change the damage the player's friends receive." />
-				<string id="BT_Settings_001204" text="Damage to Friends Tweak Amount"/>
-				<string id="BT_Settings_001204_Desc" text="Native values: Very Easy: 30%, Easy: 67%, Realistic: 100%. This value is used to calculate the damage the player's friends receive." />
 				<string id="BT_Settings_001205" text="Damage to Player's Troops Tweak"/>
 				<string id="BT_Settings_001205_Desc" text="Allows you to change the multiplier for damage the player's troops receive." />
 				<string id="BT_Settings_001206" text="Damage to Troops Tweak Amount"/>
@@ -379,8 +375,8 @@
 				<string id="BT_Settings_008101_Desc" text="Instead of changing the culture to its owner-clan culture, change to its kingdom culture." />
 				<string id="BT_Settings_008102" text="Override Culture For Player Clan"/>
 				<string id="BT_Settings_008102_Desc" text="Overrides the culture to change to for player clan owned settlements." />
-				<string id="BT_Settings_008103" text="Weeks for Settlement Culture Change"/>
-				<string id="BT_Settings_008103_Desc" text="After how many weeks the culture of a settlement changes to its owner's culture (and produces recruits of the new culturegroup)." />
+				<string id="BT_Settings_008103" text="Days for Settlement Culture Change"/>
+				<string id="BT_Settings_008103_Desc" text="After how many days the culture of a settlement changes to its owner's culture (and produces recruits of the new culturegroup)." />
 		
 			<string id="BT_Settings_008200" text="Disable Troop Donations" />
 			<string id="BT_Settings_008200_Desc" text="Disables your clan parties from donating troops to clan owned settlements." />
@@ -483,13 +479,10 @@
 				<string id="BT_Settings_008603_Desc" text="Native value is 2.5%. Modifies the percentage of your militia retiring each dayin castles." />
 				<string id="BT_Settings_008604" text="Town Militia Retirement Modifier"/>
 				<string id="BT_Settings_008604_Desc" text="Native value is 2.5%. Modifies the percentage of your militia retiring each dayin town." />
-		
-			<string id="BT_Settings_008700" text="Elite Militia" />
-			<string id="BT_Settings_008700_Desc" text="Adds a bonus to the chance that militia spawning in towns and castles are elite." />
-				<string id="BT_Settings_008701" text="Elite Melee Militia Spawn Chance"/>
-				<string id="BT_Settings_008701_Desc" text="Native value is 10%. Sets the chance that the militia spawning in towns and castles are elite melee troops."/>
-				<string id="BT_Settings_008702" text="Elite Ranged Militia Spawn Chance"/>
-				<string id="BT_Settings_008702_Desc" text="Native value is 10%. Sets the chance that the militia spawning in towns and castles are elite ranged troops." />
+				<string id="BT_Settings_008605" text="Melee Militia Spawn Ratio"/>
+				<string id="BT_Settings_008605_Desc" text="Native value is 50%. Sets the chance that the militia spawning in towns and castles are of melee type. Remaining difference to 100% determines ranged spawn ratio." />
+				<string id="BT_Settings_008606" text="Bonus Elite Militia Chance"/>
+				<string id="BT_Settings_008606_Desc" text="Native value is 0%. Sets the bonus chance that the militia spawning in towns and castles are of elite type." />
 
 			<string id="BT_Settings_008800" text="Tournaments" />
 				<string id="BT_Settings_008801" text="Renown Reward"/>
